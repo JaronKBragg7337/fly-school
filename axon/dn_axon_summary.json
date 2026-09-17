@@ -1,0 +1,2100 @@
+{
+ "source": "syn-partners-traced.feather",
+ "rows_kept": 4589277,
+ "axonal_rows": 290602,
+ "chosen_vnc_tokens": [
+  "LegNp",
+  "WTct",
+  "HTct",
+  "IntTct",
+  "LTct",
+  "NTct",
+  "Ov(",
+  "ANm",
+  "mVAC",
+  "CvN",
+  "ADMN",
+  "PDMN",
+  "DMetaN",
+  "MesoAN",
+  "MetaAN",
+  "ProAN",
+  "DProN",
+  "VProN",
+  "ProLN",
+  "MesoLN",
+  "MetaLN",
+  "AbN",
+  "AbNT",
+  "LegNv",
+  "VNC"
+ ],
+ "per_type": {
+  "CB0429": {
+   "inputs": 9311,
+   "axonal": 92
+  },
+  "DNa01": {
+   "inputs": 25785,
+   "axonal": 1135
+  },
+  "DNa02": {
+   "inputs": 48125,
+   "axonal": 1243
+  },
+  "DNa03": {
+   "inputs": 34170,
+   "axonal": 53
+  },
+  "DNa04": {
+   "inputs": 17290,
+   "axonal": 456
+  },
+  "DNa05": {
+   "inputs": 8790,
+   "axonal": 439
+  },
+  "DNa06": {
+   "inputs": 20020,
+   "axonal": 180
+  },
+  "DNa07": {
+   "inputs": 2805,
+   "axonal": 123
+  },
+  "DNa08": {
+   "inputs": 2771,
+   "axonal": 573
+  },
+  "DNa09": {
+   "inputs": 15082,
+   "axonal": 771
+  },
+  "DNa10": {
+   "inputs": 30193,
+   "axonal": 559
+  },
+  "DNa11": {
+   "inputs": 25345,
+   "axonal": 1353
+  },
+  "DNa13": {
+   "inputs": 47774,
+   "axonal": 1978
+  },
+  "DNa14": {
+   "inputs": 4302,
+   "axonal": 202
+  },
+  "DNa15": {
+   "inputs": 23330,
+   "axonal": 719
+  },
+  "DNa16": {
+   "inputs": 20959,
+   "axonal": 798
+  },
+  "DNae001": {
+   "inputs": 11472,
+   "axonal": 354
+  },
+  "DNae002": {
+   "inputs": 23287,
+   "axonal": 406
+  },
+  "DNae003": {
+   "inputs": 16176,
+   "axonal": 630
+  },
+  "DNae004": {
+   "inputs": 6454,
+   "axonal": 525
+  },
+  "DNae005": {
+   "inputs": 15422,
+   "axonal": 419
+  },
+  "DNae006": {
+   "inputs": 4347,
+   "axonal": 101
+  },
+  "DNae007": {
+   "inputs": 19458,
+   "axonal": 443
+  },
+  "DNae008": {
+   "inputs": 4116,
+   "axonal": 237
+  },
+  "DNae009": {
+   "inputs": 14164,
+   "axonal": 235
+  },
+  "DNae010": {
+   "inputs": 12050,
+   "axonal": 565
+  },
+  "DNb01": {
+   "inputs": 15346,
+   "axonal": 160
+  },
+  "DNb02": {
+   "inputs": 10383,
+   "axonal": 327
+  },
+  "DNb03": {
+   "inputs": 6422,
+   "axonal": 343
+  },
+  "DNb04": {
+   "inputs": 11076,
+   "axonal": 85
+  },
+  "DNb05": {
+   "inputs": 34524,
+   "axonal": 624
+  },
+  "DNb06": {
+   "inputs": 7779,
+   "axonal": 656
+  },
+  "DNb07": {
+   "inputs": 5725,
+   "axonal": 178
+  },
+  "DNb08": {
+   "inputs": 35739,
+   "axonal": 722
+  },
+  "DNb09": {
+   "inputs": 18679,
+   "axonal": 115
+  },
+  "DNbe001": {
+   "inputs": 32694,
+   "axonal": 1169
+  },
+  "DNbe002": {
+   "inputs": 9014,
+   "axonal": 570
+  },
+  "DNbe003": {
+   "inputs": 13475,
+   "axonal": 545
+  },
+  "DNbe004": {
+   "inputs": 18786,
+   "axonal": 600
+  },
+  "DNbe005": {
+   "inputs": 11739,
+   "axonal": 421
+  },
+  "DNbe006": {
+   "inputs": 6042,
+   "axonal": 304
+  },
+  "DNbe007": {
+   "inputs": 16050,
+   "axonal": 595
+  },
+  "DNc01": {
+   "inputs": 3476,
+   "axonal": 271
+  },
+  "DNc02": {
+   "inputs": 3188,
+   "axonal": 259
+  },
+  "DNd02": {
+   "inputs": 8427,
+   "axonal": 3217
+  },
+  "DNd03": {
+   "inputs": 8799,
+   "axonal": 3436
+  },
+  "DNd04": {
+   "inputs": 9853,
+   "axonal": 658
+  },
+  "DNd05": {
+   "inputs": 9380,
+   "axonal": 549
+  },
+  "DNde001": {
+   "inputs": 5029,
+   "axonal": 343
+  },
+  "DNde002": {
+   "inputs": 19510,
+   "axonal": 807
+  },
+  "DNde003": {
+   "inputs": 14386,
+   "axonal": 578
+  },
+  "DNde005": {
+   "inputs": 8452,
+   "axonal": 1043
+  },
+  "DNde006": {
+   "inputs": 7075,
+   "axonal": 904
+  },
+  "DNde007": {
+   "inputs": 2538,
+   "axonal": 291
+  },
+  "DNg01_a": {
+   "inputs": 2010,
+   "axonal": 158
+  },
+  "DNg01_b": {
+   "inputs": 4038,
+   "axonal": 262
+  },
+  "DNg01_c": {
+   "inputs": 1559,
+   "axonal": 252
+  },
+  "DNg01_d": {
+   "inputs": 1524,
+   "axonal": 195
+  },
+  "DNg01_unclear": {
+   "inputs": 575,
+   "axonal": 70
+  },
+  "DNg02_a": {
+   "inputs": 10273,
+   "axonal": 848
+  },
+  "DNg02_b": {
+   "inputs": 3064,
+   "axonal": 464
+  },
+  "DNg02_c": {
+   "inputs": 4271,
+   "axonal": 627
+  },
+  "DNg02_d": {
+   "inputs": 4614,
+   "axonal": 233
+  },
+  "DNg02_e": {
+   "inputs": 3162,
+   "axonal": 273
+  },
+  "DNg02_f": {
+   "inputs": 3801,
+   "axonal": 271
+  },
+  "DNg02_g": {
+   "inputs": 6028,
+   "axonal": 688
+  },
+  "DNg03": {
+   "inputs": 3944,
+   "axonal": 515
+  },
+  "DNg04": {
+   "inputs": 15448,
+   "axonal": 287
+  },
+  "DNg05_a": {
+   "inputs": 5590,
+   "axonal": 505
+  },
+  "DNg05_b": {
+   "inputs": 3371,
+   "axonal": 351
+  },
+  "DNg05_c": {
+   "inputs": 927,
+   "axonal": 52
+  },
+  "DNg06": {
+   "inputs": 6951,
+   "axonal": 525
+  },
+  "DNg07": {
+   "inputs": 8448,
+   "axonal": 163
+  },
+  "DNg08": {
+   "inputs": 10577,
+   "axonal": 338
+  },
+  "DNg09_a": {
+   "inputs": 3890,
+   "axonal": 32
+  },
+  "DNg09_b": {
+   "inputs": 1668,
+   "axonal": 16
+  },
+  "DNg10": {
+   "inputs": 4589,
+   "axonal": 48
+  },
+  "DNg100": {
+   "inputs": 40737,
+   "axonal": 796
+  },
+  "DNg101": {
+   "inputs": 9450,
+   "axonal": 966
+  },
+  "DNg102": {
+   "inputs": 18824,
+   "axonal": 758
+  },
+  "DNg103": {
+   "inputs": 6770,
+   "axonal": 923
+  },
+  "DNg104": {
+   "inputs": 7306,
+   "axonal": 884
+  },
+  "DNg105": {
+   "inputs": 29415,
+   "axonal": 2283
+  },
+  "DNg106": {
+   "inputs": 11002,
+   "axonal": 214
+  },
+  "DNg107": {
+   "inputs": 2158,
+   "axonal": 186
+  },
+  "DNg108": {
+   "inputs": 32187,
+   "axonal": 934
+  },
+  "DNg109": {
+   "inputs": 7190,
+   "axonal": 341
+  },
+  "DNg11": {
+   "inputs": 7090,
+   "axonal": 63
+  },
+  "DNg110": {
+   "inputs": 6025,
+   "axonal": 202
+  },
+  "DNg111": {
+   "inputs": 13964,
+   "axonal": 262
+  },
+  "DNg12_a": {
+   "inputs": 7958,
+   "axonal": 286
+  },
+  "DNg12_b": {
+   "inputs": 4424,
+   "axonal": 239
+  },
+  "DNg12_c": {
+   "inputs": 7664,
+   "axonal": 280
+  },
+  "DNg12_d": {
+   "inputs": 3375,
+   "axonal": 99
+  },
+  "DNg12_e": {
+   "inputs": 6775,
+   "axonal": 752
+  },
+  "DNg12_f": {
+   "inputs": 2579,
+   "axonal": 336
+  },
+  "DNg12_g": {
+   "inputs": 2251,
+   "axonal": 124
+  },
+  "DNg12_h": {
+   "inputs": 3117,
+   "axonal": 142
+  },
+  "DNg13": {
+   "inputs": 12533,
+   "axonal": 684
+  },
+  "DNg14": {
+   "inputs": 5465,
+   "axonal": 1487
+  },
+  "DNg15": {
+   "inputs": 21085,
+   "axonal": 989
+  },
+  "DNg16": {
+   "inputs": 41479,
+   "axonal": 1011
+  },
+  "DNg17": {
+   "inputs": 1715,
+   "axonal": 286
+  },
+  "DNg18_a": {
+   "inputs": 1556,
+   "axonal": 20
+  },
+  "DNg18_b": {
+   "inputs": 2769,
+   "axonal": 73
+  },
+  "DNg19": {
+   "inputs": 4278,
+   "axonal": 183
+  },
+  "DNg20": {
+   "inputs": 2666,
+   "axonal": 677
+  },
+  "DNg21": {
+   "inputs": 3775,
+   "axonal": 1621
+  },
+  "DNg22": {
+   "inputs": 9106,
+   "axonal": 935
+  },
+  "DNg23": {
+   "inputs": 2396,
+   "axonal": 173
+  },
+  "DNg24": {
+   "inputs": 6383,
+   "axonal": 110
+  },
+  "DNg26": {
+   "inputs": 3427,
+   "axonal": 886
+  },
+  "DNg27": {
+   "inputs": 6219,
+   "axonal": 612
+  },
+  "DNg28": {
+   "inputs": 1212,
+   "axonal": 0
+  },
+  "DNg29": {
+   "inputs": 13325,
+   "axonal": 215
+  },
+  "DNg30": {
+   "inputs": 6669,
+   "axonal": 735
+  },
+  "DNg31": {
+   "inputs": 12129,
+   "axonal": 839
+  },
+  "DNg32": {
+   "inputs": 3232,
+   "axonal": 190
+  },
+  "DNg33": {
+   "inputs": 7357,
+   "axonal": 1370
+  },
+  "DNg34": {
+   "inputs": 6684,
+   "axonal": 2881
+  },
+  "DNg35": {
+   "inputs": 29996,
+   "axonal": 497
+  },
+  "DNg36_a": {
+   "inputs": 3163,
+   "axonal": 487
+  },
+  "DNg36_b": {
+   "inputs": 2122,
+   "axonal": 523
+  },
+  "DNg37": {
+   "inputs": 16082,
+   "axonal": 914
+  },
+  "DNg38": {
+   "inputs": 10647,
+   "axonal": 118
+  },
+  "DNg39": {
+   "inputs": 5237,
+   "axonal": 581
+  },
+  "DNg40": {
+   "inputs": 18907,
+   "axonal": 256
+  },
+  "DNg41": {
+   "inputs": 5297,
+   "axonal": 59
+  },
+  "DNg42": {
+   "inputs": 3164,
+   "axonal": 96
+  },
+  "DNg43": {
+   "inputs": 7548,
+   "axonal": 293
+  },
+  "DNg44": {
+   "inputs": 5735,
+   "axonal": 104
+  },
+  "DNg45": {
+   "inputs": 3154,
+   "axonal": 247
+  },
+  "DNg46": {
+   "inputs": 3327,
+   "axonal": 43
+  },
+  "DNg47": {
+   "inputs": 3880,
+   "axonal": 85
+  },
+  "DNg48": {
+   "inputs": 8263,
+   "axonal": 395
+  },
+  "DNg49": {
+   "inputs": 15525,
+   "axonal": 130
+  },
+  "DNg50": {
+   "inputs": 2415,
+   "axonal": 225
+  },
+  "DNg51": {
+   "inputs": 11857,
+   "axonal": 304
+  },
+  "DNg52": {
+   "inputs": 15286,
+   "axonal": 55
+  },
+  "DNg53": {
+   "inputs": 670,
+   "axonal": 27
+  },
+  "DNg54": {
+   "inputs": 6181,
+   "axonal": 480
+  },
+  "DNg55": {
+   "inputs": 3252,
+   "axonal": 278
+  },
+  "DNg56": {
+   "inputs": 8521,
+   "axonal": 113
+  },
+  "DNg57": {
+   "inputs": 3411,
+   "axonal": 119
+  },
+  "DNg58": {
+   "inputs": 4057,
+   "axonal": 59
+  },
+  "DNg59": {
+   "inputs": 2317,
+   "axonal": 150
+  },
+  "DNg60": {
+   "inputs": 7851,
+   "axonal": 79
+  },
+  "DNg61": {
+   "inputs": 4687,
+   "axonal": 49
+  },
+  "DNg62": {
+   "inputs": 7364,
+   "axonal": 514
+  },
+  "DNg63": {
+   "inputs": 6078,
+   "axonal": 619
+  },
+  "DNg64": {
+   "inputs": 4414,
+   "axonal": 56
+  },
+  "DNg65": {
+   "inputs": 4398,
+   "axonal": 196
+  },
+  "DNg66": {
+   "inputs": 3464,
+   "axonal": 2015
+  },
+  "DNg67": {
+   "inputs": 1626,
+   "axonal": 98
+  },
+  "DNg68": {
+   "inputs": 7191,
+   "axonal": 657
+  },
+  "DNg69": {
+   "inputs": 8613,
+   "axonal": 206
+  },
+  "DNg70": {
+   "inputs": 9064,
+   "axonal": 2169
+  },
+  "DNg71": {
+   "inputs": 6471,
+   "axonal": 90
+  },
+  "DNg72": {
+   "inputs": 4057,
+   "axonal": 45
+  },
+  "DNg73": {
+   "inputs": 6282,
+   "axonal": 235
+  },
+  "DNg74_a": {
+   "inputs": 34634,
+   "axonal": 1230
+  },
+  "DNg74_b": {
+   "inputs": 21254,
+   "axonal": 1130
+  },
+  "DNg75": {
+   "inputs": 36339,
+   "axonal": 139
+  },
+  "DNg76": {
+   "inputs": 6364,
+   "axonal": 439
+  },
+  "DNg77": {
+   "inputs": 2964,
+   "axonal": 26
+  },
+  "DNg78": {
+   "inputs": 7482,
+   "axonal": 493
+  },
+  "DNg79": {
+   "inputs": 6747,
+   "axonal": 226
+  },
+  "DNg80": {
+   "inputs": 4141,
+   "axonal": 507
+  },
+  "DNg81": {
+   "inputs": 5970,
+   "axonal": 71
+  },
+  "DNg82": {
+   "inputs": 7621,
+   "axonal": 506
+  },
+  "DNg83": {
+   "inputs": 1680,
+   "axonal": 241
+  },
+  "DNg84": {
+   "inputs": 14496,
+   "axonal": 331
+  },
+  "DNg85": {
+   "inputs": 11164,
+   "axonal": 289
+  },
+  "DNg86": {
+   "inputs": 8495,
+   "axonal": 0
+  },
+  "DNg87": {
+   "inputs": 12358,
+   "axonal": 161
+  },
+  "DNg88": {
+   "inputs": 23559,
+   "axonal": 1390
+  },
+  "DNg89": {
+   "inputs": 6205,
+   "axonal": 108
+  },
+  "DNg90": {
+   "inputs": 10751,
+   "axonal": 346
+  },
+  "DNg91": {
+   "inputs": 8503,
+   "axonal": 366
+  },
+  "DNg92_a": {
+   "inputs": 3438,
+   "axonal": 108
+  },
+  "DNg92_b": {
+   "inputs": 3149,
+   "axonal": 155
+  },
+  "DNg93": {
+   "inputs": 12832,
+   "axonal": 970
+  },
+  "DNg94": {
+   "inputs": 2458,
+   "axonal": 71
+  },
+  "DNg95": {
+   "inputs": 3686,
+   "axonal": 400
+  },
+  "DNg96": {
+   "inputs": 19352,
+   "axonal": 332
+  },
+  "DNg97": {
+   "inputs": 34747,
+   "axonal": 1037
+  },
+  "DNg98": {
+   "inputs": 14387,
+   "axonal": 2356
+  },
+  "DNg99": {
+   "inputs": 13291,
+   "axonal": 299
+  },
+  "DNge001": {
+   "inputs": 4116,
+   "axonal": 243
+  },
+  "DNge002": {
+   "inputs": 4979,
+   "axonal": 400
+  },
+  "DNge003": {
+   "inputs": 9538,
+   "axonal": 432
+  },
+  "DNge004": {
+   "inputs": 4383,
+   "axonal": 86
+  },
+  "DNge006": {
+   "inputs": 5947,
+   "axonal": 469
+  },
+  "DNge007": {
+   "inputs": 11514,
+   "axonal": 623
+  },
+  "DNge008": {
+   "inputs": 2836,
+   "axonal": 194
+  },
+  "DNge009": {
+   "inputs": 2812,
+   "axonal": 269
+  },
+  "DNge010": {
+   "inputs": 5678,
+   "axonal": 733
+  },
+  "DNge011": {
+   "inputs": 5324,
+   "axonal": 133
+  },
+  "DNge012": {
+   "inputs": 7250,
+   "axonal": 1060
+  },
+  "DNge013": {
+   "inputs": 4732,
+   "axonal": 489
+  },
+  "DNge014": {
+   "inputs": 2080,
+   "axonal": 79
+  },
+  "DNge015": {
+   "inputs": 2309,
+   "axonal": 79
+  },
+  "DNge016": {
+   "inputs": 4312,
+   "axonal": 137
+  },
+  "DNge017": {
+   "inputs": 1722,
+   "axonal": 68
+  },
+  "DNge018": {
+   "inputs": 6098,
+   "axonal": 274
+  },
+  "DNge019": {
+   "inputs": 13207,
+   "axonal": 744
+  },
+  "DNge020": {
+   "inputs": 3078,
+   "axonal": 145
+  },
+  "DNge021": {
+   "inputs": 2194,
+   "axonal": 137
+  },
+  "DNge022": {
+   "inputs": 6345,
+   "axonal": 270
+  },
+  "DNge023": {
+   "inputs": 13793,
+   "axonal": 894
+  },
+  "DNge024": {
+   "inputs": 2057,
+   "axonal": 270
+  },
+  "DNge025": {
+   "inputs": 2257,
+   "axonal": 160
+  },
+  "DNge026": {
+   "inputs": 13631,
+   "axonal": 632
+  },
+  "DNge027": {
+   "inputs": 9148,
+   "axonal": 323
+  },
+  "DNge028": {
+   "inputs": 5489,
+   "axonal": 180
+  },
+  "DNge029": {
+   "inputs": 2209,
+   "axonal": 17
+  },
+  "DNge030": {
+   "inputs": 3560,
+   "axonal": 150
+  },
+  "DNge031": {
+   "inputs": 19942,
+   "axonal": 0
+  },
+  "DNge032": {
+   "inputs": 5004,
+   "axonal": 327
+  },
+  "DNge033": {
+   "inputs": 9140,
+   "axonal": 59
+  },
+  "DNge034": {
+   "inputs": 3480,
+   "axonal": 56
+  },
+  "DNge035": {
+   "inputs": 11254,
+   "axonal": 261
+  },
+  "DNge036": {
+   "inputs": 20089,
+   "axonal": 244
+  },
+  "DNge037": {
+   "inputs": 37023,
+   "axonal": 810
+  },
+  "DNge038": {
+   "inputs": 5536,
+   "axonal": 850
+  },
+  "DNge039": {
+   "inputs": 5779,
+   "axonal": 560
+  },
+  "DNge040": {
+   "inputs": 8937,
+   "axonal": 196
+  },
+  "DNge041": {
+   "inputs": 11564,
+   "axonal": 189
+  },
+  "DNge042": {
+   "inputs": 10861,
+   "axonal": 349
+  },
+  "DNge043": {
+   "inputs": 10131,
+   "axonal": 69
+  },
+  "DNge044": {
+   "inputs": 7175,
+   "axonal": 567
+  },
+  "DNge045": {
+   "inputs": 1663,
+   "axonal": 32
+  },
+  "DNge046": {
+   "inputs": 21363,
+   "axonal": 158
+  },
+  "DNge047": {
+   "inputs": 8318,
+   "axonal": 2598
+  },
+  "DNge048": {
+   "inputs": 9431,
+   "axonal": 430
+  },
+  "DNge049": {
+   "inputs": 16292,
+   "axonal": 503
+  },
+  "DNge050": {
+   "inputs": 33094,
+   "axonal": 266
+  },
+  "DNge051": {
+   "inputs": 7941,
+   "axonal": 61
+  },
+  "DNge052": {
+   "inputs": 4039,
+   "axonal": 229
+  },
+  "DNge053": {
+   "inputs": 23055,
+   "axonal": 918
+  },
+  "DNge054": {
+   "inputs": 16206,
+   "axonal": 278
+  },
+  "DNge055": {
+   "inputs": 9127,
+   "axonal": 112
+  },
+  "DNge056": {
+   "inputs": 9562,
+   "axonal": 384
+  },
+  "DNge057": {
+   "inputs": 3574,
+   "axonal": 50
+  },
+  "DNge058": {
+   "inputs": 2419,
+   "axonal": 63
+  },
+  "DNge059": {
+   "inputs": 17399,
+   "axonal": 973
+  },
+  "DNge060": {
+   "inputs": 5880,
+   "axonal": 143
+  },
+  "DNge061": {
+   "inputs": 1514,
+   "axonal": 1513
+  },
+  "DNge062": {
+   "inputs": 5375,
+   "axonal": 159
+  },
+  "DNge063": {
+   "inputs": 7191,
+   "axonal": 309
+  },
+  "DNge064": {
+   "inputs": 2290,
+   "axonal": 160
+  },
+  "DNge065": {
+   "inputs": 10089,
+   "axonal": 498
+  },
+  "DNge067": {
+   "inputs": 4837,
+   "axonal": 233
+  },
+  "DNge068": {
+   "inputs": 4154,
+   "axonal": 380
+  },
+  "DNge069": {
+   "inputs": 4339,
+   "axonal": 93
+  },
+  "DNge070": {
+   "inputs": 5914,
+   "axonal": 28
+  },
+  "DNge071": {
+   "inputs": 2011,
+   "axonal": 37
+  },
+  "DNge072": {
+   "inputs": 4288,
+   "axonal": 30
+  },
+  "DNge073": {
+   "inputs": 14400,
+   "axonal": 288
+  },
+  "DNge074": {
+   "inputs": 5371,
+   "axonal": 5363
+  },
+  "DNge075": {
+   "inputs": 7061,
+   "axonal": 4814
+  },
+  "DNge076": {
+   "inputs": 5960,
+   "axonal": 73
+  },
+  "DNge077": {
+   "inputs": 3133,
+   "axonal": 131
+  },
+  "DNge078": {
+   "inputs": 4907,
+   "axonal": 467
+  },
+  "DNge079": {
+   "inputs": 25251,
+   "axonal": 764
+  },
+  "DNge080": {
+   "inputs": 8067,
+   "axonal": 271
+  },
+  "DNge081": {
+   "inputs": 4686,
+   "axonal": 394
+  },
+  "DNge082": {
+   "inputs": 6024,
+   "axonal": 332
+  },
+  "DNge083": {
+   "inputs": 4836,
+   "axonal": 315
+  },
+  "DNge084": {
+   "inputs": 5220,
+   "axonal": 93
+  },
+  "DNge085": {
+   "inputs": 4756,
+   "axonal": 63
+  },
+  "DNge086": {
+   "inputs": 6745,
+   "axonal": 23
+  },
+  "DNge087": {
+   "inputs": 3160,
+   "axonal": 13
+  },
+  "DNge088": {
+   "inputs": 2038,
+   "axonal": 56
+  },
+  "DNge089": {
+   "inputs": 2313,
+   "axonal": 119
+  },
+  "DNge090": {
+   "inputs": 1348,
+   "axonal": 122
+  },
+  "DNge091": {
+   "inputs": 10855,
+   "axonal": 502
+  },
+  "DNge092": {
+   "inputs": 1826,
+   "axonal": 32
+  },
+  "DNge093": {
+   "inputs": 2812,
+   "axonal": 136
+  },
+  "DNge094": {
+   "inputs": 7354,
+   "axonal": 348
+  },
+  "DNge095": {
+   "inputs": 2120,
+   "axonal": 50
+  },
+  "DNge096": {
+   "inputs": 3420,
+   "axonal": 46
+  },
+  "DNge097": {
+   "inputs": 3165,
+   "axonal": 131
+  },
+  "DNge098": {
+   "inputs": 3074,
+   "axonal": 53
+  },
+  "DNge099": {
+   "inputs": 9938,
+   "axonal": 410
+  },
+  "DNge100": {
+   "inputs": 5494,
+   "axonal": 66
+  },
+  "DNge101": {
+   "inputs": 7921,
+   "axonal": 255
+  },
+  "DNge102": {
+   "inputs": 9965,
+   "axonal": 9898
+  },
+  "DNge103": {
+   "inputs": 8837,
+   "axonal": 214
+  },
+  "DNge104": {
+   "inputs": 21410,
+   "axonal": 16534
+  },
+  "DNge105": {
+   "inputs": 4019,
+   "axonal": 248
+  },
+  "DNge106": {
+   "inputs": 6416,
+   "axonal": 363
+  },
+  "DNge107": {
+   "inputs": 16522,
+   "axonal": 396
+  },
+  "DNge108": {
+   "inputs": 2897,
+   "axonal": 73
+  },
+  "DNge110": {
+   "inputs": 1171,
+   "axonal": 100
+  },
+  "DNge111": {
+   "inputs": 3200,
+   "axonal": 38
+  },
+  "DNge113": {
+   "inputs": 4725,
+   "axonal": 59
+  },
+  "DNge114": {
+   "inputs": 2297,
+   "axonal": 623
+  },
+  "DNge115": {
+   "inputs": 3293,
+   "axonal": 57
+  },
+  "DNge116": {
+   "inputs": 1278,
+   "axonal": 33
+  },
+  "DNge117": {
+   "inputs": 1516,
+   "axonal": 21
+  },
+  "DNge119": {
+   "inputs": 6576,
+   "axonal": 336
+  },
+  "DNge120": {
+   "inputs": 1457,
+   "axonal": 203
+  },
+  "DNge121": {
+   "inputs": 4232,
+   "axonal": 286
+  },
+  "DNge122": {
+   "inputs": 25174,
+   "axonal": 16176
+  },
+  "DNge123": {
+   "inputs": 7823,
+   "axonal": 141
+  },
+  "DNge124": {
+   "inputs": 7214,
+   "axonal": 110
+  },
+  "DNge125": {
+   "inputs": 12101,
+   "axonal": 649
+  },
+  "DNge126": {
+   "inputs": 776,
+   "axonal": 19
+  },
+  "DNge127": {
+   "inputs": 3268,
+   "axonal": 248
+  },
+  "DNge128": {
+   "inputs": 2484,
+   "axonal": 97
+  },
+  "DNge129": {
+   "inputs": 15750,
+   "axonal": 387
+  },
+  "DNge130": {
+   "inputs": 1633,
+   "axonal": 235
+  },
+  "DNge131": {
+   "inputs": 3824,
+   "axonal": 604
+  },
+  "DNge132": {
+   "inputs": 11776,
+   "axonal": 287
+  },
+  "DNge133": {
+   "inputs": 4932,
+   "axonal": 200
+  },
+  "DNge134": {
+   "inputs": 1207,
+   "axonal": 44
+  },
+  "DNge135": {
+   "inputs": 9495,
+   "axonal": 122
+  },
+  "DNge136": {
+   "inputs": 12601,
+   "axonal": 844
+  },
+  "DNge137": {
+   "inputs": 5340,
+   "axonal": 474
+  },
+  "DNge138": {
+   "inputs": 11836,
+   "axonal": 1726
+  },
+  "DNge139": {
+   "inputs": 8251,
+   "axonal": 778
+  },
+  "DNge140": {
+   "inputs": 8695,
+   "axonal": 1507
+  },
+  "DNge141": {
+   "inputs": 6247,
+   "axonal": 154
+  },
+  "DNge142": {
+   "inputs": 8202,
+   "axonal": 715
+  },
+  "DNge143": {
+   "inputs": 11161,
+   "axonal": 768
+  },
+  "DNge144": {
+   "inputs": 3010,
+   "axonal": 287
+  },
+  "DNge145": {
+   "inputs": 3799,
+   "axonal": 41
+  },
+  "DNge146": {
+   "inputs": 10114,
+   "axonal": 184
+  },
+  "DNge147": {
+   "inputs": 3335,
+   "axonal": 157
+  },
+  "DNge148": {
+   "inputs": 7007,
+   "axonal": 439
+  },
+  "DNge149": {
+   "inputs": 6291,
+   "axonal": 2200
+  },
+  "DNge150": {
+   "inputs": 4200,
+   "axonal": 1853
+  },
+  "DNge151": {
+   "inputs": 2213,
+   "axonal": 605
+  },
+  "DNge152": {
+   "inputs": 3960,
+   "axonal": 1034
+  },
+  "DNge153": {
+   "inputs": 8498,
+   "axonal": 8483
+  },
+  "DNge154": {
+   "inputs": 1162,
+   "axonal": 40
+  },
+  "DNge172": {
+   "inputs": 4587,
+   "axonal": 866
+  },
+  "DNge173": {
+   "inputs": 11112,
+   "axonal": 216
+  },
+  "DNge174": {
+   "inputs": 5342,
+   "axonal": 109
+  },
+  "DNge175": {
+   "inputs": 3698,
+   "axonal": 118
+  },
+  "DNge176": {
+   "inputs": 914,
+   "axonal": 64
+  },
+  "DNge178": {
+   "inputs": 2272,
+   "axonal": 170
+  },
+  "DNge179": {
+   "inputs": 2528,
+   "axonal": 19
+  },
+  "DNge180": {
+   "inputs": 1119,
+   "axonal": 59
+  },
+  "DNge181": {
+   "inputs": 3156,
+   "axonal": 218
+  },
+  "DNge182": {
+   "inputs": 10544,
+   "axonal": 10442
+  },
+  "DNge183": {
+   "inputs": 1288,
+   "axonal": 46
+  },
+  "DNge184": {
+   "inputs": 2635,
+   "axonal": 34
+  },
+  "DNp01": {
+   "inputs": 36735,
+   "axonal": 2273
+  },
+  "DNp02": {
+   "inputs": 16039,
+   "axonal": 614
+  },
+  "DNp03": {
+   "inputs": 18765,
+   "axonal": 356
+  },
+  "DNp04": {
+   "inputs": 21034,
+   "axonal": 340
+  },
+  "DNp05": {
+   "inputs": 11352,
+   "axonal": 446
+  },
+  "DNp06": {
+   "inputs": 41711,
+   "axonal": 618
+  },
+  "DNp07": {
+   "inputs": 11530,
+   "axonal": 466
+  },
+  "DNp08": {
+   "inputs": 8840,
+   "axonal": 328
+  },
+  "DNp09": {
+   "inputs": 15490,
+   "axonal": 177
+  },
+  "DNp10": {
+   "inputs": 21155,
+   "axonal": 1067
+  },
+  "DNp101": {
+   "inputs": 10444,
+   "axonal": 58
+  },
+  "DNp102": {
+   "inputs": 17943,
+   "axonal": 523
+  },
+  "DNp103": {
+   "inputs": 54203,
+   "axonal": 1417
+  },
+  "DNp104": {
+   "inputs": 13948,
+   "axonal": 152
+  },
+  "DNp11": {
+   "inputs": 21380,
+   "axonal": 542
+  },
+  "DNp12": {
+   "inputs": 14369,
+   "axonal": 739
+  },
+  "DNp13": {
+   "inputs": 19685,
+   "axonal": 1254
+  },
+  "DNp14": {
+   "inputs": 8099,
+   "axonal": 208
+  },
+  "DNp15": {
+   "inputs": 7763,
+   "axonal": 158
+  },
+  "DNp16_a": {
+   "inputs": 2352,
+   "axonal": 45
+  },
+  "DNp16_b": {
+   "inputs": 1939,
+   "axonal": 50
+  },
+  "DNp17": {
+   "inputs": 6111,
+   "axonal": 574
+  },
+  "DNp18": {
+   "inputs": 21143,
+   "axonal": 706
+  },
+  "DNp19": {
+   "inputs": 14273,
+   "axonal": 951
+  },
+  "DNp20": {
+   "inputs": 9521,
+   "axonal": 137
+  },
+  "DNp21": {
+   "inputs": 6298,
+   "axonal": 143
+  },
+  "DNp22": {
+   "inputs": 7956,
+   "axonal": 101
+  },
+  "DNp23": {
+   "inputs": 10705,
+   "axonal": 168
+  },
+  "DNp24": {
+   "inputs": 1546,
+   "axonal": 305
+  },
+  "DNp25": {
+   "inputs": 2098,
+   "axonal": 100
+  },
+  "DNp26": {
+   "inputs": 19331,
+   "axonal": 516
+  },
+  "DNp27": {
+   "inputs": 16502,
+   "axonal": 257
+  },
+  "DNp28": {
+   "inputs": 351,
+   "axonal": 257
+  },
+  "DNp29": {
+   "inputs": 6399,
+   "axonal": 223
+  },
+  "DNp30": {
+   "inputs": 12884,
+   "axonal": 104
+  },
+  "DNp31": {
+   "inputs": 34099,
+   "axonal": 355
+  },
+  "DNp32": {
+   "inputs": 16805,
+   "axonal": 313
+  },
+  "DNp33": {
+   "inputs": 5224,
+   "axonal": 130
+  },
+  "DNp34": {
+   "inputs": 8567,
+   "axonal": 702
+  },
+  "DNp35": {
+   "inputs": 35016,
+   "axonal": 91
+  },
+  "DNp36": {
+   "inputs": 14655,
+   "axonal": 851
+  },
+  "DNp38": {
+   "inputs": 4040,
+   "axonal": 703
+  },
+  "DNp39": {
+   "inputs": 5364,
+   "axonal": 213
+  },
+  "DNp41": {
+   "inputs": 5492,
+   "axonal": 110
+  },
+  "DNp42": {
+   "inputs": 17071,
+   "axonal": 551
+  },
+  "DNp43": {
+   "inputs": 17113,
+   "axonal": 207
+  },
+  "DNp44": {
+   "inputs": 2424,
+   "axonal": 93
+  },
+  "DNp45": {
+   "inputs": 12245,
+   "axonal": 431
+  },
+  "DNp46": {
+   "inputs": 4457,
+   "axonal": 205
+  },
+  "DNp47": {
+   "inputs": 7107,
+   "axonal": 274
+  },
+  "DNp48": {
+   "inputs": 7652,
+   "axonal": 709
+  },
+  "DNp49": {
+   "inputs": 8007,
+   "axonal": 792
+  },
+  "DNp51,DNpe019": {
+   "inputs": 11764,
+   "axonal": 267
+  },
+  "DNp52": {
+   "inputs": 3260,
+   "axonal": 0
+  },
+  "DNp53": {
+   "inputs": 6676,
+   "axonal": 107
+  },
+  "DNp54": {
+   "inputs": 9261,
+   "axonal": 173
+  },
+  "DNp55": {
+   "inputs": 16022,
+   "axonal": 340
+  },
+  "DNp56": {
+   "inputs": 7472,
+   "axonal": 196
+  },
+  "DNp57": {
+   "inputs": 15399,
+   "axonal": 334
+  },
+  "DNp58": {
+   "inputs": 4223,
+   "axonal": 387
+  },
+  "DNp59": {
+   "inputs": 13399,
+   "axonal": 604
+  },
+  "DNp60": {
+   "inputs": 2862,
+   "axonal": 160
+  },
+  "DNp62": {
+   "inputs": 8136,
+   "axonal": 235
+  },
+  "DNp63": {
+   "inputs": 12273,
+   "axonal": 1462
+  },
+  "DNp64": {
+   "inputs": 10237,
+   "axonal": 133
+  },
+  "DNp65": {
+   "inputs": 2795,
+   "axonal": 326
+  },
+  "DNp66": {
+   "inputs": 11480,
+   "axonal": 231
+  },
+  "DNp67": {
+   "inputs": 4964,
+   "axonal": 109
+  },
+  "DNp68": {
+   "inputs": 12432,
+   "axonal": 513
+  },
+  "DNp69": {
+   "inputs": 23492,
+   "axonal": 404
+  },
+  "DNp70": {
+   "inputs": 21859,
+   "axonal": 619
+  },
+  "DNp71": {
+   "inputs": 11384,
+   "axonal": 293
+  },
+  "DNp72": {
+   "inputs": 1724,
+   "axonal": 258
+  },
+  "DNp73": {
+   "inputs": 13254,
+   "axonal": 734
+  },
+  "DNpe001": {
+   "inputs": 9537,
+   "axonal": 34
+  },
+  "DNpe002": {
+   "inputs": 13486,
+   "axonal": 264
+  },
+  "DNpe003": {
+   "inputs": 10129,
+   "axonal": 664
+  },
+  "DNpe004": {
+   "inputs": 5762,
+   "axonal": 188
+  },
+  "DNpe005": {
+   "inputs": 6367,
+   "axonal": 248
+  },
+  "DNpe006": {
+   "inputs": 2417,
+   "axonal": 134
+  },
+  "DNpe007": {
+   "inputs": 5624,
+   "axonal": 1085
+  },
+  "DNpe008": {
+   "inputs": 5936,
+   "axonal": 605
+  },
+  "DNpe009": {
+   "inputs": 4728,
+   "axonal": 88
+  },
+  "DNpe010": {
+   "inputs": 2205,
+   "axonal": 100
+  },
+  "DNpe011": {
+   "inputs": 1064,
+   "axonal": 100
+  },
+  "DNpe012_a": {
+   "inputs": 2625,
+   "axonal": 34
+  },
+  "DNpe012_b": {
+   "inputs": 2214,
+   "axonal": 52
+  },
+  "DNpe013": {
+   "inputs": 14933,
+   "axonal": 406
+  },
+  "DNpe014": {
+   "inputs": 7626,
+   "axonal": 62
+  },
+  "DNpe015": {
+   "inputs": 4844,
+   "axonal": 379
+  },
+  "DNpe016": {
+   "inputs": 6514,
+   "axonal": 69
+  },
+  "DNpe017": {
+   "inputs": 19224,
+   "axonal": 662
+  },
+  "DNpe018": {
+   "inputs": 508,
+   "axonal": 52
+  },
+  "DNpe020": {
+   "inputs": 10889,
+   "axonal": 445
+  },
+  "DNpe021": {
+   "inputs": 11097,
+   "axonal": 243
+  },
+  "DNpe022": {
+   "inputs": 10400,
+   "axonal": 336
+  },
+  "DNpe023": {
+   "inputs": 13383,
+   "axonal": 31
+  },
+  "DNpe024": {
+   "inputs": 8198,
+   "axonal": 402
+  },
+  "DNpe025": {
+   "inputs": 16157,
+   "axonal": 281
+  },
+  "DNpe026": {
+   "inputs": 7143,
+   "axonal": 350
+  },
+  "DNpe027": {
+   "inputs": 8660,
+   "axonal": 50
+  },
+  "DNpe028": {
+   "inputs": 3866,
+   "axonal": 140
+  },
+  "DNpe029": {
+   "inputs": 5618,
+   "axonal": 5503
+  },
+  "DNpe030": {
+   "inputs": 4647,
+   "axonal": 999
+  },
+  "DNpe031": {
+   "inputs": 23374,
+   "axonal": 696
+  },
+  "DNpe032": {
+   "inputs": 4837,
+   "axonal": 325
+  },
+  "DNpe033": {
+   "inputs": 2914,
+   "axonal": 71
+  },
+  "DNpe034": {
+   "inputs": 6111,
+   "axonal": 338
+  },
+  "DNpe035": {
+   "inputs": 3143,
+   "axonal": 653
+  },
+  "DNpe036": {
+   "inputs": 1205,
+   "axonal": 239
+  },
+  "DNpe037": {
+   "inputs": 6124,
+   "axonal": 52
+  },
+  "DNpe039": {
+   "inputs": 5480,
+   "axonal": 543
+  },
+  "DNpe040": {
+   "inputs": 6725,
+   "axonal": 161
+  },
+  "DNpe041": {
+   "inputs": 4158,
+   "axonal": 450
+  },
+  "DNpe042": {
+   "inputs": 32047,
+   "axonal": 857
+  },
+  "DNpe043": {
+   "inputs": 4659,
+   "axonal": 162
+  },
+  "DNpe045": {
+   "inputs": 14796,
+   "axonal": 231
+  },
+  "DNpe048": {
+   "inputs": 4653,
+   "axonal": 0
+  },
+  "DNpe049": {
+   "inputs": 9535,
+   "axonal": 2769
+  },
+  "DNpe050": {
+   "inputs": 8992,
+   "axonal": 95
+  },
+  "DNpe052": {
+   "inputs": 8298,
+   "axonal": 182
+  },
+  "DNpe053": {
+   "inputs": 35880,
+   "axonal": 220
+  },
+  "DNpe054": {
+   "inputs": 3249,
+   "axonal": 236
+  },
+  "DNpe055": {
+   "inputs": 7666,
+   "axonal": 238
+  },
+  "DNpe056": {
+   "inputs": 14913,
+   "axonal": 808
+  },
+  "DNpe057": {
+   "inputs": 1390,
+   "axonal": 54
+  },
+  "DNx01": {
+   "inputs": 3245,
+   "axonal": 2251
+  },
+  "DNx02": {
+   "inputs": 467,
+   "axonal": 106
+  },
+  "DNxl114": {
+   "inputs": 5831,
+   "axonal": 5191
+  },
+  "LN-DN1": {
+   "inputs": 1017,
+   "axonal": 246
+  },
+  "LN-DN2": {
+   "inputs": 440,
+   "axonal": 228
+  },
+  "MDN": {
+   "inputs": 20776,
+   "axonal": 840
+  },
+  "aSP22": {
+   "inputs": 18742,
+   "axonal": 1448
+  },
+  "pIP1": {
+   "inputs": 40124,
+   "axonal": 2092
+  },
+  "pIP10": {
+   "inputs": 21545,
+   "axonal": 1615
+  },
+  "pMP2": {
+   "inputs": 16739,
+   "axonal": 1526
+  }
+ },
+ "focus": {
+  "DNa01": {
+   "bodies": [
+    10442,
+    10760
+   ],
+   "inputs": 25785,
+   "axonal": 1135,
+   "axonal_pct": 4.4,
+   "axonal_rois": {
+    "LegNp(T2)(L)": 218,
+    "LegNp(T2)(R)": 169,
+    "LegNp(T3)(L)": 155,
+    "LegNp(T3)(R)": 141,
+    "LegNp(T1)(R)": 139,
+    "LegNp(T1)(L)": 128,
+    "LTct": 85,
+    "IntTct": 71
+   },
+   "axonal_pre_types_top": {
+    "IN07B104": 218,
+    "IN19A003": 136,
+    "IN09A001": 136,
+    "IN07B009": 100,
+    "AN06B007": 60,
+    "IN08B054": 50,
+    "DNge123": 36,
+    "IN07B006": 20,
+    "IN19A005": 18,
+    "INXXX464": 15,
+    "IN03A006": 14,
+    "DNge042": 13,
+    "DNge008": 12,
+    "IN14B003": 11,
+    "DNa13": 10
+   },
+   "dendritic_rois_top": {
+    "GNG": 6945,
+    "VES(L)": 5114,
+    "VES(R)": 4809,
+    "LAL(R)": 1592,
+    "LAL(L)": 1528
+   }
+  },
+  "DNp01": {
+   "bodies": [
+    10001,
+    10010
+   ],
+   "inputs": 36735,
+   "axonal": 2273,
+   "axonal_pct": 6.2,
+   "axonal_rois": {
+    "LTct": 1840,
+    "IntTct": 238,
+    "VNC-unspecified": 195
+   },
+   "axonal_pre_types_top": {
+    "AN08B098": 399,
+    "IN00A062": 257,
+    "IN05B032": 156,
+    "AN05B006": 132,
+    "IN12B015": 124,
+    "DNp11": 103,
+    "PSI": 95,
+    "IN00A039": 93,
+    "IN00A047": 84,
+    "IN21A032": 69,
+    "IN13A022": 69,
+    "AN08B099_e": 63,
+    "IN11A001": 30,
+    "IN00A022": 28,
+    "IN06B056": 26
+   },
+   "dendritic_rois_top": {
+    "PVLP(L)": 9857,
+    "PVLP(R)": 7484,
+    "SAD": 7239,
+    "GOR(L)": 1868,
+    "GOR(R)": 1657
+   }
+  },
+  "DNa02": {
+   "bodies": [
+    10360,
+    523769
+   ],
+   "inputs": 48125,
+   "axonal": 1243,
+   "axonal_pct": 2.6,
+   "axonal_rois": {
+    "LegNp(T1)(R)": 222,
+    "LegNp(T1)(L)": 220,
+    "LegNp(T2)(L)": 169,
+    "LegNp(T2)(R)": 166,
+    "LegNp(T3)(L)": 136,
+    "LegNp(T3)(R)": 113,
+    "IntTct": 73,
+    "HTct(UTct-T3)(R)": 42
+   },
+   "axonal_pre_types_top": {
+    "IN12B014": 224,
+    "IN19A003": 124,
+    "IN14B004": 118,
+    "IN03B021": 112,
+    "IN16B045": 85,
+    "IN06A008": 67,
+    "SNpp45": 47,
+    "IN19A013": 37,
+    "IN06B022": 24,
+    "IN04B074": 19,
+    "DNge068": 16,
+    "IN09A004": 14,
+    "IN06A024": 14,
+    "INXXX140": 14,
+    "IN21A013": 13
+   },
+   "dendritic_rois_top": {
+    "LAL(R)": 8340,
+    "LAL(L)": 7834,
+    "VES(L)": 5679,
+    "VES(R)": 4793,
+    "IPS(R)": 3075
+   }
+  }
+ }
+}

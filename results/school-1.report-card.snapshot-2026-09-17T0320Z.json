@@ -1,0 +1,1221 @@
+{
+ "fly": "school-1",
+ "version": "fly-v1",
+ "exams": [
+  {
+   "lesson": 0,
+   "at": "2026-09-17T02:04:09.085615+00:00",
+   "age_h": 0.01,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "..",
+      ".",
+      "..",
+      "",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 0,
+    "mean_gain": 1.0,
+    "min_gain": 1.0,
+    "rewards": 0,
+    "punishments": 0,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 0,
+   "punishments_total": 0
+  },
+  {
+   "lesson": 1,
+   "at": "2026-09-17T02:05:06.184306+00:00",
+   "age_h": 0.02,
+   "heldout": {
+    ".-": {
+     "correct": 1,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      "..",
+      ".",
+      ".",
+      ".-"
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "",
+      ".",
+      ".",
+      ".",
+      "..",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 41096,
+    "mean_gain": 0.5366,
+    "min_gain": 0.4762,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 12,
+   "punishments_total": 12
+  },
+  {
+   "lesson": 2,
+   "at": "2026-09-17T02:06:06.294294+00:00",
+   "age_h": 0.04,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      "",
+      ".",
+      ".",
+      "..",
+      ""
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "-",
+      "..",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42320,
+    "mean_gain": 0.3347,
+    "min_gain": 0.25,
+    "rewards": 24,
+    "punishments": 24,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 24,
+   "punishments_total": 24
+  },
+  {
+   "lesson": 3,
+   "at": "2026-09-17T02:07:09.955156+00:00",
+   "age_h": 0.06,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".",
+      "",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42471,
+    "mean_gain": 0.3185,
+    "min_gain": 0.25,
+    "rewards": 33,
+    "punishments": 39,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 33,
+   "punishments_total": 39
+  },
+  {
+   "lesson": 4,
+   "at": "2026-09-17T02:08:10.007582+00:00",
+   "age_h": 0.07,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      "-",
+      ".",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "..",
+      "-",
+      "",
+      ".",
+      ".-",
+      ".-"
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42548,
+    "mean_gain": 0.3112,
+    "min_gain": 0.25,
+    "rewards": 44,
+    "punishments": 52,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 44,
+   "punishments_total": 52
+  },
+  {
+   "lesson": 5,
+   "at": "2026-09-17T02:09:15.544955+00:00",
+   "age_h": 0.09,
+   "heldout": {
+    ".-": {
+     "correct": 1,
+     "trials": 6,
+     "decoded": [
+      ".",
+      "",
+      ".-",
+      ".",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42548,
+    "mean_gain": 0.3055,
+    "min_gain": 0.25,
+    "rewards": 55,
+    "punishments": 65,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 55,
+   "punishments_total": 65
+  },
+  {
+   "lesson": 6,
+   "at": "2026-09-17T02:10:18.502318+00:00",
+   "age_h": 0.11,
+   "heldout": {
+    ".-": {
+     "correct": 1,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".-",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "..",
+      ".",
+      ".-",
+      ".",
+      "-",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42549,
+    "mean_gain": 0.3029,
+    "min_gain": 0.25,
+    "rewards": 65,
+    "punishments": 79,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 65,
+   "punishments_total": 79
+  },
+  {
+   "lesson": 7,
+   "at": "2026-09-17T02:11:23.054667+00:00",
+   "age_h": 0.13,
+   "heldout": {
+    ".-": {
+     "correct": 1,
+     "trials": 6,
+     "decoded": [
+      ".-",
+      ".",
+      "",
+      "",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      "",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42567,
+    "mean_gain": 0.2995,
+    "min_gain": 0.25,
+    "rewards": 76,
+    "punishments": 92,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 76,
+   "punishments_total": 92
+  },
+  {
+   "lesson": 8,
+   "at": "2026-09-17T02:12:28.371474+00:00",
+   "age_h": 0.15,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      "..",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".",
+      "",
+      "-"
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42567,
+    "mean_gain": 0.2973,
+    "min_gain": 0.25,
+    "rewards": 85,
+    "punishments": 107,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 85,
+   "punishments_total": 107
+  },
+  {
+   "lesson": 9,
+   "at": "2026-09-17T02:13:30.585147+00:00",
+   "age_h": 0.16,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      "-",
+      ".",
+      ".",
+      ".-"
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42578,
+    "mean_gain": 0.2943,
+    "min_gain": 0.25,
+    "rewards": 96,
+    "punishments": 120,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 96,
+   "punishments_total": 120
+  },
+  {
+   "lesson": 10,
+   "at": "2026-09-17T02:14:28.523710+00:00",
+   "age_h": 0.18,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      "",
+      "",
+      ".",
+      "",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      "-",
+      ".",
+      "-"
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42588,
+    "mean_gain": 0.292,
+    "min_gain": 0.25,
+    "rewards": 107,
+    "punishments": 133,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 107,
+   "punishments_total": 133
+  },
+  {
+   "lesson": 11,
+   "at": "2026-09-17T02:15:24.371970+00:00",
+   "age_h": 0.19,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "",
+      ".",
+      ".",
+      ".-",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42588,
+    "mean_gain": 0.2914,
+    "min_gain": 0.25,
+    "rewards": 115,
+    "punishments": 149,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 115,
+   "punishments_total": 149
+  },
+  {
+   "lesson": 12,
+   "at": "2026-09-17T02:16:20.544562+00:00",
+   "age_h": 0.21,
+   "heldout": {
+    ".-": {
+     "correct": 1,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".-",
+      "-",
+      ".",
+      ".",
+      "-"
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".-",
+      ".",
+      ""
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42622,
+    "mean_gain": 0.29,
+    "min_gain": 0.25,
+    "rewards": 125,
+    "punishments": 163,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 125,
+   "punishments_total": 163
+  },
+  {
+   "lesson": 13,
+   "at": "2026-09-17T02:17:17.404363+00:00",
+   "age_h": 0.23,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      "-",
+      ".",
+      ".",
+      ".",
+      "-"
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "",
+      ".",
+      "",
+      ".",
+      ".",
+      ""
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42622,
+    "mean_gain": 0.2897,
+    "min_gain": 0.25,
+    "rewards": 138,
+    "punishments": 174,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 138,
+   "punishments_total": 174
+  },
+  {
+   "lesson": 14,
+   "at": "2026-09-17T02:18:11.783325+00:00",
+   "age_h": 0.24,
+   "heldout": {
+    ".-": {
+     "correct": 1,
+     "trials": 6,
+     "decoded": [
+      "-",
+      ".-",
+      ".",
+      ".",
+      ".",
+      ""
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42622,
+    "mean_gain": 0.2885,
+    "min_gain": 0.25,
+    "rewards": 150,
+    "punishments": 186,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 150,
+   "punishments_total": 186
+  },
+  {
+   "lesson": 15,
+   "at": "2026-09-17T02:19:05.369277+00:00",
+   "age_h": 0.26,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      "",
+      "",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42622,
+    "mean_gain": 0.2879,
+    "min_gain": 0.25,
+    "rewards": 160,
+    "punishments": 200,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 160,
+   "punishments_total": 200
+  },
+  {
+   "lesson": 16,
+   "at": "2026-09-17T02:20:01.396662+00:00",
+   "age_h": 0.27,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      "",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42626,
+    "mean_gain": 0.2871,
+    "min_gain": 0.25,
+    "rewards": 168,
+    "punishments": 216,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 168,
+   "punishments_total": 216
+  },
+  {
+   "lesson": 17,
+   "at": "2026-09-17T02:20:57.088225+00:00",
+   "age_h": 0.29,
+   "heldout": {
+    ".-": {
+     "correct": 1,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      "..",
+      ".",
+      ".",
+      ".-"
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".",
+      ".-",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42626,
+    "mean_gain": 0.2861,
+    "min_gain": 0.25,
+    "rewards": 180,
+    "punishments": 228,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 180,
+   "punishments_total": 228
+  },
+  {
+   "lesson": 18,
+   "at": "2026-09-17T02:21:53.239123+00:00",
+   "age_h": 0.3,
+   "heldout": {
+    ".-": {
+     "correct": 1,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      "..",
+      ".-",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      "",
+      ".",
+      "",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42686,
+    "mean_gain": 0.2857,
+    "min_gain": 0.25,
+    "rewards": 189,
+    "punishments": 243,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 189,
+   "punishments_total": 243
+  },
+  {
+   "lesson": 19,
+   "at": "2026-09-17T02:22:52.937846+00:00",
+   "age_h": 0.32,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "",
+      ".",
+      ".",
+      ".",
+      ".",
+      ""
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42686,
+    "mean_gain": 0.2853,
+    "min_gain": 0.25,
+    "rewards": 200,
+    "punishments": 256,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 200,
+   "punishments_total": 256
+  },
+  {
+   "lesson": 20,
+   "at": "2026-09-17T02:23:51.481011+00:00",
+   "age_h": 0.34,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      "..",
+      "",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "",
+      ".",
+      ".",
+      ".-",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42698,
+    "mean_gain": 0.2849,
+    "min_gain": 0.25,
+    "rewards": 209,
+    "punishments": 271,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 209,
+   "punishments_total": 271
+  },
+  {
+   "lesson": 21,
+   "at": "2026-09-17T02:24:50.415246+00:00",
+   "age_h": 0.35,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      "..",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      "-",
+      ".",
+      "..",
+      ".-"
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42714,
+    "mean_gain": 0.2845,
+    "min_gain": 0.25,
+    "rewards": 219,
+    "punishments": 285,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 219,
+   "punishments_total": 285
+  },
+  {
+   "lesson": 22,
+   "at": "2026-09-17T02:25:51.587635+00:00",
+   "age_h": 0.37,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      "",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      "-",
+      ".",
+      ""
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42714,
+    "mean_gain": 0.2844,
+    "min_gain": 0.25,
+    "rewards": 231,
+    "punishments": 297,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 231,
+   "punishments_total": 297
+  },
+  {
+   "lesson": 23,
+   "at": "2026-09-17T02:26:51.080903+00:00",
+   "age_h": 0.39,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "-",
+      "-",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42714,
+    "mean_gain": 0.284,
+    "min_gain": 0.25,
+    "rewards": 241,
+    "punishments": 311,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 241,
+   "punishments_total": 311
+  },
+  {
+   "lesson": 24,
+   "at": "2026-09-17T02:27:52.440741+00:00",
+   "age_h": 0.4,
+   "heldout": {
+    ".-": {
+     "correct": 2,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".-",
+      ".",
+      ".",
+      ".-"
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      "",
+      ".",
+      ".",
+      "-"
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42728,
+    "mean_gain": 0.2837,
+    "min_gain": 0.25,
+    "rewards": 249,
+    "punishments": 327,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 249,
+   "punishments_total": 327
+  },
+  {
+   "lesson": 25,
+   "at": "2026-09-17T02:28:54.055370+00:00",
+   "age_h": 0.42,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".",
+      ".",
+      "..",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      ".",
+      ".-",
+      ".",
+      ".",
+      ".-",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42733,
+    "mean_gain": 0.2834,
+    "min_gain": 0.25,
+    "rewards": 258,
+    "punishments": 342,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 258,
+   "punishments_total": 342
+  },
+  {
+   "lesson": 26,
+   "at": "2026-09-17T02:29:52.363482+00:00",
+   "age_h": 0.44,
+   "heldout": {
+    ".-": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "",
+      ".",
+      "",
+      ".",
+      ".",
+      "."
+     ]
+    },
+    "-.": {
+     "correct": 0,
+     "trials": 6,
+     "decoded": [
+      "",
+      ".",
+      "",
+      ".",
+      ".",
+      "."
+     ]
+    }
+   },
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 42745,
+    "mean_gain": 0.2831,
+    "min_gain": 0.25,
+    "rewards": 268,
+    "punishments": 356,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "rewards_total": 268,
+   "punishments_total": 356
+  }
+ ]
+}
