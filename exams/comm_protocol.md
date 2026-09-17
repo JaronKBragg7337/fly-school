@@ -71,3 +71,15 @@ PASS (all, fixed): (1) pooled APPROACH rate on A >= 0.50; (2) pooled AVOID rate 
 Also recorded (not criteria): DNa13, DNa03, MDN, DNa02 — the motor pathway; if they move with the answer, item 5 is fully met,
 otherwise item 5 is met only as "endogenous output pathway". Seeds: 1717,1818,1919,2020,2121,2222,2323,2424.
 After a pass: Grade 0b on fly-v5; freeze; re-run this exact test from a clean process; both must pass.
+
+# TEST 4 — predeclared 2026-09-17 04:35 EDT, on fly-v5 (after test 3 FAILED per-trial)
+Same fly, symbols, training, cold protocol and pupil (lr 0.2) as test 3. Test 3 stands as FAILED.
+Change, justified before running: real conditioning is read at the BLOCK level (Tully & Quinn: performance index over the
+test period), not per trial. Block reply for odour X in a seed:
+  zP_block = (mean PAM_post(X) - mean PAM_pre(X)) / (sd PAM_pre(X) / sqrt(6));  zL_block likewise on PPL.
+  reply(X) = "APPROACH" if zP_block < -2 and zP_block <= zL_block; "AVOID" if zL_block < -2; else "NONE".
+  (Chance of a false APPROACH/AVOID per seed under no learning ~2.3% each, one-sided.)
+PASS (all, fixed): (1) reply(A) == "APPROACH" in >= 6 of 8 seeds; (2) reply(C) == "NONE" in >= 7 of 8 seeds;
+(3) reply(B) recorded; "AVOID" on B is reported but NOT required (the PPL1-side output is ~5 Hz and did not move in test 3).
+Seeds: 2525,2626,2727,2828,2929,3030,3131,3232. A pass establishes items 1-4 and item 5 as "endogenous MB output pathway"
+(not motor) — stated now. Then Grade 0b on fly-v5 and a clean re-run of this exact test.

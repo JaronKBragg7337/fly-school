@@ -203,3 +203,5 @@ On it, a rewarded odour's avoid-side MBON output fell 21–31% while a control o
 predeclared test 3 on 8 fresh seeds: the drop is 5–20% and per-trial replies are at chance — failed. Three predeclared
 tests (24 seeds) failed tonight; none was redefined. The gap is quantitative: the learned change is about a fifth of the
 trial-to-trial variability at the readout. Next: a calibration whose objective includes the learned readout, many seeds.
+
+Test 4 (block-level reply, 8 fresh seeds): failed — 0/8. Four predeclared tests, 32 seeds, none redefined. Communication not established; see `exams/comm_protocol.md` for every predeclaration and the ledger for the next step.

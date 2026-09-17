@@ -154,7 +154,20 @@ for seed in SEEDS:
 pool = {s: round(float(np.mean([r["decode"][s]["avoid_rate"] for r in results])), 3) for s in ("A", "B", "C")}
 seeds_B_gt_A = sum(r["decode"]["B"]["avoid_rate"] > r["decode"]["A"]["avoid_rate"] for r in results)
 nR, nP, nL = sum(r["R_drop"] for r in results), sum(r["P_drop"] for r in results), sum(r["L_drop"] for r in results)
-if os.environ.get("COMM_DECODE") == "valence2":
+if os.environ.get("COMM_DECODE") == "valence2" and os.environ.get("COMM_BLOCK"):
+    blk = {}
+    for r in results:
+        b = {}
+        for s_ in ("A", "B", "C"):
+            P0, P1 = np.array(r["pre"][s_]["PAM"]), np.array(r["post"][s_]["PAM"]); L0, L1 = np.array(r["pre"][s_]["PPL"]), np.array(r["post"][s_]["PPL"])
+            zP = (P1.mean() - P0.mean()) / max(1e-6, P0.std() / np.sqrt(len(P0))); zL = (L1.mean() - L0.mean()) / max(1e-6, L0.std() / np.sqrt(len(L0)))
+            b[s_] = {"zP": round(float(zP), 2), "zL": round(float(zL), 2), "reply": "APPROACH" if (zP < -2 and zP <= zL) else ("AVOID" if zL < -2 else "NONE")}
+        r["block"] = b; blk[r["seed"]] = b
+    nA = sum(b["A"]["reply"] == "APPROACH" for b in blk.values()); nC = sum(b["C"]["reply"] == "NONE" for b in blk.values()); nB = sum(b["B"]["reply"] == "AVOID" for b in blk.values())
+    crit = {"1_A_APPROACH_ge_6of8": nA >= 6, "2_C_NONE_ge_7of8": nC >= 7, "3_B_AVOID_recorded_not_required": True}
+    pool = {"A_approach_seeds": nA, "C_none_seeds": nC, "B_avoid_seeds": nB, "blocks": {str(k): v for k, v in blk.items()}}
+    seeds_B_gt_A = {"A": nA, "C": nC, "B": nB}
+elif os.environ.get("COMM_DECODE") == "valence2":
     pool = {s: {"approach": round(float(np.mean([r["decode"][s]["approach_rate"] for r in results])), 3), "avoid": round(float(np.mean([r["decode"][s]["avoid_rate"] for r in results])), 3)} for s in ("A", "B", "C")}
     nA = sum(r["decode"]["A"]["approach_rate"] > r["decode"]["C"]["approach_rate"] for r in results)
     nB = sum(r["decode"]["B"]["avoid_rate"] > r["decode"]["C"]["avoid_rate"] for r in results)
