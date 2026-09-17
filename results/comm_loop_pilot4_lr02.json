@@ -1,0 +1,1479 @@
+{
+ "protocol": "comm_protocol.md (predeclared 2026-09-17 03:20 EDT)",
+ "graph": "C:\\Users\\lilli\\Fly-Lab\\versions\\fly-v3\\graph_v3_s0.35.npz",
+ "seeds": [
+  73,
+  7337
+ ],
+ "c_hz": 7.211836918161491,
+ "mbon_gain": 1.0,
+ "lr": 0.2,
+ "epochs": 24,
+ "reps": 6,
+ "A": "ORN_DA2",
+ "B": "ORN_VM2",
+ "C": "ORN_DL4",
+ "a_hz": 40.0,
+ "b_hz": 40.0,
+ "answer": [
+  "DNa13",
+  "DNa03",
+  "MDN"
+ ],
+ "pooled_avoid_rate": {
+  "A": 0.0,
+  "B": 0.084,
+  "C": 0.084
+ },
+ "seeds_B_gt_A": 1,
+ "R_drop_seeds": 2,
+ "P_drop_seeds": 1,
+ "criteria": {
+  "1_B_avoid_ge_0.60": false,
+  "2_A_and_C_avoid_le_0.30": true,
+  "3_seeds_B_gt_A_ge_6of8": false,
+  "4_R_drop_ge5_and_P_drop_ge5": false
+ },
+ "PASS": false,
+ "elapsed_s": 140.5,
+ "seeds_detail": [
+  {
+   "seed": 73,
+   "pre": {
+    "A": {
+     "R": [
+      2.778,
+      4.167,
+      25.0,
+      4.861,
+      1.389,
+      12.5
+     ],
+     "P": [
+      22.569,
+      23.611,
+      13.542,
+      21.528,
+      17.014,
+      23.264
+     ],
+     "MDN": [
+      20.0,
+      16.667,
+      14.444,
+      16.667,
+      21.389,
+      35.833
+     ],
+     "DNa02": [
+      26.389,
+      15.278,
+      31.944,
+      25.0,
+      33.333,
+      34.722
+     ],
+     "DNa01": [
+      0.0,
+      1.389,
+      9.722,
+      1.389,
+      8.333,
+      1.389
+     ],
+     "kc_n": [
+      172,
+      165,
+      454,
+      392,
+      170,
+      399
+     ],
+     "hz": [
+      1.72,
+      1.76,
+      2.18,
+      1.71,
+      2.34,
+      2.2
+     ]
+    },
+    "B": {
+     "R": [
+      8.333,
+      4.167,
+      8.333,
+      3.472,
+      2.778,
+      8.333
+     ],
+     "P": [
+      0.694,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "MDN": [
+      9.167,
+      9.444,
+      9.444,
+      6.944,
+      3.611,
+      7.5
+     ],
+     "DNa02": [
+      6.944,
+      8.333,
+      9.722,
+      5.556,
+      4.167,
+      9.722
+     ],
+     "DNa01": [
+      1.389,
+      5.556,
+      0.0,
+      1.389,
+      1.389,
+      2.778
+     ],
+     "kc_n": [
+      329,
+      315,
+      217,
+      188,
+      257,
+      329
+     ],
+     "hz": [
+      0.66,
+      0.62,
+      0.54,
+      0.41,
+      0.27,
+      0.52
+     ]
+    },
+    "C": {
+     "R": [
+      11.111,
+      1.389,
+      8.333,
+      6.944,
+      8.333,
+      2.778
+     ],
+     "P": [
+      0.0,
+      1.042,
+      0.0,
+      0.347,
+      3.125,
+      0.694
+     ],
+     "MDN": [
+      11.389,
+      12.5,
+      8.889,
+      8.889,
+      11.667,
+      5.833
+     ],
+     "DNa02": [
+      12.5,
+      9.722,
+      9.722,
+      9.722,
+      8.333,
+      5.556
+     ],
+     "DNa01": [
+      5.556,
+      6.944,
+      1.389,
+      8.333,
+      9.722,
+      1.389
+     ],
+     "kc_n": [
+      179,
+      297,
+      351,
+      168,
+      193,
+      204
+     ],
+     "hz": [
+      1.03,
+      0.95,
+      0.87,
+      0.76,
+      0.84,
+      0.86
+     ]
+    }
+   },
+   "post": {
+    "A": {
+     "R": [
+      0.0,
+      0.0,
+      0.0,
+      2.083,
+      4.167,
+      1.389
+     ],
+     "P": [
+      23.611,
+      29.167,
+      27.431,
+      16.319,
+      5.208,
+      27.778
+     ],
+     "MDN": [
+      34.444,
+      18.889,
+      25.278,
+      32.5,
+      30.556,
+      29.444
+     ],
+     "DNa02": [
+      31.944,
+      12.5,
+      37.5,
+      29.167,
+      22.222,
+      23.611
+     ],
+     "DNa01": [
+      0.0,
+      0.0,
+      0.0,
+      16.667,
+      6.944,
+      0.0
+     ],
+     "kc_n": [
+      187,
+      363,
+      168,
+      594,
+      475,
+      393
+     ],
+     "hz": [
+      2.01,
+      1.62,
+      1.92,
+      2.02,
+      1.77,
+      1.72
+     ]
+    },
+    "B": {
+     "R": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "P": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "MDN": [
+      5.278,
+      7.222,
+      9.722,
+      5.556,
+      12.778,
+      10.556
+     ],
+     "DNa02": [
+      5.556,
+      6.944,
+      11.111,
+      6.944,
+      13.889,
+      11.111
+     ],
+     "DNa01": [
+      0.0,
+      0.0,
+      0.0,
+      1.389,
+      1.389,
+      2.778
+     ],
+     "kc_n": [
+      137,
+      249,
+      226,
+      336,
+      273,
+      198
+     ],
+     "hz": [
+      0.27,
+      0.4,
+      0.53,
+      0.38,
+      0.64,
+      0.52
+     ]
+    },
+    "C": {
+     "R": [
+      0.0,
+      0.0,
+      0.0,
+      0.694,
+      0.0,
+      0.0
+     ],
+     "P": [
+      1.736,
+      0.694,
+      0.347,
+      0.694,
+      7.986,
+      2.778
+     ],
+     "MDN": [
+      9.444,
+      7.778,
+      11.944,
+      10.0,
+      7.5,
+      10.833
+     ],
+     "DNa02": [
+      8.333,
+      12.5,
+      13.889,
+      9.722,
+      9.722,
+      6.944
+     ],
+     "DNa01": [
+      2.778,
+      6.944,
+      2.778,
+      1.389,
+      0.0,
+      4.167
+     ],
+     "kc_n": [
+      367,
+      175,
+      176,
+      300,
+      290,
+      176
+     ],
+     "hz": [
+      0.9,
+      0.86,
+      0.91,
+      0.83,
+      1.04,
+      0.84
+     ]
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1206
+    },
+    {
+     "epoch": 0,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 1012
+    },
+    {
+     "epoch": 1,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1820
+    },
+    {
+     "epoch": 1,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 633
+    },
+    {
+     "epoch": 2,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2087
+    },
+    {
+     "epoch": 2,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 812
+    },
+    {
+     "epoch": 3,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 876
+    },
+    {
+     "epoch": 3,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 666
+    },
+    {
+     "epoch": 4,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 838
+    },
+    {
+     "epoch": 4,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 697
+    },
+    {
+     "epoch": 5,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 861
+    },
+    {
+     "epoch": 5,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 792
+    },
+    {
+     "epoch": 6,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1934
+    },
+    {
+     "epoch": 6,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 757
+    },
+    {
+     "epoch": 7,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 833
+    },
+    {
+     "epoch": 7,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 829
+    },
+    {
+     "epoch": 8,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2416
+    },
+    {
+     "epoch": 8,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 688
+    },
+    {
+     "epoch": 9,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1841
+    },
+    {
+     "epoch": 9,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 485
+    },
+    {
+     "epoch": 10,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1815
+    },
+    {
+     "epoch": 10,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 818
+    },
+    {
+     "epoch": 11,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1040
+    },
+    {
+     "epoch": 11,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 600
+    },
+    {
+     "epoch": 12,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1479
+    },
+    {
+     "epoch": 12,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 586
+    },
+    {
+     "epoch": 13,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2371
+    },
+    {
+     "epoch": 13,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 818
+    },
+    {
+     "epoch": 14,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 814
+    },
+    {
+     "epoch": 14,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 1189
+    },
+    {
+     "epoch": 15,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2379
+    },
+    {
+     "epoch": 15,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 714
+    },
+    {
+     "epoch": 16,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 814
+    },
+    {
+     "epoch": 16,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 671
+    },
+    {
+     "epoch": 17,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1187
+    },
+    {
+     "epoch": 17,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 819
+    },
+    {
+     "epoch": 18,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1096
+    },
+    {
+     "epoch": 18,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 808
+    },
+    {
+     "epoch": 19,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1224
+    },
+    {
+     "epoch": 19,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 595
+    },
+    {
+     "epoch": 20,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 997
+    },
+    {
+     "epoch": 20,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 839
+    },
+    {
+     "epoch": 21,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 854
+    },
+    {
+     "epoch": 21,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 790
+    },
+    {
+     "epoch": 22,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2205
+    },
+    {
+     "epoch": 22,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 663
+    },
+    {
+     "epoch": 23,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 898
+    },
+    {
+     "epoch": 23,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 837
+    }
+   ],
+   "decode": {
+    "A": {
+     "threshold": 35.012,
+     "replies": [
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID"
+     ],
+     "avoid_rate": 0.0
+    },
+    "B": {
+     "threshold": 11.813,
+     "replies": [
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "AVOID",
+      "NO-AVOID"
+     ],
+     "avoid_rate": 0.167
+    },
+    "C": {
+     "threshold": 14.383,
+     "replies": [
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID"
+     ],
+     "avoid_rate": 0.0
+    }
+   },
+   "R_A_pre_post": [
+    8.45,
+    1.27
+   ],
+   "P_B_pre_post": [
+    0.12,
+    0.0
+   ],
+   "R_drop": true,
+   "P_drop": true,
+   "MDN_mean": {
+    "A": [
+     20.83,
+     28.52
+    ],
+    "B": [
+     7.68,
+     8.52
+    ],
+    "C": [
+     9.86,
+     9.58
+    ]
+   },
+   "mb": {
+    "synapses": 29169,
+    "reward_side": 16616,
+    "punish_side": 12553,
+    "depressed": 4462,
+    "mean_gain": 0.9024,
+    "min_gain": 0.25,
+    "rewards": 24,
+    "punishments": 24,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   }
+  },
+  {
+   "seed": 7337,
+   "pre": {
+    "A": {
+     "R": [
+      0.694,
+      0.0,
+      2.778,
+      0.0,
+      0.0,
+      1.389
+     ],
+     "P": [
+      14.583,
+      19.097,
+      13.889,
+      22.569,
+      24.306,
+      30.208
+     ],
+     "MDN": [
+      31.944,
+      14.444,
+      23.333,
+      17.222,
+      10.556,
+      35.278
+     ],
+     "DNa02": [
+      16.667,
+      23.611,
+      30.556,
+      20.833,
+      18.056,
+      38.889
+     ],
+     "DNa01": [
+      0.0,
+      0.0,
+      6.944,
+      0.0,
+      1.389,
+      0.0
+     ],
+     "kc_n": [
+      400,
+      167,
+      452,
+      192,
+      441,
+      503
+     ],
+     "hz": [
+      1.4,
+      2.02,
+      2.16,
+      1.93,
+      1.62,
+      2.11
+     ]
+    },
+    "B": {
+     "R": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "P": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "MDN": [
+      4.722,
+      5.556,
+      5.556,
+      10.833,
+      7.778,
+      7.778
+     ],
+     "DNa02": [
+      5.556,
+      5.556,
+      5.556,
+      11.111,
+      8.333,
+      6.944
+     ],
+     "DNa01": [
+      0.0,
+      0.0,
+      2.778,
+      0.0,
+      2.778,
+      1.389
+     ],
+     "kc_n": [
+      262,
+      238,
+      210,
+      223,
+      336,
+      194
+     ],
+     "hz": [
+      0.27,
+      0.27,
+      0.27,
+      0.53,
+      0.64,
+      0.39
+     ]
+    },
+    "C": {
+     "R": [
+      0.0,
+      0.0,
+      0.0,
+      0.694,
+      0.0,
+      0.0
+     ],
+     "P": [
+      1.042,
+      1.736,
+      3.819,
+      3.819,
+      3.472,
+      0.0
+     ],
+     "MDN": [
+      13.333,
+      13.333,
+      5.556,
+      9.444,
+      8.333,
+      8.611
+     ],
+     "DNa02": [
+      12.5,
+      11.111,
+      4.167,
+      8.333,
+      9.722,
+      11.111
+     ],
+     "DNa01": [
+      0.0,
+      5.556,
+      0.0,
+      2.778,
+      2.778,
+      5.556
+     ],
+     "kc_n": [
+      161,
+      390,
+      396,
+      376,
+      353,
+      180
+     ],
+     "hz": [
+      1.07,
+      1.1,
+      0.69,
+      0.87,
+      0.91,
+      0.98
+     ]
+    }
+   },
+   "post": {
+    "A": {
+     "R": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "P": [
+      6.25,
+      10.764,
+      20.833,
+      16.667,
+      35.764,
+      24.306
+     ],
+     "MDN": [
+      25.0,
+      39.444,
+      20.833,
+      23.889,
+      32.5,
+      24.444
+     ],
+     "DNa02": [
+      33.333,
+      30.556,
+      29.167,
+      27.778,
+      29.167,
+      26.389
+     ],
+     "DNa01": [
+      4.167,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      5.556
+     ],
+     "kc_n": [
+      471,
+      185,
+      173,
+      359,
+      232,
+      259
+     ],
+     "hz": [
+      1.83,
+      2.4,
+      2.07,
+      2.25,
+      2.24,
+      1.9
+     ]
+    },
+    "B": {
+     "R": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "P": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "MDN": [
+      5.278,
+      7.5,
+      9.444,
+      6.944,
+      9.167,
+      10.0
+     ],
+     "DNa02": [
+      5.556,
+      8.333,
+      12.5,
+      8.333,
+      11.111,
+      13.889
+     ],
+     "DNa01": [
+      1.389,
+      1.389,
+      2.778,
+      1.389,
+      1.389,
+      0.0
+     ],
+     "kc_n": [
+      360,
+      270,
+      315,
+      237,
+      205,
+      216
+     ],
+     "hz": [
+      0.4,
+      0.39,
+      0.62,
+      0.4,
+      0.63,
+      0.64
+     ]
+    },
+    "C": {
+     "R": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "P": [
+      11.806,
+      0.0,
+      0.0,
+      0.0,
+      1.042,
+      1.042
+     ],
+     "MDN": [
+      5.556,
+      10.278,
+      9.167,
+      16.111,
+      10.0,
+      13.333
+     ],
+     "DNa02": [
+      4.167,
+      11.111,
+      5.556,
+      11.111,
+      9.722,
+      8.333
+     ],
+     "DNa01": [
+      0.0,
+      2.778,
+      2.778,
+      16.667,
+      11.111,
+      6.944
+     ],
+     "kc_n": [
+      388,
+      185,
+      195,
+      175,
+      175,
+      177
+     ],
+     "hz": [
+      1.1,
+      0.71,
+      0.89,
+      1.07,
+      0.92,
+      0.92
+     ]
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1107
+    },
+    {
+     "epoch": 0,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 567
+    },
+    {
+     "epoch": 1,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2107
+    },
+    {
+     "epoch": 1,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 1224
+    },
+    {
+     "epoch": 2,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1119
+    },
+    {
+     "epoch": 2,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 711
+    },
+    {
+     "epoch": 3,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 246
+    },
+    {
+     "epoch": 3,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 441
+    },
+    {
+     "epoch": 4,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 915
+    },
+    {
+     "epoch": 4,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 887
+    },
+    {
+     "epoch": 5,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1343
+    },
+    {
+     "epoch": 5,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 757
+    },
+    {
+     "epoch": 6,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2315
+    },
+    {
+     "epoch": 6,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 863
+    },
+    {
+     "epoch": 7,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 830
+    },
+    {
+     "epoch": 7,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 569
+    },
+    {
+     "epoch": 8,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 923
+    },
+    {
+     "epoch": 8,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 892
+    },
+    {
+     "epoch": 9,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2335
+    },
+    {
+     "epoch": 9,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 721
+    },
+    {
+     "epoch": 10,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 845
+    },
+    {
+     "epoch": 10,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 763
+    },
+    {
+     "epoch": 11,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2126
+    },
+    {
+     "epoch": 11,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 927
+    },
+    {
+     "epoch": 12,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 894
+    },
+    {
+     "epoch": 12,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 828
+    },
+    {
+     "epoch": 13,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 588
+    },
+    {
+     "epoch": 13,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 777
+    },
+    {
+     "epoch": 14,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 848
+    },
+    {
+     "epoch": 14,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 836
+    },
+    {
+     "epoch": 15,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 839
+    },
+    {
+     "epoch": 15,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 852
+    },
+    {
+     "epoch": 16,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 339
+    },
+    {
+     "epoch": 16,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 1267
+    },
+    {
+     "epoch": 17,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2554
+    },
+    {
+     "epoch": 17,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 767
+    },
+    {
+     "epoch": 18,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1943
+    },
+    {
+     "epoch": 18,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 780
+    },
+    {
+     "epoch": 19,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2258
+    },
+    {
+     "epoch": 19,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 606
+    },
+    {
+     "epoch": 20,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1596
+    },
+    {
+     "epoch": 20,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 674
+    },
+    {
+     "epoch": 21,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2299
+    },
+    {
+     "epoch": 21,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 847
+    },
+    {
+     "epoch": 22,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2307
+    },
+    {
+     "epoch": 22,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 694
+    },
+    {
+     "epoch": 23,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 893
+    },
+    {
+     "epoch": 23,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 834
+    }
+   ],
+   "decode": {
+    "A": {
+     "threshold": 40.162,
+     "replies": [
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID"
+     ],
+     "avoid_rate": 0.0
+    },
+    "B": {
+     "threshold": 11.14,
+     "replies": [
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID"
+     ],
+     "avoid_rate": 0.0
+    },
+    "C": {
+     "threshold": 15.346,
+     "replies": [
+      "NO-AVOID",
+      "NO-AVOID",
+      "NO-AVOID",
+      "AVOID",
+      "NO-AVOID",
+      "NO-AVOID"
+     ],
+     "avoid_rate": 0.167
+    }
+   },
+   "R_A_pre_post": [
+    0.81,
+    0.0
+   ],
+   "P_B_pre_post": [
+    0.0,
+    0.0
+   ],
+   "R_drop": true,
+   "P_drop": false,
+   "MDN_mean": {
+    "A": [
+     22.13,
+     27.68
+    ],
+    "B": [
+     7.04,
+     8.06
+    ],
+    "C": [
+     9.77,
+     10.74
+    ]
+   },
+   "mb": {
+    "synapses": 29169,
+    "reward_side": 16616,
+    "punish_side": 12553,
+    "depressed": 4445,
+    "mean_gain": 0.899,
+    "min_gain": 0.25,
+    "rewards": 24,
+    "punishments": 24,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   }
+  }
+ ]
+}

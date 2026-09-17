@@ -183,3 +183,14 @@ FAIL · loom: LPLC2 → GF/DNp04/DNp06, LC4 → DNp02/DNp04 — the feature spec
 JO-B → AMMC PASS (weak key) · DM1 odour → DM1 PN 297 Hz but Kenyon cells 2.8% (target 5–10%) FAIL · antennal → grooming DNs
 PASS (weak key). **v2: 7 pass / 3 fail / 1 not testable. v1: 0 pass, 11 ignite.** Neighbour numbers (lulzx/fly-brain, nine
 fitted globals, conductance synapses): sugar → MN9 59 Hz, KC 7.4%. That recipe is the fly-v3 candidate. `results/grade0b_*.json`.
+
+## 12. The communication loop — attempted, predeclared, NOT established (2026-09-17 03:15–05:05)
+
+`exams/comm_protocol.md` holds two predeclared tests; `exams/comm_loop.py` runs them; every pilot and test JSON is in
+`results/`. Test 1 (answer = MDN, 8 fresh seeds) failed all criteria. Test 2 (answer = MBON21+26, 8 fresh seeds) failed all
+criteria. What held: the MBON side table (Aso 2014), symbol delivery through sensory neurons only, two-odour discrimination
+when the pair is chosen well, and dopamine-gated depression at the intended synapses in the intended direction. What did not:
+any answer channel selecting reproducibly by symbol after learning. Root cause, measured: the Kenyon-cell code shares
+0.4–0.7 of its cells across most odour pairs (`results/glom_scan_v3.json`), and a per-KC homeostasis attempt (`versions/fly-v4`)
+decorrelates it only by making it unreliable. The next step is a mushroom-body calibration search with the objective written
+in the project ledger. Nothing was redefined after a result.
