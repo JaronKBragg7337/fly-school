@@ -1,0 +1,508 @@
+{
+ "tag": "gate1",
+ "protocol": "gate1_protocol.md (predeclared 2026-09-17 12:25 EDT)",
+ "seeds": [
+  20101,
+  20202,
+  20303,
+  20404,
+  20505,
+  20606,
+  20707,
+  20808
+ ],
+ "device": "cuda",
+ "counts": {
+  "S1_sings": 8,
+  "S2_no_ignition": 8,
+  "R1a_live_gt_mute": 8,
+  "R1b_live_ge_2x": 8,
+  "R2_mute_identical_to_zero": 8,
+  "R3_scramble_identical_to_live": 8,
+  "R4_silent_le_1p1_mute": 8
+ },
+ "criteria": {
+  "S1_sings_ge_7of8": true,
+  "S2_no_ignition_all": true,
+  "R1_live_gt_mute_ge_7of8_and_2x_ge_6of8": true,
+  "R2_mute_identical_all": true,
+  "R3_scramble_identical_all": true,
+  "R4_silent_quiet_ge_7of8": true
+ },
+ "verdict": "PASS",
+ "rows": [
+  {
+   "seed": 20101,
+   "sender_pulse_mn_hz": [
+    67.5,
+    0.0
+   ],
+   "sender_wing_all_hz": [
+    57.891,
+    0.0
+   ],
+   "sender_song_pattern_hz": {
+    "dPR1": 82.5,
+    "TN1a_g": 82.5,
+    "TN1a_h": 82.5,
+    "TN1a_i": 82.5,
+    "vPR9_a": 82.5,
+    "vPR9_b": 82.5,
+    "vPR9_c": 82.5
+   },
+   "sender_brain_hz": [
+    1.7648,
+    0.0
+   ],
+   "song_on_ms": {
+    "LIVE": 177.0,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 177.0,
+    "ZERO": 0.0
+   },
+   "ammc_hz": {
+    "LIVE": 3.2572,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 3.2572,
+    "ZERO": 0.0
+   },
+   "gf_hz": {
+    "LIVE": 0.0,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 0.0,
+    "ZERO": 0.0
+   },
+   "receiver_brain_hz": {
+    "LIVE": 1.5012,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 1.5012,
+    "ZERO": 0.0
+   },
+   "S1_sings": true,
+   "S2_no_ignition": true,
+   "R1a_live_gt_mute": true,
+   "R1b_live_ge_2x": true,
+   "R2_mute_identical_to_zero": true,
+   "R3_scramble_identical_to_live": true,
+   "R4_silent_le_1p1_mute": true
+  },
+  {
+   "seed": 20202,
+   "sender_pulse_mn_hz": [
+    91.25,
+    0.0
+   ],
+   "sender_wing_all_hz": [
+    66.953,
+    0.0
+   ],
+   "sender_song_pattern_hz": {
+    "dPR1": 87.5,
+    "TN1a_g": 86.25,
+    "TN1a_h": 87.5,
+    "TN1a_i": 86.25,
+    "vPR9_a": 88.75,
+    "vPR9_b": 87.5,
+    "vPR9_c": 90.0
+   },
+   "sender_brain_hz": [
+    1.9733,
+    0.0
+   ],
+   "song_on_ms": {
+    "LIVE": 197.0,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 197.0,
+    "ZERO": 0.0
+   },
+   "ammc_hz": {
+    "LIVE": 4.5072,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 4.5072,
+    "ZERO": 0.0
+   },
+   "gf_hz": {
+    "LIVE": 3.75,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 3.75,
+    "ZERO": 0.0
+   },
+   "receiver_brain_hz": {
+    "LIVE": 1.7317,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 1.7317,
+    "ZERO": 0.0
+   },
+   "S1_sings": true,
+   "S2_no_ignition": true,
+   "R1a_live_gt_mute": true,
+   "R1b_live_ge_2x": true,
+   "R2_mute_identical_to_zero": true,
+   "R3_scramble_identical_to_live": true,
+   "R4_silent_le_1p1_mute": true
+  },
+  {
+   "seed": 20303,
+   "sender_pulse_mn_hz": [
+    58.125,
+    0.0
+   ],
+   "sender_wing_all_hz": [
+    50.703,
+    0.0
+   ],
+   "sender_song_pattern_hz": {
+    "dPR1": 75.0,
+    "TN1a_g": 75.625,
+    "TN1a_h": 72.5,
+    "TN1a_i": 63.75,
+    "vPR9_a": 82.5,
+    "vPR9_b": 77.5,
+    "vPR9_c": 83.333
+   },
+   "sender_brain_hz": [
+    1.5364,
+    0.0
+   ],
+   "song_on_ms": {
+    "LIVE": 193.6,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 193.6,
+    "ZERO": 0.0
+   },
+   "ammc_hz": {
+    "LIVE": 4.1466,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 4.1466,
+    "ZERO": 0.0
+   },
+   "gf_hz": {
+    "LIVE": 0.0,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 0.0,
+    "ZERO": 0.0
+   },
+   "receiver_brain_hz": {
+    "LIVE": 1.8883,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 1.8883,
+    "ZERO": 0.0
+   },
+   "S1_sings": true,
+   "S2_no_ignition": true,
+   "R1a_live_gt_mute": true,
+   "R1b_live_ge_2x": true,
+   "R2_mute_identical_to_zero": true,
+   "R3_scramble_identical_to_live": true,
+   "R4_silent_le_1p1_mute": true
+  },
+  {
+   "seed": 20404,
+   "sender_pulse_mn_hz": [
+    99.688,
+    0.0
+   ],
+   "sender_wing_all_hz": [
+    73.594,
+    0.0
+   ],
+   "sender_song_pattern_hz": {
+    "dPR1": 97.5,
+    "TN1a_g": 95.0,
+    "TN1a_h": 97.5,
+    "TN1a_i": 96.25,
+    "vPR9_a": 97.5,
+    "vPR9_b": 98.75,
+    "vPR9_c": 100.0
+   },
+   "sender_brain_hz": [
+    2.2206,
+    0.0
+   ],
+   "song_on_ms": {
+    "LIVE": 230.4,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 230.4,
+    "ZERO": 0.0
+   },
+   "ammc_hz": {
+    "LIVE": 4.6274,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 4.6274,
+    "ZERO": 0.0
+   },
+   "gf_hz": {
+    "LIVE": 2.5,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 2.5,
+    "ZERO": 0.0
+   },
+   "receiver_brain_hz": {
+    "LIVE": 2.3085,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 2.3085,
+    "ZERO": 0.0
+   },
+   "S1_sings": true,
+   "S2_no_ignition": true,
+   "R1a_live_gt_mute": true,
+   "R1b_live_ge_2x": true,
+   "R2_mute_identical_to_zero": true,
+   "R3_scramble_identical_to_live": true,
+   "R4_silent_le_1p1_mute": true
+  },
+  {
+   "seed": 20505,
+   "sender_pulse_mn_hz": [
+    55.0,
+    0.0
+   ],
+   "sender_wing_all_hz": [
+    48.281,
+    0.0
+   ],
+   "sender_song_pattern_hz": {
+    "dPR1": 72.5,
+    "TN1a_g": 81.875,
+    "TN1a_h": 72.5,
+    "TN1a_i": 72.5,
+    "vPR9_a": 85.625,
+    "vPR9_b": 81.25,
+    "vPR9_c": 80.833
+   },
+   "sender_brain_hz": [
+    1.5825,
+    0.0
+   ],
+   "song_on_ms": {
+    "LIVE": 185.6,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 185.6,
+    "ZERO": 0.0
+   },
+   "ammc_hz": {
+    "LIVE": 2.6683,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 2.6683,
+    "ZERO": 0.0
+   },
+   "gf_hz": {
+    "LIVE": 0.0,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 0.0,
+    "ZERO": 0.0
+   },
+   "receiver_brain_hz": {
+    "LIVE": 1.5488,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 1.5488,
+    "ZERO": 0.0
+   },
+   "S1_sings": true,
+   "S2_no_ignition": true,
+   "R1a_live_gt_mute": true,
+   "R1b_live_ge_2x": true,
+   "R2_mute_identical_to_zero": true,
+   "R3_scramble_identical_to_live": true,
+   "R4_silent_le_1p1_mute": true
+  },
+  {
+   "seed": 20606,
+   "sender_pulse_mn_hz": [
+    54.375,
+    0.0
+   ],
+   "sender_wing_all_hz": [
+    50.156,
+    0.0
+   ],
+   "sender_song_pattern_hz": {
+    "dPR1": 82.5,
+    "TN1a_g": 84.375,
+    "TN1a_h": 77.5,
+    "TN1a_i": 63.75,
+    "vPR9_a": 90.625,
+    "vPR9_b": 86.25,
+    "vPR9_c": 90.0
+   },
+   "sender_brain_hz": [
+    1.6224,
+    0.0
+   ],
+   "song_on_ms": {
+    "LIVE": 214.2,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 214.2,
+    "ZERO": 0.0
+   },
+   "ammc_hz": {
+    "LIVE": 4.4231,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 4.4231,
+    "ZERO": 0.0
+   },
+   "gf_hz": {
+    "LIVE": 0.0,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 0.0,
+    "ZERO": 0.0
+   },
+   "receiver_brain_hz": {
+    "LIVE": 2.1766,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 2.1766,
+    "ZERO": 0.0
+   },
+   "S1_sings": true,
+   "S2_no_ignition": true,
+   "R1a_live_gt_mute": true,
+   "R1b_live_ge_2x": true,
+   "R2_mute_identical_to_zero": true,
+   "R3_scramble_identical_to_live": true,
+   "R4_silent_le_1p1_mute": true
+  },
+  {
+   "seed": 20707,
+   "sender_pulse_mn_hz": [
+    93.75,
+    0.0
+   ],
+   "sender_wing_all_hz": [
+    66.406,
+    0.0
+   ],
+   "sender_song_pattern_hz": {
+    "dPR1": 92.5,
+    "TN1a_g": 90.625,
+    "TN1a_h": 91.25,
+    "TN1a_i": 88.75,
+    "vPR9_a": 95.0,
+    "vPR9_b": 92.5,
+    "vPR9_c": 95.0
+   },
+   "sender_brain_hz": [
+    2.4936,
+    0.0
+   ],
+   "song_on_ms": {
+    "LIVE": 200.4,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 200.4,
+    "ZERO": 0.0
+   },
+   "ammc_hz": {
+    "LIVE": 2.6923,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 2.6923,
+    "ZERO": 0.0
+   },
+   "gf_hz": {
+    "LIVE": 0.0,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 0.0,
+    "ZERO": 0.0
+   },
+   "receiver_brain_hz": {
+    "LIVE": 1.5261,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 1.5261,
+    "ZERO": 0.0
+   },
+   "S1_sings": true,
+   "S2_no_ignition": true,
+   "R1a_live_gt_mute": true,
+   "R1b_live_ge_2x": true,
+   "R2_mute_identical_to_zero": true,
+   "R3_scramble_identical_to_live": true,
+   "R4_silent_le_1p1_mute": true
+  },
+  {
+   "seed": 20808,
+   "sender_pulse_mn_hz": [
+    78.75,
+    0.0
+   ],
+   "sender_wing_all_hz": [
+    68.359,
+    0.0
+   ],
+   "sender_song_pattern_hz": {
+    "dPR1": 90.0,
+    "TN1a_g": 90.0,
+    "TN1a_h": 90.0,
+    "TN1a_i": 90.0,
+    "vPR9_a": 90.0,
+    "vPR9_b": 90.0,
+    "vPR9_c": 90.0
+   },
+   "sender_brain_hz": [
+    2.8671,
+    0.0
+   ],
+   "song_on_ms": {
+    "LIVE": 190.2,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 190.2,
+    "ZERO": 0.0
+   },
+   "ammc_hz": {
+    "LIVE": 3.3173,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 3.3173,
+    "ZERO": 0.0
+   },
+   "gf_hz": {
+    "LIVE": 0.0,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 0.0,
+    "ZERO": 0.0
+   },
+   "receiver_brain_hz": {
+    "LIVE": 1.5104,
+    "MUTE": 0.0,
+    "SILENT": 0.0,
+    "SCRAMBLE": 1.5104,
+    "ZERO": 0.0
+   },
+   "S1_sings": true,
+   "S2_no_ignition": true,
+   "R1a_live_gt_mute": true,
+   "R1b_live_ge_2x": true,
+   "R2_mute_identical_to_zero": true,
+   "R3_scramble_identical_to_live": true,
+   "R4_silent_le_1p1_mute": true
+  }
+ ],
+ "wall_s": 168
+}

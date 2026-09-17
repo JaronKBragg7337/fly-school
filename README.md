@@ -224,3 +224,50 @@ gave a 32–50% learned drop in every fly (`versions/fly-v10`). Grade 0b on v10:
 wiring-chosen top-5 reward-side compartments): the rewarded odour's output fell 40% in 8/8 flies (z −13 to −22) — but the
 never-paired control fell 15% and the punished odour 30%, so the predeclared specificity criterion failed. Eight predeclared
 tests, none redefined. The remaining leak is Kenyon-cell reliability (0.29–0.47 in these flies). `results/comm_loop_test8_s*.json`.
+
+## 16. Test 9 — the first predeclared communication test to pass; reproduced (2026-09-17 11:02–11:42)
+
+ChatGPT chat's review found three more leaks: the calibration had been searched with odour A alone while the tests trained A and
+B; the control odour's rate was matched to one probe trial; and the block statistic ignored the post-training variance. Test 9
+(`exams/comm_protocol.md`, predeclared 10:50) therefore trains A only, replays identical sensory realisations before and after
+(paired differences), freezes the answer population to five reward-side compartments (MBON09/01/05/03/06) and skips the equaliser.
+Result on 8 fresh seeds: rewarded odour A → APPROACH in 8/8 (paired z −13.6 to −23.2, output down 45–49%); never-paired odour C →
+NONE in 8/8 (1–4%). Grade 0b on fly-v10 identical before and after. Reproduction on 8 new seeds (8181–8888): 8/8 and 8/8 again.
+Frozen as `versions/comm-loop-1` (SHA-256 of graph, calibration, side table, code). The reproduction's *motor* line (paired z on
+DNa13+DNa03+MDN with 24 realisations) was mis-sized for such small counts and failed even though the direction was right in
+16/16 flies — reported as failed, not redefined. `results/comm_loop_test9_s*.json`, `results/comm_loop_repro_8181-8888.json`.
+
+## 17. Test 10 / 10b — the motor stage passes its own predeclared bar (2026-09-17 12:33)
+
+Same frozen protocol, 48 matched realisations per odour, criteria fixed at 11:50 before either batch ran: rel_Y(A) > 0 in ≥ 7/8,
+mean ≥ 0.15, A > C in ≥ 7/8, |mean rel_Y(C)| ≤ 0.15, plus the MB lines unchanged. Test 10 (9191–9898): MB 8/8 + 8/8; descending
+sum down for A in 8/8 (mean 0.229), C mean 0.048. Test 10b (10101–10808): 8/8 + 8/8; A 8/8 (mean 0.214), C mean 0.014. Decoded
+reply GO-TOWARD in 16/16. Grade 0b after: every verdict and read identical. Caveat: C barely drives these descending neurons
+(1–5 Hz vs A's 90–111 Hz), so single-fly rel_Y(C) is noisy; the A effect is not. `results/comm_loop_test10*_s*.json`,
+`results/comm_loop_test10_pooled.json`, `results/grade0b_v10calib_post10.json`.
+
+With that, the nine-item goal predeclared on 2026-09-17 is met on every item, on its own bars, and reproduced from clean
+processes. In Grok chat's words it is **Goal A: a decoded endogenous reply from one fly on a frozen test.** It is not two flies
+talking through a world (Goal B). Section 18 starts that.
+
+## 18. GPU kernel (verified bit-for-bit) and Gate 1 — a sender's song reaches a receiver's ear through a world (2026-09-17 12:26)
+
+`gpu/flysim_gpu.py`: the same LIF maths batched over flies with one sparse matmul per step (torch 2.6 + CUDA, RTX 4060). Verified
+against the CPU kernel on five organ rows: every one of 165,122 neurons' spike counts identical (`results/gpu_verify.json`).
+0.5 s per fly in a batch of 8 (CPU ≈ 7 s).
+
+Grok chat (reading this repo, 2026-09-17) set the bar for communication: a sender changes a physical field in a shared world, the
+receiver gets it only through its own sensory neurons, a mute lesion and a scramble are the controls, and the fly's own channels
+(song, cVA, CO2) replace Morse. Gate 1 (`world/gate1_protocol.md`, predeclared 12:25): two separate processes (`world/sender.py`,
+`world/receiver.py`) on the frozen fly-v10 stack; the only shared thing is a song on/off schedule that `world/world.py` writes from
+the sender's wing motor neuron spikes. Sender: pIP10 (2 cells, 100 Hz) → dPR1 / TN1a / vPR9 song-pattern neurons 72–100 Hz → pulse-
+song wing motor neurons hg1/ps1/i1/i2 at 54–100 Hz (silent sender: 0). Receiver: JO-A driven at 120 Hz only while the schedule
+says song → AMMC 2.7–4.6 Hz live vs 0 muted, 8/8; mute identical to a zero world and scramble identical to live (whole spike
+vectors equal), 8/8; no ignition. PASS on every criterion, 168 s. Limits stated in the protocol: the model has no spontaneous
+activity, so mute = 0 Hz makes the 2× line easy; the world rule is binary (no pulse-song rhythm yet); 100 Hz on pIP10 is chosen,
+not fitted. It is a wire test. Gates 2–4 (cVA / CO2 on the receiver; state-gated emission; learned coupling) are next.
+`results/gate1/gate1_summary.json`.
+
+Credits for this stretch: Grok chat (the four-gate design, the mute/scramble controls, the song channel, the shared-weights bug);
+ChatGPT chat (the A-only calibration mismatch, the one-trial equaliser, the block statistic, the literature answer key); Claude
+Code (the runs, the kernel, the writing); Jaron (the rule that nothing is cancelled out — the chemistry lead is logged, not dropped).

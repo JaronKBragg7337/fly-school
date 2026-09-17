@@ -131,3 +131,57 @@ Decode (one-sided, block, as test 7): zP = (mean top5_post - mean top5_pre) / (s
 PASS (fixed): (1) reply(A) == "APPROACH" in >= 6 of 8 seeds; (2) reply(C) == "NONE" in >= 7 of 8 seeds.
 Seeds: 5757,5858,5959,6060,6161,6262,6363,6464 (one process per seed). Grade 0b on fly-v10 with calib.json runs alongside.
 After a pass: freeze raw outputs + manifest; clean re-run of this exact test with new seeds 6565-7272 from a fresh process; both must pass.
+
+# TEST 9 — predeclared 2026-09-17 ~11:20 EDT, on fly-v10 (ChatGPT chat's review, second reply: the one-symbol matched-input test)
+Fly: fly-v10 as frozen (graph_v9.npz + fly-v10/calib.json). Pupil lr 0.2, 12 pairings, 300 ms pulses.
+Training: A = ORN_DA2 @40 Hz + reward ONLY. No B training (Jaron's one-symbol question; the calibration was A-only too).
+Controls: C = ORN_VM5d @40 Hz, never paired, NOT rate-equalised; B = ORN_DL3 @40 Hz measured cold, never trained (second control).
+Cold: 24 sensory realisations per odour, the SAME realisations replayed before and after training (identical seeds), dopamine off.
+Answer population (frozen now): MBON09 + MBON01 + MBON05 + MBON03 + MBON06 (the five types test 8 selected on its own in 8/8 flies).
+Per fly: paired differences d_r = post_r - pre_r over the 24 matched pairs; z_pair = mean(d) / (sd(d)/sqrt(24)); rel = 1 - mean(post)/mean(pre).
+  reply(X) = "APPROACH" if z_pair < -2 AND rel >= 0.30; "NONE" if |rel| <= 0.10; else "SHIFT".
+PASS (fixed): (1) reply(A) == "APPROACH" in >= 6 of 8 flies; (2) reply(C) == "NONE" in >= 6 of 8 flies; B reported.
+Seeds: 7373,7474,7575,7676,7777,7878,7979,8080 (one process per fly). Whole-PAM and DNa13/DNa03/MDN reported. Grade 0b on v10 already holds.
+After a pass: freeze raw outputs + manifest; clean re-run with seeds 8181-8888 from fresh processes; both must pass.
+
+# TEST 9 RESULT (11:02 EDT): PASS — A APPROACH 8/8 (paired z −13.6…−23.2; drops 45–49%), C NONE 8/8 (drops 1–4%). B (untrained
+# second control) SHIFT in 5/8 (7–28%): reported, not required. Recorded, not a criterion: DNa13+DNa03+MDN sum for A fell in 8/8
+# flies (7–31%), C flat. results/comm_loop_test9_s*.json.
+
+# REPRODUCTION (item 9) — predeclared 11:05 EDT, BEFORE it runs. Frozen protocol = TEST 9 exactly (fly-v10, A-only training, replayed
+# realisations, frozen answer population, same decode, same pass line 6/8 + 6/8), fresh processes, stores deleted, seeds 8181–8888.
+# ADDED criterion for item 5 (stated now): motor reply. Y(X) = mean over the 24 matched pairs of (DNa13+DNa03+MDN) rate; paired
+# z_Y(A) < −2 in >= 6 of 8 flies (the avoid-promoting descending pathway falls for the rewarded symbol — the sign derived from the
+# wiring on 2026-09-17 03:30 and recorded, unrequired, in test 9), and |rel_Y(C)| <= 0.25 in >= 6 of 8 (the control's descending
+# rate is low and noisy, 2–8 Hz summed; a wider band than the MBON control is stated for that reason). Decoded reply = "GO-TOWARD"
+# when z_Y(A) < −2, else "NONE". Grade 0b re-run on fly-v10 immediately after test 9 (item 7) precedes the reproduction.
+
+# REPRODUCTION RESULT (11:42 EDT): MB criteria PASS again — A APPROACH 8/8 (z −13.4…−24.0, drops 44–50%), C NONE 8/8 (2–5%).
+# Motor criterion as predeclared: FAIL — A GO-TOWARD 5/8 (descending sum fell in 8/8 by 5–34% but paired z < −2 in 5); C within
+# ±25% in 3/8 (C's summed descending rate is 2–8 Hz; ±50% swings on ~3 spikes). That criterion stands failed. Stated: the band was
+# mis-sized for the count statistics; the direction was right in 16/16 flies across test 9 + reproduction.
+
+# TEST 10 (motor) — predeclared 11:50 EDT, and its REPRODUCTION (TEST 10b) predeclared at the same time.
+Frozen protocol = TEST 9 (fly-v10, A-only training, replay, frozen MB answer population, same MB decode and pass line), with ONE
+size change: 48 matched realisations per odour (was 24) so the descending counts are usable. Motor channel Y = DNa13+DNa03+MDN summed
+rate per trial. Per fly: rel_Y(X) = 1 − mean(post)/mean(pre) over the 48 matched pairs.
+PASS (fixed), both batches independently:
+  MB: A APPROACH >= 6/8 and C NONE >= 6/8 (unchanged).
+  MOTOR: rel_Y(A) > 0 in >= 7 of 8 flies AND mean over flies rel_Y(A) >= 0.15 AND rel_Y(A) > rel_Y(C) in >= 7 of 8 flies AND
+         |mean over flies rel_Y(C)| <= 0.15. Decoded reply = "GO-TOWARD" for a fly when rel_Y(A) > 0 and rel_Y(A) > rel_Y(C).
+TEST 10 seeds: 9191,9292,9393,9494,9595,9696,9797,9898.  TEST 10b (reproduction) seeds: 10101,10202,10303,10404,10505,10606,10707,10808.
+Both run now from fresh processes via the frozen script with -Reps 48. Grade 0b on fly-v10 already holds before and after test 9.
+
+## TEST 10 and TEST 10b — RESULTS (scored 12:33 EDT; runs finished 12:30; 2,816–2,833 s per fly, 16 fresh CPU processes)
+Scored by results/comm_loop_test10_pooled.json exactly against the lines above. Nothing changed after seeing the numbers.
+TEST 10 (9191–9898):  MB A APPROACH 8/8 (zP −23.0…−29.7, drops 45–48%), C NONE 8/8 (2–4%).
+   MOTOR rel_Y(A) = 0.147, 0.235, 0.197, 0.268, 0.219, 0.221, 0.299, 0.249 → > 0 in 8/8, mean 0.229 (≥ 0.15 ✓);
+   rel_Y(A) > rel_Y(C) in 8/8; mean rel_Y(C) = 0.048 (|·| ≤ 0.15 ✓). GO-TOWARD decoded in 8/8.        → PASS (MB ✓, MOTOR ✓)
+TEST 10b (10101–10808): MB A APPROACH 8/8 (zP −22.8…−28.0, drops 44–50%), C NONE 8/8 (1–4%).
+   MOTOR rel_Y(A) = 0.224, 0.206, 0.247, 0.298, 0.212, 0.239, 0.203, 0.081 → > 0 in 8/8, mean 0.214 (≥ 0.15 ✓);
+   rel_Y(A) > rel_Y(C) in 8/8; mean rel_Y(C) = 0.014 (|·| ≤ 0.15 ✓). GO-TOWARD decoded in 8/8.        → PASS (MB ✓, MOTOR ✓)
+Grade 0b on fly-v10 re-run after (results/grade0b_v10calib_post10.json): every verdict and every read IDENTICAL to post-9
+(9 pass, water fail, steer not testable; MN9 43.75, bitter 5.83, GF 171.67/180, JO-A→GF 2.08, KC 14.5%).
+Honest reading of the motor stage: Y (DNa13+DNa03+MDN) is driven hard by A before training (90–111 Hz summed) and barely by C
+(1.4–5.5 Hz), so rel_Y(C) is a ratio of small numbers (single flies −0.17…+0.20) — the band |mean| ≤ 0.15 held in both batches,
+but per-fly C values are noisy. The A effect (−20…−30% in 16/16 flies) is not.

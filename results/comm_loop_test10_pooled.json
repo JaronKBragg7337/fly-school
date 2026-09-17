@@ -1,0 +1,354 @@
+{
+ "test10": {
+  "rows": [
+   {
+    "seed": 9191,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -23.94,
+    "A_rel_drop": 0.469,
+    "C_rel_drop": 0.021,
+    "rel_Y_A": 0.299,
+    "rel_Y_C": 0.012,
+    "Y_A": [
+     109.1,
+     76.49
+    ],
+    "Y_C": [
+     3.72,
+     3.67
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 9292,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -23.77,
+    "A_rel_drop": 0.455,
+    "C_rel_drop": 0.031,
+    "rel_Y_A": 0.235,
+    "rel_Y_C": 0.092,
+    "Y_A": [
+     98.73,
+     75.55
+    ],
+    "Y_C": [
+     3.94,
+     3.57
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 9393,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -26.68,
+    "A_rel_drop": 0.456,
+    "C_rel_drop": 0.028,
+    "rel_Y_A": 0.197,
+    "rel_Y_C": 0.091,
+    "Y_A": [
+     107.39,
+     86.2
+    ],
+    "Y_C": [
+     3.17,
+     2.88
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 9494,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -26.8,
+    "A_rel_drop": 0.477,
+    "C_rel_drop": 0.035,
+    "rel_Y_A": 0.268,
+    "rel_Y_C": -0.15,
+    "Y_A": [
+     104.64,
+     76.55
+    ],
+    "Y_C": [
+     3.67,
+     4.22
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 9595,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -27.55,
+    "A_rel_drop": 0.482,
+    "C_rel_drop": 0.023,
+    "rel_Y_A": 0.219,
+    "rel_Y_C": 0.124,
+    "Y_A": [
+     109.42,
+     85.45
+    ],
+    "Y_C": [
+     5.02,
+     4.4
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 9696,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -24.68,
+    "A_rel_drop": 0.474,
+    "C_rel_drop": 0.044,
+    "rel_Y_A": 0.221,
+    "rel_Y_C": -0.113,
+    "Y_A": [
+     97.37,
+     75.87
+    ],
+    "Y_C": [
+     2.82,
+     3.14
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 9797,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -23.0,
+    "A_rel_drop": 0.451,
+    "C_rel_drop": 0.036,
+    "rel_Y_A": 0.147,
+    "rel_Y_C": 0.129,
+    "Y_A": [
+     92.32,
+     78.73
+    ],
+    "Y_C": [
+     3.02,
+     2.63
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 9898,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -29.72,
+    "A_rel_drop": 0.468,
+    "C_rel_drop": 0.036,
+    "rel_Y_A": 0.249,
+    "rel_Y_C": 0.198,
+    "Y_A": [
+     102.63,
+     77.05
+    ],
+    "Y_C": [
+     3.57,
+     2.86
+    ],
+    "GO_TOWARD": true
+   }
+  ],
+  "counts": {
+   "A_APPROACH": 8,
+   "C_NONE": 8,
+   "relYA_gt0": 8,
+   "relYA_gt_relYC": 8,
+   "GO_TOWARD": 8
+  },
+  "mean_rel_Y_A": 0.229,
+  "mean_rel_Y_C": 0.048,
+  "criteria": {
+   "MB_A_APPROACH_ge_6of8": true,
+   "MB_C_NONE_ge_6of8": true,
+   "MOTOR_relYA_gt0_ge_7of8": true,
+   "MOTOR_mean_relYA_ge_0.15": true,
+   "MOTOR_relYA_gt_relYC_ge_7of8": true,
+   "MOTOR_abs_mean_relYC_le_0.15": true
+  },
+  "MB_PASS": true,
+  "MOTOR_PASS": true,
+  "PASS": true
+ },
+ "test10b": {
+  "rows": [
+   {
+    "seed": 10101,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -28.01,
+    "A_rel_drop": 0.466,
+    "C_rel_drop": 0.031,
+    "rel_Y_A": 0.224,
+    "rel_Y_C": 0.067,
+    "Y_A": [
+     98.09,
+     76.1
+    ],
+    "Y_C": [
+     1.52,
+     1.42
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 10202,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -24.81,
+    "A_rel_drop": 0.48,
+    "C_rel_drop": 0.037,
+    "rel_Y_A": 0.206,
+    "rel_Y_C": 0.195,
+    "Y_A": [
+     102.44,
+     81.32
+    ],
+    "Y_C": [
+     3.85,
+     3.1
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 10303,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -25.6,
+    "A_rel_drop": 0.473,
+    "C_rel_drop": 0.021,
+    "rel_Y_A": 0.247,
+    "rel_Y_C": 0.124,
+    "Y_A": [
+     111.28,
+     83.84
+    ],
+    "Y_C": [
+     5.24,
+     4.59
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 10404,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -27.91,
+    "A_rel_drop": 0.468,
+    "C_rel_drop": 0.038,
+    "rel_Y_A": 0.298,
+    "rel_Y_C": -0.155,
+    "Y_A": [
+     107.26,
+     75.33
+    ],
+    "Y_C": [
+     2.14,
+     2.47
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 10505,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -25.04,
+    "A_rel_drop": 0.495,
+    "C_rel_drop": 0.013,
+    "rel_Y_A": 0.212,
+    "rel_Y_C": 0.051,
+    "Y_A": [
+     97.16,
+     76.53
+    ],
+    "Y_C": [
+     3.43,
+     3.26
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 10606,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -23.15,
+    "A_rel_drop": 0.463,
+    "C_rel_drop": 0.027,
+    "rel_Y_A": 0.239,
+    "rel_Y_C": -0.015,
+    "Y_A": [
+     108.19,
+     82.38
+    ],
+    "Y_C": [
+     3.91,
+     3.96
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 10707,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -27.08,
+    "A_rel_drop": 0.481,
+    "C_rel_drop": 0.026,
+    "rel_Y_A": 0.203,
+    "rel_Y_C": 0.013,
+    "Y_A": [
+     101.48,
+     80.9
+    ],
+    "Y_C": [
+     5.47,
+     5.4
+    ],
+    "GO_TOWARD": true
+   },
+   {
+    "seed": 10808,
+    "A_reply": "APPROACH",
+    "C_reply": "NONE",
+    "A_zP": -22.84,
+    "A_rel_drop": 0.439,
+    "C_rel_drop": 0.016,
+    "rel_Y_A": 0.081,
+    "rel_Y_C": -0.172,
+    "Y_A": [
+     89.99,
+     82.67
+    ],
+    "Y_C": [
+     1.35,
+     1.58
+    ],
+    "GO_TOWARD": true
+   }
+  ],
+  "counts": {
+   "A_APPROACH": 8,
+   "C_NONE": 8,
+   "relYA_gt0": 8,
+   "relYA_gt_relYC": 8,
+   "GO_TOWARD": 8
+  },
+  "mean_rel_Y_A": 0.214,
+  "mean_rel_Y_C": 0.014,
+  "criteria": {
+   "MB_A_APPROACH_ge_6of8": true,
+   "MB_C_NONE_ge_6of8": true,
+   "MOTOR_relYA_gt0_ge_7of8": true,
+   "MOTOR_mean_relYA_ge_0.15": true,
+   "MOTOR_relYA_gt_relYC_ge_7of8": true,
+   "MOTOR_abs_mean_relYC_le_0.15": true
+  },
+  "MB_PASS": true,
+  "MOTOR_PASS": true,
+  "PASS": true
+ }
+}

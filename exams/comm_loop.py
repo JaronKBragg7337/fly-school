@@ -81,8 +81,9 @@ def trial(mb, stim, seed, hz_override=None):
 
 def cold(mb, seed, phase, c_hz):
     out = {}
+    ph = "cold" if os.environ.get("COMM_REPLAY") else phase          # test 9: identical sensory realisations pre and post
     for s in ("A", "B", "C"):
-        rs = [trial(mb, s, seed_for(seed, phase, s, r), c_hz if s == "C" else None) for r in range(REPS)]
+        rs = [trial(mb, s, seed_for(seed, ph, s, r), c_hz if s == "C" else None) for r in range(REPS)]
         out[s] = {k: [round(r[k], 3) for r in rs] for k in READ}
         out[s]["kc_n"] = [r["kc_n"] for r in rs]; out[s]["hz"] = [round(r["hz"], 2) for r in rs]; out[s]["_kc"] = [set(r["kc"].tolist()) for r in rs]
     j = lambda a, b: len(a & b) / max(1, len(a | b))
@@ -98,13 +99,16 @@ def cold(mb, seed, phase, c_hz):
 t0 = time.perf_counter(); results = []
 # C's rate: equalise KC count to A (probe with a fresh MB, not part of the test)
 _mb = MushroomBody(fb, calibration=C.CHOSEN, sides=RUNTIME / "build" / "mb_sides.json", store=LAB / "comm_probe.npz", clock=lambda: 0.0)
-ka = trial(_mb, "A", 11)["kc_n"]; c_hz = 40.0
-for _ in range(5):
-    kc_ = trial(_mb, "C", 12, c_hz)["kc_n"]
-    if kc_ and abs(kc_ - ka) / max(1, ka) <= 0.2: break
-    c_hz = float(np.clip(c_hz * ((ka / max(1, kc_)) ** 0.7 if kc_ else 1.5), 5, 250))
+NPROBE = 6
+ka = float(np.mean([trial(_mb, "A", 11 + k)["kc_n"] for k in range(NPROBE)])); c_hz = 40.0
+if os.environ.get("COMM_NO_EQUALISE"):
+    kc_ = float(np.mean([trial(_mb, "C", 21 + k, c_hz)["kc_n"] for k in range(NPROBE)])); NPROBE = -NPROBE
+for _ in range(6 if NPROBE > 0 else 0):
+    kc_ = float(np.mean([trial(_mb, "C", 21 + k, c_hz)["kc_n"] for k in range(NPROBE)]))
+    if kc_ and abs(kc_ - ka) / max(1, ka) <= 0.15: break
+    c_hz = float(np.clip(c_hz * ((ka / max(1, kc_)) ** 0.7 if kc_ else 1.5), 2, 250))
 (LAB / "comm_probe.npz").unlink(missing_ok=True)
-print(f"C rate equalised: A -> {ka} KCs; C @{c_hz:.1f} Hz -> {kc_} KCs", flush=True)
+print(f"C rate equalised (mean of {NPROBE} probe trials): A -> {ka:.0f} KCs; C @{c_hz:.1f} Hz -> {kc_:.0f} KCs", flush=True)
 
 READ["PAM"] = np.asarray(_mb.reward_side); READ["PPL"] = np.asarray(_mb.punish_side)
 for seed in SEEDS:
@@ -112,7 +116,10 @@ for seed in SEEDS:
     store = LAB / f"comm_seed_{seed}.npz"; store.unlink(missing_ok=True)
     mb = MushroomBody(fb, lr=LR, calibration=C.CHOSEN, sides=RUNTIME / "build" / "mb_sides.json", store=store, clock=lambda: 0.0)
     pre = cold(mb, seed, "pre", c_hz)
-    if os.environ.get("COMM_TOPK"):      # test 8: answer channel = top-K PAM-side MBON TYPES by KC->MBON weight from A's PRE-trial KCs (wiring + pre only)
+    if os.environ.get("COMM_ANSWER_TYPES"):      # test 9: answer population frozen before the run
+        READ["PAMtop"] = T(*os.environ["COMM_ANSWER_TYPES"].split(",")); topinfo = {"fixed": os.environ["COMM_ANSWER_TYPES"]}
+        pre = cold(mb, seed, "pre", c_hz)
+    elif os.environ.get("COMM_TOPK"):      # test 8: answer channel = top-K PAM-side MBON TYPES by KC->MBON weight from A's PRE-trial KCs (wiring + pre only)
         K = int(os.environ["COMM_TOPK"]); a_kc = np.array(sorted(pre["A"]["_kc_union"]), dtype=np.int64)
         m = np.isin(mb.pre, a_kc) & np.isin(mb.post, READ["PAM"])
         w_by_cell = np.bincount(mb.post[m], weights=np.abs(mb.base[m]), minlength=fb.n)
@@ -127,7 +134,7 @@ for seed in SEEDS:
         topinfo = None
     teach = []
     for epoch in range(TEACH_EPOCHS):
-        for s, val in (("A", +1), ("B", -1)):
+        for s, val in ((("A", +1),) if os.environ.get("COMM_NO_B") else (("A", +1), ("B", -1))):
             r = trial(mb, s, seed_for(seed, "teach", s, epoch))
             mb.forget_trace(); mb.observe(r["kc"]); hit = int(mb.dopamine(val, 1.0)); mb.apply()
             teach.append({"epoch": epoch, "stim": s, "dopamine": val, "synapses_hit": hit})
@@ -181,8 +188,15 @@ if os.environ.get("COMM_DECODE") == "valence2" and os.environ.get("COMM_BLOCK"):
         for s_ in ("A", "B", "C"):
             key = "PAMtop" if "PAMtop" in r["pre"][s_] else "PAM"
             P0, P1 = np.array(r["pre"][s_][key]), np.array(r["post"][s_][key]); L0, L1 = np.array(r["pre"][s_]["PPL"]), np.array(r["post"][s_]["PPL"])
-            zP = (P1.mean() - P0.mean()) / max(1e-6, P0.std() / np.sqrt(len(P0))); zL = (L1.mean() - L0.mean()) / max(1e-6, L0.std() / np.sqrt(len(L0)))
-            if os.environ.get("COMM_ONESIDED"):
+            if os.environ.get("COMM_Z2"):
+                zP = (P1.mean() - P0.mean()) / max(1e-6, np.sqrt(P0.var() / len(P0) + P1.var() / len(P1))); zL = (L1.mean() - L0.mean()) / max(1e-6, np.sqrt(L0.var() / len(L0) + L1.var() / len(L1)))
+            else:
+                zP = (P1.mean() - P0.mean()) / max(1e-6, P0.std() / np.sqrt(len(P0))); zL = (L1.mean() - L0.mean()) / max(1e-6, L0.std() / np.sqrt(len(L0)))
+            if os.environ.get("COMM_REPLAY"):     # test 9: paired differences on identical inputs; reply needs paired z < -2 AND relative drop >= 30%
+                dP = P1 - P0; zpair = dP.mean() / max(1e-6, dP.std(ddof=1) / np.sqrt(len(dP))); rel = 1 - P1.mean() / max(1e-6, P0.mean())
+                b[s_] = {"zP": round(float(zpair), 2), "zL": round(float(zL), 2), "rel_drop": round(float(rel), 3),
+                         "reply": "APPROACH" if (zpair < -2 and rel >= 0.30) else ("NONE" if abs(rel) <= 0.10 else "SHIFT")}
+            elif os.environ.get("COMM_ONESIDED"):
                 b[s_] = {"zP": round(float(zP), 2), "zL": round(float(zL), 2), "reply": "APPROACH" if zP < -2 else "NONE"}
             else:
                 b[s_] = {"zP": round(float(zP), 2), "zL": round(float(zL), 2), "reply": "APPROACH" if (zP < -2 and zP <= zL) else ("AVOID" if zL < -2 else "NONE")}

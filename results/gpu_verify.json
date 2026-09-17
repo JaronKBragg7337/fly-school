@@ -1,0 +1,156 @@
+{
+ "graph": "C:\\Users\\lilli\\Fly-Lab\\versions\\fly-v9\\graph_v9.npz",
+ "calib": "C:/Users/lilli/Fly-Lab/versions/fly-v10/calib.json",
+ "rows": [
+  {
+   "row": "sugar LB3b+LB3c",
+   "seed": 4097169590,
+   "brain_hz_cpu": 2.223,
+   "brain_hz_gpu": 2.223,
+   "neurons_identical": 165122,
+   "neurons_differ": 0,
+   "spikes_cpu": 146826,
+   "spikes_gpu": 146826,
+   "reads": {
+    "MN9": [
+     23.75,
+     23.75
+    ]
+   },
+   "kc_frac": [
+    0.0064,
+    0.0064
+   ],
+   "t_cpu_s": 6.9,
+   "t_gpu_s": 2.5
+  },
+  {
+   "row": "loom LPLC2+LC4",
+   "seed": 2960064155,
+   "brain_hz_cpu": 3.4363,
+   "brain_hz_gpu": 3.4363,
+   "neurons_identical": 165122,
+   "neurons_differ": 0,
+   "spikes_cpu": 226961,
+   "spikes_gpu": 226961,
+   "reads": {
+    "DNp01": [
+     185.0,
+     185.0
+    ],
+    "DNp02": [
+     151.25,
+     151.25
+    ]
+   },
+   "kc_frac": [
+    0.0389,
+    0.0389
+   ],
+   "t_cpu_s": 8.3,
+   "t_gpu_s": 2.3
+  },
+  {
+   "row": "sound JO-A",
+   "seed": 2166596959,
+   "brain_hz_cpu": 1.8404,
+   "brain_hz_gpu": 1.8404,
+   "neurons_identical": 165122,
+   "neurons_differ": 0,
+   "spikes_cpu": 121555,
+   "spikes_gpu": 121555,
+   "reads": {
+    "DNp01": [
+     1.25,
+     1.25
+    ]
+   },
+   "kc_frac": [
+    0.0197,
+    0.0197
+   ],
+   "t_cpu_s": 6.0,
+   "t_gpu_s": 2.2
+  },
+  {
+   "row": "odour ORN_DM1",
+   "seed": 2175250851,
+   "brain_hz_cpu": 3.5284,
+   "brain_hz_gpu": 3.5284,
+   "neurons_identical": 165122,
+   "neurons_differ": 0,
+   "spikes_cpu": 233047,
+   "spikes_gpu": 233047,
+   "reads": {
+    "DM1_lPN": [
+     175.0,
+     175.0
+    ],
+    "KC": [
+     3.64,
+     3.64
+    ]
+   },
+   "kc_frac": [
+    0.174,
+    0.174
+   ],
+   "t_cpu_s": 7.5,
+   "t_gpu_s": 2.2
+  },
+  {
+   "row": "odour ORN_DA2 (test-9 A)",
+   "seed": 767320645,
+   "brain_hz_cpu": 2.3892,
+   "brain_hz_gpu": 2.3892,
+   "neurons_identical": 165122,
+   "neurons_differ": 0,
+   "spikes_cpu": 157803,
+   "spikes_gpu": 157803,
+   "reads": {
+    "KC": [
+     0.185,
+     0.185
+    ],
+    "MBON09": [
+     70.625,
+     70.625
+    ],
+    "PAM5": [
+     52.292,
+     52.292
+    ]
+   },
+   "kc_frac": [
+    0.0157,
+    0.0157
+   ],
+   "t_cpu_s": 6.5,
+   "t_gpu_s": 2.1
+  }
+ ],
+ "batch8": {
+  "t_gpu_s": 4.1,
+  "per_fly_s": 0.51,
+  "brain_hz": [
+   2.559,
+   2.249,
+   2.403,
+   2.228,
+   2.149,
+   2.878,
+   2.897,
+   2.208
+  ],
+  "kc_frac": [
+   0.0157,
+   0.014,
+   0.016,
+   0.0138,
+   0.0167,
+   0.03,
+   0.0241,
+   0.0192
+  ]
+ }
+}
