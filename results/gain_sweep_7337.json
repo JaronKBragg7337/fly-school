@@ -1,0 +1,103 @@
+{
+ "chosen": {
+  "scales": [
+   0.5,
+   0.4,
+   0.35,
+   0.3
+  ],
+  "seed": 7337,
+  "reps": 3,
+  "target": "KC active 5-15%; jaccard(dot,dash) << jaccard(dot,dot); DNs respond"
+ },
+ "measured": [
+  {
+   "scale": 0.5,
+   "hz_per_cell": 12.44,
+   "fired_frac": 0.172,
+   "kc_frac_active": 0.376,
+   "jaccard_dot_dot": 0.795,
+   "jaccard_dot_dash": 0.827,
+   "reads_dot": {
+    "DNa01": 10,
+    "DNp17": 40,
+    "DNge131": 7,
+    "MBON": 534,
+    "DN_all": 4845
+   },
+   "reads_dash": {
+    "DNa01": 5,
+    "DNp17": 95,
+    "DNge131": 29,
+    "MBON": 590,
+    "DN_all": 5526
+   }
+  },
+  {
+   "scale": 0.4,
+   "hz_per_cell": 4.22,
+   "fired_frac": 0.107,
+   "kc_frac_active": 0.122,
+   "jaccard_dot_dot": 0.007,
+   "jaccard_dot_dash": 0.428,
+   "reads_dot": {
+    "DNa01": 3,
+    "DNp17": 45,
+    "DNge131": 7,
+    "MBON": 120,
+    "DN_all": 2112
+   },
+   "reads_dash": {
+    "DNa01": 1,
+    "DNp17": 57,
+    "DNge131": 15,
+    "MBON": 157,
+    "DN_all": 3294
+   }
+  },
+  {
+   "scale": 0.35,
+   "hz_per_cell": 2.85,
+   "fired_frac": 0.087,
+   "kc_frac_active": 0.105,
+   "jaccard_dot_dot": 0.825,
+   "jaccard_dot_dash": 0.808,
+   "reads_dot": {
+    "DNa01": 1,
+    "DNp17": 16,
+    "DNge131": 2,
+    "MBON": 72,
+    "DN_all": 1207
+   },
+   "reads_dash": {
+    "DNa01": 2,
+    "DNp17": 45,
+    "DNge131": 13,
+    "MBON": 128,
+    "DN_all": 2924
+   }
+  },
+  {
+   "scale": 0.3,
+   "hz_per_cell": 1.58,
+   "fired_frac": 0.062,
+   "kc_frac_active": 0.023,
+   "jaccard_dot_dot": 0.227,
+   "jaccard_dot_dash": 0.195,
+   "reads_dot": {
+    "DNa01": 1,
+    "DNp17": 9,
+    "DNge131": 2,
+    "MBON": 36,
+    "DN_all": 925
+   },
+   "reads_dash": {
+    "DNa01": 2,
+    "DNp17": 11,
+    "DNge131": 1,
+    "MBON": 52,
+    "DN_all": 1498
+   }
+  }
+ ]
+}

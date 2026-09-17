@@ -1,0 +1,10 @@
+@echo off
+set SCHOOL_FLY=school-4
+set SCHOOL_VERSION=fly-v1-gentle
+set SCHOOL_HOURS=9-12,13-16
+set SCHOOL_NIGHT=22-7
+set SCHOOL_LR=0.02
+set SCHOOL_FLOOR=0.5
+set SCHOOL_PUNISH=change
+set SCHOOL_CAPACITY=5
+"C:\Users\lilli\AI-Shared\projects\fly-brain\.venv\Scripts\python.exe" "C:\Users\lilli\Fly-Lab-2\school\school.py"

@@ -1,0 +1,83 @@
+{
+ "chosen": {
+  "seeds": [
+   73,
+   7337,
+   101
+  ],
+  "reps": 3,
+  "patterns": [
+   ".",
+   "-",
+   ".-",
+   "-."
+  ],
+  "conditions": [
+   "fresh",
+   "floor",
+   "silent"
+  ]
+ },
+ "measured": {
+  "fresh_vs_floor": {
+   "dn_cells_changed": 0,
+   "of": 0,
+   "total_abs_diff": 0,
+   "total_spikes_fresh": 0,
+   "decodes_changed": 30,
+   "of_trials": 36,
+   "per_readout_changed": {
+    "DNa01": 10,
+    "DNp17": 16,
+    "DNge131": 22,
+    "DNp30": 25
+   }
+  },
+  "fresh_vs_silent": {
+   "dn_cells_changed": 0,
+   "of": 0,
+   "total_abs_diff": 0,
+   "total_spikes_fresh": 0,
+   "decodes_changed": 31,
+   "of_trials": 36,
+   "per_readout_changed": {
+    "DNa01": 6,
+    "DNp17": 13,
+    "DNge131": 20,
+    "DNp30": 17
+   }
+  },
+  "mean_mbon_spikes": {
+   "fresh": 1397.25,
+   "floor": 881.0833333333334,
+   "silent": 620.1666666666666
+  },
+  "mean_kc_spikes": {
+   "fresh": 38660.694444444445,
+   "floor": 35558.27777777778,
+   "silent": 37045.77777777778
+  },
+  "exact_by_cond": {
+   "fresh": {
+    "DNa01": 9,
+    "DNp17": 15,
+    "DNge131": 13,
+    "DNp30": 12
+   },
+   "floor": {
+    "DNa01": 10,
+    "DNp17": 14,
+    "DNge131": 13,
+    "DNp30": 12
+   },
+   "silent": {
+    "DNa01": 9,
+    "DNp17": 13,
+    "DNge131": 11,
+    "DNp30": 13
+   }
+  },
+  "trials_per_cond": 36,
+  "elapsed_s": 165.6
+ }
+}

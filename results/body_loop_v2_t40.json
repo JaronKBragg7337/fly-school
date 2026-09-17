@@ -1,0 +1,1052 @@
+{
+ "chosen": {
+  "seconds": 2.0,
+  "touch_hz": 40.0,
+  "prop_gain": 5.0,
+  "motor_gain": 0.02,
+  "motor_decay": 0.8,
+  "muscle_map": {
+   "Tergopleural/Pleural promotor MN": [
+    "coxa",
+    1
+   ],
+   "Pleural remotor/abductor MN": [
+    "coxa",
+    -1
+   ],
+   "Sternal anterior rotator MN": [
+    "coxa_twist",
+    1
+   ],
+   "Sternal posterior rotator MN": [
+    "coxa_twist",
+    -1
+   ],
+   "Sternal adductor MN": [
+    "coxa_abduct",
+    -1
+   ],
+   "Tr flexor MN": [
+    "femur",
+    1
+   ],
+   "Acc. tr flexor MN": [
+    "femur",
+    1
+   ],
+   "Tr extensor MN": [
+    "femur",
+    -1
+   ],
+   "Sternotrochanter MN": [
+    "femur",
+    -1
+   ],
+   "Tergotr. MN": [
+    "femur",
+    -1
+   ],
+   "Fe reductor MN": [
+    "femur_twist",
+    -1
+   ],
+   "Ti flexor MN": [
+    "tibia",
+    1
+   ],
+   "Acc. ti flexor MN": [
+    "tibia",
+    1
+   ],
+   "Ti extensor MN": [
+    "tibia",
+    -1
+   ],
+   "Ta depressor MN": [
+    "tarsus",
+    1
+   ],
+   "Ta levator MN": [
+    "tarsus",
+    -1
+   ],
+   "ltm MN": [
+    "adhere_claw",
+    1
+   ],
+   "ltm1-tibia MN": [
+    "adhere_claw",
+    1
+   ],
+   "ltm2-femur MN": [
+    "adhere_claw",
+    1
+   ]
+  },
+  "seed": 1,
+  "env": "flybody walk_on_ball",
+  "graph": "C:/Users/lilli/Fly-Lab/versions/fly-v2/graph_v2.npz"
+ },
+ "measured": {
+  "motor_neurons_mapped": 328,
+  "unmapped_by_type": {
+   "MNx02": 2,
+   "CvN6": 2,
+   "MN9": 2,
+   "PS349": 2,
+   "GNG649": 2,
+   "MN2Db": 2,
+   "GNG648": 2,
+   "MN12D": 4,
+   "CvN5": 2,
+   "GNG641": 2,
+   "CvN7": 2,
+   "GNG651": 2,
+   "nan": 10,
+   "PS348": 2,
+   "MN1": 4,
+   "MN11D": 3,
+   "CvN4": 2,
+   "GNG650": 2,
+   "MN4b": 2,
+   "GNG652": 2,
+   "MN10": 3,
+   "GNG276": 2,
+   "GNG647": 3,
+   "GNG283": 2,
+   "GNG314": 2,
+   "GNG653": 2,
+   "GNG668": 2,
+   "GNG133": 2,
+   "MN5": 2,
+   "MN2Da": 2,
+   "MN13": 2,
+   "MN7": 4,
+   "MNx03": 3,
+   "MN8": 2,
+   "MN4a": 4,
+   "MNx01": 4,
+   "CEM": 6,
+   "MNx05": 2,
+   "MN11V": 2,
+   "MN3L": 4,
+   "MN3M": 2,
+   "MNad21": 4,
+   "MNx04": 2,
+   "MN6": 2,
+   "MN2V": 2,
+   "DVMn 1a-c": 6,
+   "TTMn": 2,
+   "MNwm36": 2,
+   "MNwm35": 2,
+   "MNml82": 2,
+   "hg1 MN": 2,
+   "MNad07": 6,
+   "MNhl64": 2,
+   "i2 MN": 2,
+   "MNhm42": 2,
+   "MNad68": 2,
+   "MNad49": 2,
+   "MNad61": 2,
+   "MNad19": 4,
+   "i1 MN": 2,
+   "MNad22": 4,
+   "MNad64": 2,
+   "DLMn c-f": 8,
+   "ps1 MN": 2,
+   "MNad41": 2,
+   "hg4 MN": 2,
+   "MNad33": 2,
+   "tp2 MN": 2,
+   "MNad20": 4,
+   "hg3 MN": 2,
+   "b2 MN": 2,
+   "tpn MN": 2,
+   "MNhl02": 2,
+   "b3 MN": 2,
+   "DLMn a, b": 2,
+   "MNad42": 2,
+   "b1 MN": 2,
+   "MNnm13": 2,
+   "MNhl59": 2,
+   "STTMm": 4,
+   "MNad67": 2,
+   "MNml81": 2,
+   "MNad05": 6,
+   "ADNM1 MN": 2,
+   "MNhl62": 2,
+   "MNad01": 8,
+   "tp1 MN": 2,
+   "hi2 MN": 4,
+   "MNad66": 2,
+   "MNad65": 2,
+   "MNad02": 12,
+   "MNnm03": 2,
+   "MNnm08": 2,
+   "MNad14": 8,
+   "MNad62": 2,
+   "MNad34": 2,
+   "iii3 MN": 2,
+   "MNad06": 8,
+   "MNad53": 4,
+   "MNad40": 2,
+   "MNhm03": 2,
+   "MNad30": 2,
+   "iii1 MN": 2,
+   "ps2 MN": 2,
+   "MNad23": 2,
+   "MNad63": 2,
+   "MNad17": 8,
+   "MNad15": 4,
+   "MNad16": 8,
+   "MNml29": 2,
+   "MNad08": 6,
+   "hDVM MN": 2,
+   "MNhm43": 2,
+   "MNad11": 8,
+   "MNnm11": 2,
+   "MNad35": 2,
+   "MNnm10": 2,
+   "DVMn 2a, b": 4,
+   "MNad36": 2,
+   "MNad03": 6,
+   "MNnm09": 2,
+   "hg2 MN": 2,
+   "MNad10": 6,
+   "MNhl29": 2,
+   "FNM2": 2,
+   "ADNM2 MN": 2,
+   "MNhl88": 2,
+   "MNad26": 2,
+   "MNad18,MNad27": 8,
+   "hi1 MN": 2,
+   "DVMn 3a, b": 4,
+   "MNad32": 2,
+   "MNad46": 2,
+   "MNad44": 2,
+   "MNad24": 2,
+   "MNnm14": 2,
+   "MNad69": 2,
+   "MNad12": 4,
+   "MNad09": 8,
+   "MNad31": 2,
+   "MNad47": 2,
+   "MNhl01": 2,
+   "MNad28": 2,
+   "MNad56": 2,
+   "MNad45": 2,
+   "MNad43": 2,
+   "MNad57": 2,
+   "MNad04,MNad48": 5,
+   "MNad25": 4,
+   "hiii2 MN": 2,
+   "MNhl87": 2,
+   "MNxm02": 2,
+   "MNad55": 2,
+   "MNxm03": 2,
+   "MNml78": 6,
+   "MNad29": 2,
+   "MNxm01": 2,
+   "MNad54": 4,
+   "MNml83": 1,
+   "MNml80": 6,
+   "MNml79": 2,
+   "MNml77": 2,
+   "MNnm07,MNnm12": 4,
+   "MNhl65": 3,
+   "MNad50": 1,
+   "MNhl60": 2,
+   "MNml76": 1
+  },
+  "touch_cells": {
+   "T1_left": 462,
+   "T1_right": 462,
+   "T2_left": 537,
+   "T2_right": 576,
+   "T3_left": 599,
+   "T3_right": 618
+  },
+  "prop_cells": {
+   "T1_left": 45,
+   "T1_right": 20,
+   "T2_left": 139,
+   "T2_right": 144,
+   "T3_left": 142,
+   "T3_right": 155
+  },
+  "brain_spikes_per_sec_per_cell": 6.063,
+  "motor_neuron_spikes": 16532,
+  "final_touch": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "elapsed_s": 17.0,
+  "sim_s": 2.0
+ },
+ "trace": [
+  {
+   "t": 0.0,
+   "touch": [
+    1,
+    1,
+    0,
+    0,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.058,
+    2.329,
+    -0.084
+   ],
+   "act_abs_mean": 0.021,
+   "mn_spikes_window": 62,
+   "brain_hz_per_cell": 23.43
+  },
+  {
+   "t": 0.05,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    0.018,
+    0.053,
+    -0.154
+   ],
+   "act_abs_mean": 0.011,
+   "mn_spikes_window": 1,
+   "brain_hz_per_cell": 6.3
+  },
+  {
+   "t": 0.1,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.201,
+    0.14,
+    -1.598
+   ],
+   "act_abs_mean": 0.0267,
+   "mn_spikes_window": 21,
+   "brain_hz_per_cell": 5.31
+  },
+  {
+   "t": 0.15,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.061,
+    -0.075,
+    0.536
+   ],
+   "act_abs_mean": 0.0272,
+   "mn_spikes_window": 5,
+   "brain_hz_per_cell": 5.7
+  },
+  {
+   "t": 0.2,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.001,
+    0.052,
+    -0.101
+   ],
+   "act_abs_mean": 0.0194,
+   "mn_spikes_window": 13,
+   "brain_hz_per_cell": 5.78
+  },
+  {
+   "t": 0.25,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    -0.051,
+    0.059,
+    -0.055
+   ],
+   "act_abs_mean": 0.0251,
+   "mn_spikes_window": 24,
+   "brain_hz_per_cell": 5.7
+  },
+  {
+   "t": 0.3,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    0.066,
+    -0.091,
+    0.528
+   ],
+   "act_abs_mean": 0.0208,
+   "mn_spikes_window": 1,
+   "brain_hz_per_cell": 5.78
+  },
+  {
+   "t": 0.35,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.004,
+    0.005,
+    -0.045
+   ],
+   "act_abs_mean": 0.0246,
+   "mn_spikes_window": 25,
+   "brain_hz_per_cell": 5.86
+  },
+  {
+   "t": 0.4,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.059,
+    0.056,
+    0.277
+   ],
+   "act_abs_mean": 0.0201,
+   "mn_spikes_window": 7,
+   "brain_hz_per_cell": 5.85
+  },
+  {
+   "t": 0.45,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.011,
+    0.124,
+    0.299
+   ],
+   "act_abs_mean": 0.011,
+   "mn_spikes_window": 2,
+   "brain_hz_per_cell": 5.78
+  },
+  {
+   "t": 0.5,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.008,
+    -0.083,
+    0.262
+   ],
+   "act_abs_mean": 0.0189,
+   "mn_spikes_window": 12,
+   "brain_hz_per_cell": 5.77
+  },
+  {
+   "t": 0.55,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    0.013,
+    -0.086,
+    0.282
+   ],
+   "act_abs_mean": 0.0255,
+   "mn_spikes_window": 6,
+   "brain_hz_per_cell": 5.88
+  },
+  {
+   "t": 0.6,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    -0.102,
+    0.054,
+    0.266
+   ],
+   "act_abs_mean": 0.0238,
+   "mn_spikes_window": 15,
+   "brain_hz_per_cell": 6.05
+  },
+  {
+   "t": 0.65,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    0.074,
+    -0.03,
+    -0.871
+   ],
+   "act_abs_mean": 0.0184,
+   "mn_spikes_window": 1,
+   "brain_hz_per_cell": 6.02
+  },
+  {
+   "t": 0.7,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.086,
+    0.062,
+    -0.221
+   ],
+   "act_abs_mean": 0.0268,
+   "mn_spikes_window": 12,
+   "brain_hz_per_cell": 5.95
+  },
+  {
+   "t": 0.75,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.003,
+    -0.021,
+    -0.151
+   ],
+   "act_abs_mean": 0.0199,
+   "mn_spikes_window": 18,
+   "brain_hz_per_cell": 5.85
+  },
+  {
+   "t": 0.8,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.11,
+    -0.093,
+    0.379
+   ],
+   "act_abs_mean": 0.031,
+   "mn_spikes_window": 24,
+   "brain_hz_per_cell": 5.82
+  },
+  {
+   "t": 0.85,
+   "touch": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    -0.163,
+    0.256,
+    0.559
+   ],
+   "act_abs_mean": 0.0338,
+   "mn_spikes_window": 28,
+   "brain_hz_per_cell": 5.86
+  },
+  {
+   "t": 0.9,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.25,
+    -0.156,
+    0.014
+   ],
+   "act_abs_mean": 0.025,
+   "mn_spikes_window": 15,
+   "brain_hz_per_cell": 5.89
+  },
+  {
+   "t": 0.95,
+   "touch": [
+    1,
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.078,
+    0.017,
+    0.051
+   ],
+   "act_abs_mean": 0.0216,
+   "mn_spikes_window": 21,
+   "brain_hz_per_cell": 5.91
+  },
+  {
+   "t": 1.0,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.011,
+    -0.032,
+    0.237
+   ],
+   "act_abs_mean": 0.0221,
+   "mn_spikes_window": 11,
+   "brain_hz_per_cell": 5.88
+  },
+  {
+   "t": 1.05,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    -0.016,
+    0.021,
+    0.294
+   ],
+   "act_abs_mean": 0.0212,
+   "mn_spikes_window": 4,
+   "brain_hz_per_cell": 5.83
+  },
+  {
+   "t": 1.1,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    0.022,
+    -0.005,
+    -0.212
+   ],
+   "act_abs_mean": 0.0266,
+   "mn_spikes_window": 9,
+   "brain_hz_per_cell": 5.83
+  },
+  {
+   "t": 1.15,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.179,
+    0.027,
+    -0.436
+   ],
+   "act_abs_mean": 0.0362,
+   "mn_spikes_window": 23,
+   "brain_hz_per_cell": 5.79
+  },
+  {
+   "t": 1.2,
+   "touch": [
+    1,
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.1,
+    -0.014,
+    0.355
+   ],
+   "act_abs_mean": 0.0217,
+   "mn_spikes_window": 3,
+   "brain_hz_per_cell": 5.8
+  },
+  {
+   "t": 1.25,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.154,
+    0.173,
+    0.214
+   ],
+   "act_abs_mean": 0.0349,
+   "mn_spikes_window": 21,
+   "brain_hz_per_cell": 5.82
+  },
+  {
+   "t": 1.3,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.004,
+    -0.01,
+    -0.227
+   ],
+   "act_abs_mean": 0.021,
+   "mn_spikes_window": 8,
+   "brain_hz_per_cell": 5.8
+  },
+  {
+   "t": 1.35,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.011,
+    -0.043,
+    0.34
+   ],
+   "act_abs_mean": 0.0285,
+   "mn_spikes_window": 22,
+   "brain_hz_per_cell": 5.77
+  },
+  {
+   "t": 1.4,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.023,
+    0.02,
+    -0.617
+   ],
+   "act_abs_mean": 0.0298,
+   "mn_spikes_window": 14,
+   "brain_hz_per_cell": 5.78
+  },
+  {
+   "t": 1.45,
+   "touch": [
+    1,
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.044,
+    0.138,
+    -0.589
+   ],
+   "act_abs_mean": 0.0336,
+   "mn_spikes_window": 34,
+   "brain_hz_per_cell": 5.76
+  },
+  {
+   "t": 1.5,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.043,
+    0.015,
+    0.006
+   ],
+   "act_abs_mean": 0.0321,
+   "mn_spikes_window": 15,
+   "brain_hz_per_cell": 5.77
+  },
+  {
+   "t": 1.55,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.085,
+    0.16,
+    0.379
+   ],
+   "act_abs_mean": 0.024,
+   "mn_spikes_window": 0,
+   "brain_hz_per_cell": 5.78
+  },
+  {
+   "t": 1.6,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    -0.059,
+    -0.009,
+    -0.304
+   ],
+   "act_abs_mean": 0.0316,
+   "mn_spikes_window": 23,
+   "brain_hz_per_cell": 5.83
+  },
+  {
+   "t": 1.65,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    0.074,
+    -0.073,
+    -0.1
+   ],
+   "act_abs_mean": 0.0368,
+   "mn_spikes_window": 24,
+   "brain_hz_per_cell": 5.87
+  },
+  {
+   "t": 1.7,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.051,
+    0.026,
+    -0.245
+   ],
+   "act_abs_mean": 0.0494,
+   "mn_spikes_window": 34,
+   "brain_hz_per_cell": 6.0
+  },
+  {
+   "t": 1.75,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    -0.09,
+    -0.021,
+    0.062
+   ],
+   "act_abs_mean": 0.0322,
+   "mn_spikes_window": 3,
+   "brain_hz_per_cell": 6.08
+  },
+  {
+   "t": 1.8,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "ball_qvel": [
+    0.063,
+    0.047,
+    -0.139
+   ],
+   "act_abs_mean": 0.0236,
+   "mn_spikes_window": 10,
+   "brain_hz_per_cell": 6.1
+  },
+  {
+   "t": 1.85,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    0.028,
+    0.091,
+    -0.158
+   ],
+   "act_abs_mean": 0.0192,
+   "mn_spikes_window": 6,
+   "brain_hz_per_cell": 6.08
+  },
+  {
+   "t": 1.9,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    0.048,
+    0.074,
+    -0.25
+   ],
+   "act_abs_mean": 0.0224,
+   "mn_spikes_window": 15,
+   "brain_hz_per_cell": 6.08
+  },
+  {
+   "t": 1.95,
+   "touch": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   "ball_qvel": [
+    0.182,
+    -0.17,
+    -0.086
+   ],
+   "act_abs_mean": 0.031,
+   "mn_spikes_window": 22,
+   "brain_hz_per_cell": 6.06
+  }
+ ]
+}

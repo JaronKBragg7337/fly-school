@@ -1,0 +1,699 @@
+{
+ "chosen": {
+  "patterns": [
+   ".",
+   "-",
+   ".-",
+   "-."
+  ],
+  "reps": 6,
+  "seeds": [
+   73,
+   7337,
+   101,
+   202,
+   303
+  ],
+  "protocol": "morse_grade1 constants; fresh fly-v1; no dopamine"
+ },
+ "measured": {
+  "dn_cells": 1342,
+  "dn_types": 484,
+  "trials": 120,
+  "trials_per_pattern": 30,
+  "cells_that_ever_spiked": 1281,
+  "types_saying_-.": [
+   {
+    "name": "DNge145",
+    "exact": 5,
+    "of": 30
+   },
+   {
+    "name": "DNpe006",
+    "exact": 4,
+    "of": 30
+   },
+   {
+    "name": "DNp30",
+    "exact": 4,
+    "of": 30
+   },
+   {
+    "name": "DNge114",
+    "exact": 4,
+    "of": 30
+   },
+   {
+    "name": "DNp17",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNg103",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNge131",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DN1a",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNg89",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNc01",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNbe007",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNp68",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNd01",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNb03",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNae005",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNa15",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNd02",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNg01_c",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNp102",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNp28",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNge183",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNp25",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNge031",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNge047",
+    "exact": 2,
+    "of": 30
+   },
+   {
+    "name": "DNg12_a",
+    "exact": 2,
+    "of": 30
+   }
+  ],
+  "types_saying_.-": [
+   {
+    "name": "DNa02",
+    "exact": 18,
+    "of": 30
+   },
+   {
+    "name": "DNae002",
+    "exact": 16,
+    "of": 30
+   },
+   {
+    "name": "DNa16",
+    "exact": 15,
+    "of": 30
+   },
+   {
+    "name": "DNge006",
+    "exact": 15,
+    "of": 30
+   },
+   {
+    "name": "DNg106",
+    "exact": 14,
+    "of": 30
+   },
+   {
+    "name": "DNg49",
+    "exact": 14,
+    "of": 30
+   },
+   {
+    "name": "DNge060",
+    "exact": 14,
+    "of": 30
+   },
+   {
+    "name": "DNge131",
+    "exact": 14,
+    "of": 30
+   },
+   {
+    "name": "DNge086",
+    "exact": 13,
+    "of": 30
+   },
+   {
+    "name": "DNge029",
+    "exact": 12,
+    "of": 30
+   },
+   {
+    "name": "DNg12_b",
+    "exact": 12,
+    "of": 30
+   },
+   {
+    "name": "DNg12_g",
+    "exact": 12,
+    "of": 30
+   },
+   {
+    "name": "DNp42",
+    "exact": 12,
+    "of": 30
+   },
+   {
+    "name": "DNg05_a",
+    "exact": 12,
+    "of": 30
+   },
+   {
+    "name": "DNge045",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNge103",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNg12_f",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNg19",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNg12_a",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNg12_h",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNbe007",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNa06",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNb06",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNg58",
+    "exact": 10,
+    "of": 30
+   },
+   {
+    "name": "DNge108",
+    "exact": 10,
+    "of": 30
+   }
+  ],
+  "types_saying_.": [
+   {
+    "name": "DNpe050",
+    "exact": 28,
+    "of": 30
+   },
+   {
+    "name": "DNp101",
+    "exact": 27,
+    "of": 30
+   },
+   {
+    "name": "DNge073",
+    "exact": 27,
+    "of": 30
+   },
+   {
+    "name": "DNg38",
+    "exact": 27,
+    "of": 30
+   },
+   {
+    "name": "DNg31",
+    "exact": 27,
+    "of": 30
+   },
+   {
+    "name": "DNge119",
+    "exact": 27,
+    "of": 30
+   },
+   {
+    "name": "DNge032",
+    "exact": 26,
+    "of": 30
+   },
+   {
+    "name": "DNp46",
+    "exact": 26,
+    "of": 30
+   },
+   {
+    "name": "DNge012",
+    "exact": 26,
+    "of": 30
+   },
+   {
+    "name": "DNge063",
+    "exact": 26,
+    "of": 30
+   },
+   {
+    "name": "DNge051",
+    "exact": 25,
+    "of": 30
+   },
+   {
+    "name": "DNge104",
+    "exact": 25,
+    "of": 30
+   },
+   {
+    "name": "DNp62",
+    "exact": 25,
+    "of": 30
+   },
+   {
+    "name": "DNge107",
+    "exact": 25,
+    "of": 30
+   },
+   {
+    "name": "DNpe020",
+    "exact": 25,
+    "of": 30
+   }
+  ],
+  "types_saying_-": [
+   {
+    "name": "DNae006",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNb05",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNd01",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNpe015",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNp31",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNp32",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNg20",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNge151",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNg36_a",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNg33",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNp12",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNp104",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNp47",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNge141",
+    "exact": 29,
+    "of": 30
+   },
+   {
+    "name": "DNg56",
+    "exact": 29,
+    "of": 30
+   }
+  ],
+  "cells_saying_-.": [
+   {
+    "name": "DNg02_a#23411",
+    "exact": 7,
+    "of": 30
+   },
+   {
+    "name": "DNg08#25188",
+    "exact": 6,
+    "of": 30
+   },
+   {
+    "name": "DNg07#26591",
+    "exact": 5,
+    "of": 30
+   },
+   {
+    "name": "DNpe006#11459",
+    "exact": 5,
+    "of": 30
+   },
+   {
+    "name": "DNg12_a#531434",
+    "exact": 4,
+    "of": 30
+   },
+   {
+    "name": "DNge015#27490",
+    "exact": 4,
+    "of": 30
+   },
+   {
+    "name": "DNg07#26413",
+    "exact": 4,
+    "of": 30
+   },
+   {
+    "name": "DNpe004#20131",
+    "exact": 4,
+    "of": 30
+   },
+   {
+    "name": "DNpe017#555871",
+    "exact": 4,
+    "of": 30
+   },
+   {
+    "name": "DNg08#411306",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNge145#18110",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNpe009#217516",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNp73#10354",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNg106#15796",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNpe009#512037",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNg23#517654",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNpe008#42226",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNg08#25848",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNpe008#40934",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNg110#28678",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNg36_b#32680",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNg53#35233",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNg07#38064",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNpe054#31059",
+    "exact": 3,
+    "of": 30
+   },
+   {
+    "name": "DNge071#44502",
+    "exact": 3,
+    "of": 30
+   }
+  ],
+  "cells_saying_.-": [
+   {
+    "name": "DNge029#19084",
+    "exact": 15,
+    "of": 30
+   },
+   {
+    "name": "DNp21#15024",
+    "exact": 15,
+    "of": 30
+   },
+   {
+    "name": "DNp18#10026",
+    "exact": 14,
+    "of": 30
+   },
+   {
+    "name": "DNa02#523769",
+    "exact": 13,
+    "of": 30
+   },
+   {
+    "name": "DNge176#42002",
+    "exact": 13,
+    "of": 30
+   },
+   {
+    "name": "DNg58#15454",
+    "exact": 13,
+    "of": 30
+   },
+   {
+    "name": "DNpe015#259442",
+    "exact": 13,
+    "of": 30
+   },
+   {
+    "name": "DNp72#21031",
+    "exact": 13,
+    "of": 30
+   },
+   {
+    "name": "DNde007#11739",
+    "exact": 12,
+    "of": 30
+   },
+   {
+    "name": "DNpe017#555871",
+    "exact": 12,
+    "of": 30
+   },
+   {
+    "name": "DNpe017#10527",
+    "exact": 12,
+    "of": 30
+   },
+   {
+    "name": "DNpe015#31987",
+    "exact": 12,
+    "of": 30
+   },
+   {
+    "name": "DNpe004#15457",
+    "exact": 12,
+    "of": 30
+   },
+   {
+    "name": "DNa16#519460",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNg12_f#818789",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNg94#16731",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNge060#14213",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNpe015#32288",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNp60#13092",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNpe015#30503",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNge045#556450",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNg34#13585",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNg52#525595",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNpe015#34468",
+    "exact": 11,
+    "of": 30
+   },
+   {
+    "name": "DNg52#14048",
+    "exact": 11,
+    "of": 30
+   }
+  ],
+  "n_types_any_-.": 127,
+  "n_types_any_.-": 308,
+  "n_cells_any_-.": 320,
+  "n_cells_any_.-": 676,
+  "dna01_type": {
+   ".": 19,
+   "-": 0,
+   ".-": 1,
+   "-.": 0
+  },
+  "elapsed_s": 197.0
+ }
+}

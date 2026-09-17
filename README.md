@@ -134,3 +134,23 @@ between BLAS builds; if it does, the pooled counts in row 3 are the check instea
 ---
 Code in `school/`, `exams/`, `axon/`: MIT (Jaron Bragg, 2026). `runtime/`: MIT, © fruitflydev. Connectome: CC-BY 4.0,
 © HHMI Janelia FlyEM et al. — keep the attribution; it is the whole reason any of this is real.
+
+## 8. What one night on the persistent fly found (2026-09-17, rows 8–14; every file in `results/`, scripts in `exams/`)
+
+1. **The graded neuron could not speak.** `exams/dn_readout_scan.py`: DNa01 says a dash 0/30 times untrained. 117 DN
+   types / 275 cells can say all four rhythms untrained. (`results/dn_readout_scan.json`)
+2. **On readouts that can speak, training moves nothing.** Four readouts × 5 seeds: `.-` 29→26/120, `-.` 7→3/120.
+   (`results/morse_grade1_readout_*.json`)
+3. **The mushroom body does not reach a production exam.** `exams/mb_reach_test.py`: cutting MB output entirely leaves
+   every readout's accuracy unchanged (36 trials × 3 conditions). (`results/mb_reach_test.json`)
+4. **Its own exam — valence — fails too,** because dot and dash are the same Kenyon cells (Jaccard 0.97; ~65% of KCs fire
+   for any sound). `exams/morse_valence.py`. (`results/morse_valence.json`)
+5. **Root cause: whole-brain ignition** under the stock gain (25–35 Hz/cell for any sustained input).
+6. **Fix, measured:** `exams/gain_sweep.py` on 3 seeds — every weight × 0.35 → 2–2.9 Hz/cell, KC 7–11% active (the real
+   fly range), descending neurons alive and duration-sensitive. **This is `fly-v2`** (`versions/fly-v2/MANIFEST.md`; build
+   it by scaling `graph.npz["data"]` by 0.35). (`results/gain_sweep*.json`)
+7. **The body.** `body/body_loop.py` (flybody + MuJoCo 3.13, own venv): 328 leg motor neurons → 59 actuators by muscle
+   name; 3,915 leg sensory cells ← touch / joint speed; same 0.2 ms step. On v1 the fly seizes at any touch; on v2 it
+   stands (4–6 Hz/cell, five or six legs down, ball still). (`results/body_loop_*.json`)
+
+Rebuild check for this section: `SWEEP=0.35 SWEEP_SEED=73 python exams/gain_sweep.py` → `hz_per_cell` ≈ 2.0, `kc_frac_active` ≈ 0.07.

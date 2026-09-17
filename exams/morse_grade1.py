@@ -14,7 +14,7 @@ if os.environ.get("MORSE_BRAIN") == "axon":   # fly-v1-axon fork (2026-09-17); d
     from flysim_axon import FlyBrainAxon as FlyBrain   # noqa: F811
     _AXON_GRAPH = Path(r"C:/Users/lilli/Fly-Lab/versions/fly-v1-axon/graph_axon.npz")
 else:
-    _AXON_GRAPH = None
+    _AXON_GRAPH = Path(os.environ["MORSE_GRAPH"]) if os.environ.get("MORSE_GRAPH") else None   # fly-v2: MORSE_GRAPH=.../graph_v2.npz
 from mushroom import MushroomBody
 import calibration as C
 
@@ -81,13 +81,25 @@ def decode(counts, pre_bins):
     return pattern, active.astype(int).tolist(), [[int(a), int(b)] for a, b in runs]
 
 
+def readout_cells(fb):
+    """The cells whose spikes are decoded. Default DNa01 (rows 1-7). MORSE_READOUT (2026-09-17, after the DN readout scan
+    showed DNa01 cannot produce a dash at all): a type regex (e.g. '^DNg02_a$') or 'body:23411,25188' for exact cells."""
+    spec = os.environ.get("MORSE_READOUT", "")
+    if not spec:
+        return fb.where(type_re=r"^DNa01$")
+    if spec.startswith("body:"):
+        want = np.array([int(x) for x in spec[5:].split(",")], dtype=np.int64)
+        return np.flatnonzero(np.isin(fb.bodies.astype(np.int64), want))
+    return fb.where(type_re=spec)
+
+
 def run_trial(fb, mb, pattern, seed):
     p = fb.p
     sound, pre_steps = make_timeline(pattern, p.dt)
     jo = fb.where(type_re=r"^JO-A")
-    dn = fb.where(type_re=r"^DNa01$")
+    dn = readout_cells(fb)
     if not len(jo) or not len(dn):
-        raise RuntimeError(f"missing JO-A or DNa01: jo={len(jo)} dn={len(dn)}")
+        raise RuntimeError(f"missing JO-A or readout: jo={len(jo)} dn={len(dn)}")
     gains = C.gains_for(fb, C.CHOSEN)
     gain_per_neuron = (np.ones(fb.n, dtype=np.float32) if gains is None
                        else gains[fb.type_code].astype(np.float32))
@@ -225,10 +237,10 @@ def chosen_block():
         "dot_ms": DOT_MS, "dash_ms": DASH_MS, "gap_ms": GAP_MS,
         "pre_ms": PRE_MS, "tail_ms": TAIL_MS,
         "input_population": "all type names matching ^JO-A",
-        "carrier_hz": JO_HZ, "output_population": "DNa01 (2 cells)",
+        "carrier_hz": JO_HZ, "output_population": os.environ.get("MORSE_READOUT") or "DNa01 (2 cells)",
         "output_bin_ms": BIN_MS, "readout_threshold_spikes_per_bin": DN_SPIKES_PER_BIN,
         "dot_dash_split_ms": DOT_DASH_SPLIT_MS,
-        "leg_tonic_hz": float(os.environ.get("MORSE_LEG_HZ", 0)), "brain": os.environ.get("MORSE_BRAIN", "v1"),
+        "leg_tonic_hz": float(os.environ.get("MORSE_LEG_HZ", 0)), "brain": os.environ.get("MORSE_BRAIN", "v1"), "graph": os.environ.get("MORSE_GRAPH", "runtime/build/graph.npz"),
         "reward_mapping": "exact primitive decode => +1; anything else => -1",
         "dopamine_amount": 1.0, "training_symbols": list(TRAIN),
         "heldout_symbols": list(HELDOUT), "training_epochs": TRAIN_EPOCHS,
@@ -256,7 +268,7 @@ def main(smoke=False):
             "mode": "STARTUP ONLY — not a learning verdict",
             "chosen": chosen_block(),
             "measured": {"brain_n": fb.n, "jo_a_cells": len(fb.where(type_re=r"^JO-A")),
-                         "dna01_cells": len(fb.where(type_re=r"^DNa01$")), "trials": rows},
+                         "dna01_cells": len(readout_cells(fb)), "trials": rows},
         }
         path = RESULTS / "morse_grade1_smoke.json"
     else:

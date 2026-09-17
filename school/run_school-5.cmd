@@ -1,0 +1,9 @@
+@echo off
+set SCHOOL_FLY=school-5
+set SCHOOL_VERSION=fly-v2
+set SCHOOL_GRAPH=C:\Users\lilli\Fly-Lab\versions\fly-v2\graph_v2.npz
+set SCHOOL_READOUT=^DNp17$
+set SCHOOL_HOURS=9-12,13-16
+set SCHOOL_NIGHT=22-7
+set SCHOOL_CAPACITY=5
+"C:\Users\lilli\AI-Shared\projects\fly-brain\.venv\Scripts\python.exe" "C:\Users\lilli\Fly-Lab-2\school\school.py"

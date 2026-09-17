@@ -1,0 +1,1488 @@
+{
+ "experiment": "Grade 1 (valence): A=. rewarded, B=- punished; cold valence readout; generalization to .- and -.",
+ "chosen": {
+  "teach_epochs": 12,
+  "reps": 6,
+  "seeds": [
+   73,
+   7337,
+   101,
+   202,
+   303
+  ],
+  "A": ".",
+  "B": "-",
+  "readout": "MBON approach (PPL1-side) Hz minus avoid (PAM-side) Hz over the trial",
+  "pass_line": "sep_post > sep_pre and sep_post > 0 in a majority of seeds"
+ },
+ "measured": {
+  "seeds_learned": 2,
+  "of": 5,
+  "mean_sep_pre": -14.208,
+  "mean_sep_post": -8.633,
+  "pass": false,
+  "elapsed_s": 502.9
+ },
+ "seeds": [
+  {
+   "seed": 73,
+   "pre": {
+    ".": {
+     "mean": 29.904362659698027,
+     "sd": 17.97829206505306,
+     "values": [
+      41.605,
+      9.239,
+      3.125,
+      33.428,
+      53.974,
+      38.055
+     ]
+    },
+    "-": {
+     "mean": 46.368684668989545,
+     "sd": 18.71816305521833,
+     "values": [
+      36.905,
+      20.935,
+      60.213,
+      64.877,
+      67.991,
+      27.29
+     ]
+    },
+    ".-": {
+     "mean": 29.21022067363531,
+     "sd": 10.593263212805718,
+     "values": [
+      23.996,
+      29.326,
+      23.393,
+      26.399,
+      52.045,
+      20.103
+     ]
+    },
+    "-.": {
+     "mean": 37.41329526390502,
+     "sd": 8.994931830801262,
+     "values": [
+      44.036,
+      48.96,
+      26.912,
+      25.941,
+      33.878,
+      44.754
+     ]
+    }
+   },
+   "post": {
+    ".": {
+     "mean": 24.465556039488963,
+     "sd": 23.005118327517312,
+     "values": [
+      8.509,
+      4.992,
+      5.281,
+      22.762,
+      35.524,
+      69.725
+     ]
+    },
+    "-": {
+     "mean": 60.010162601626014,
+     "sd": 6.785616092802627,
+     "values": [
+      55.35,
+      62.634,
+      67.843,
+      50.138,
+      55.702,
+      68.394
+     ]
+    },
+    ".-": {
+     "mean": 58.099835462640335,
+     "sd": 17.444865167981394,
+     "values": [
+      37.577,
+      45.724,
+      81.214,
+      64.407,
+      78.163,
+      41.514
+     ]
+    },
+    "-.": {
+     "mean": 45.44134727061556,
+     "sd": 9.713453448461092,
+     "values": [
+      30.207,
+      46.574,
+      45.088,
+      40.232,
+      62.761,
+      47.786
+     ]
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20995,
+     "valence_during": -4.829
+    },
+    {
+     "epoch": 0,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17645,
+     "valence_during": 53.245
+    },
+    {
+     "epoch": 1,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21158,
+     "valence_during": 37.315
+    },
+    {
+     "epoch": 1,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17289,
+     "valence_during": -7.408
+    },
+    {
+     "epoch": 2,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21146,
+     "valence_during": 54.927
+    },
+    {
+     "epoch": 2,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17430,
+     "valence_during": 70.507
+    },
+    {
+     "epoch": 3,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20855,
+     "valence_during": 28.882
+    },
+    {
+     "epoch": 3,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17507,
+     "valence_during": 39.787
+    },
+    {
+     "epoch": 4,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20640,
+     "valence_during": 11.683
+    },
+    {
+     "epoch": 4,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17487,
+     "valence_during": 63.237
+    },
+    {
+     "epoch": 5,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20996,
+     "valence_during": 34.119
+    },
+    {
+     "epoch": 5,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17749,
+     "valence_during": 69.316
+    },
+    {
+     "epoch": 6,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20640,
+     "valence_during": 48.389
+    },
+    {
+     "epoch": 6,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 16984,
+     "valence_during": 37.87
+    },
+    {
+     "epoch": 7,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20855,
+     "valence_during": 38.779
+    },
+    {
+     "epoch": 7,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 16330,
+     "valence_during": 48.479
+    },
+    {
+     "epoch": 8,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20640,
+     "valence_during": 54.17
+    },
+    {
+     "epoch": 8,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 9066,
+     "valence_during": 51.709
+    },
+    {
+     "epoch": 9,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 11516,
+     "valence_during": 48.541
+    },
+    {
+     "epoch": 9,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 18115,
+     "valence_during": 49.521
+    },
+    {
+     "epoch": 10,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 11806,
+     "valence_during": 56.261
+    },
+    {
+     "epoch": 10,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17647,
+     "valence_during": 59.208
+    },
+    {
+     "epoch": 11,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20751,
+     "valence_during": -9.674
+    },
+    {
+     "epoch": 11,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17020,
+     "valence_during": 34.117
+    }
+   ],
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 41230,
+    "mean_gain": 0.5595,
+    "min_gain": 0.4759,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "separation_pre": -16.464,
+   "separation_post": -35.545,
+   "learned": false,
+   "generalization_post": {
+    ".-": 58.1,
+    "-.": 45.441
+   }
+  },
+  {
+   "seed": 7337,
+   "pre": {
+    ".": {
+     "mean": 25.918263646922185,
+     "sd": 17.864510071956683,
+     "values": [
+      45.16,
+      41.355,
+      16.311,
+      6.833,
+      2.532,
+      43.32
+     ]
+    },
+    "-": {
+     "mean": 40.68791134339915,
+     "sd": 17.98737616646049,
+     "values": [
+      40.698,
+      19.421,
+      23.65,
+      58.185,
+      32.698,
+      69.476
+     ]
+    },
+    ".-": {
+     "mean": 62.45765582655826,
+     "sd": 22.510148112142822,
+     "values": [
+      40.537,
+      36.055,
+      83.106,
+      94.95,
+      46.467,
+      73.63
+     ]
+    },
+    "-.": {
+     "mean": 40.183814040521355,
+     "sd": 17.727910164427545,
+     "values": [
+      36.043,
+      48.389,
+      41.749,
+      31.833,
+      70.916,
+      12.173
+     ]
+    }
+   },
+   "post": {
+    ".": {
+     "mean": 29.808180894308947,
+     "sd": 14.601659947563732,
+     "values": [
+      54.834,
+      18.342,
+      29.998,
+      13.148,
+      20.318,
+      42.209
+     ]
+    },
+    "-": {
+     "mean": 37.07776809910956,
+     "sd": 20.41489895679999,
+     "values": [
+      1.31,
+      17.244,
+      50.65,
+      49.731,
+      46.661,
+      56.871
+     ]
+    },
+    ".-": {
+     "mean": 48.943412053168146,
+     "sd": 12.596706248390888,
+     "values": [
+      46.034,
+      37.674,
+      31.069,
+      65.326,
+      64.056,
+      49.502
+     ]
+    },
+    "-.": {
+     "mean": 62.37659698025552,
+     "sd": 26.09811789660694,
+     "values": [
+      53.254,
+      57.818,
+      27.187,
+      65.929,
+      55.839,
+      114.232
+     ]
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21266,
+     "valence_during": 7.197
+    },
+    {
+     "epoch": 0,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17652,
+     "valence_during": 48.374
+    },
+    {
+     "epoch": 1,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20524,
+     "valence_during": 11.76
+    },
+    {
+     "epoch": 1,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17671,
+     "valence_during": 90.353
+    },
+    {
+     "epoch": 2,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 11293,
+     "valence_during": 34.843
+    },
+    {
+     "epoch": 2,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17487,
+     "valence_during": 55.437
+    },
+    {
+     "epoch": 3,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20789,
+     "valence_during": 41.708
+    },
+    {
+     "epoch": 3,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17793,
+     "valence_during": 87.591
+    },
+    {
+     "epoch": 4,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 11292,
+     "valence_during": 34.533
+    },
+    {
+     "epoch": 4,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17372,
+     "valence_during": 76.695
+    },
+    {
+     "epoch": 5,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21100,
+     "valence_during": 32.644
+    },
+    {
+     "epoch": 5,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17372,
+     "valence_during": 54.221
+    },
+    {
+     "epoch": 6,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20712,
+     "valence_during": 29.834
+    },
+    {
+     "epoch": 6,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17392,
+     "valence_during": 42.48
+    },
+    {
+     "epoch": 7,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21001,
+     "valence_during": 12.957
+    },
+    {
+     "epoch": 7,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17645,
+     "valence_during": 38.556
+    },
+    {
+     "epoch": 8,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20893,
+     "valence_during": 41.278
+    },
+    {
+     "epoch": 8,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17888,
+     "valence_during": 60.493
+    },
+    {
+     "epoch": 9,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 22289,
+     "valence_during": 9.348
+    },
+    {
+     "epoch": 9,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17652,
+     "valence_during": 52.827
+    },
+    {
+     "epoch": 10,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20933,
+     "valence_during": 18.489
+    },
+    {
+     "epoch": 10,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17442,
+     "valence_during": 80.753
+    },
+    {
+     "epoch": 11,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20855,
+     "valence_during": 7.105
+    },
+    {
+     "epoch": 11,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17863,
+     "valence_during": 32.949
+    }
+   ],
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 41347,
+    "mean_gain": 0.5507,
+    "min_gain": 0.4759,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "separation_pre": -14.77,
+   "separation_post": -7.27,
+   "learned": false,
+   "generalization_post": {
+    ".-": 48.943,
+    "-.": 62.377
+   }
+  },
+  {
+   "seed": 101,
+   "pre": {
+    ".": {
+     "mean": 26.527112369337974,
+     "sd": 12.170460463776278,
+     "values": [
+      16.169,
+      29.998,
+      43.538,
+      34.707,
+      28.457,
+      6.294
+     ]
+    },
+    "-": {
+     "mean": 47.124830623306245,
+     "sd": 13.323788767472003,
+     "values": [
+      34.346,
+      53.285,
+      70.866,
+      53.012,
+      36.277,
+      34.963
+     ]
+    },
+    ".-": {
+     "mean": 54.979674796747965,
+     "sd": 9.745755183762466,
+     "values": [
+      68.368,
+      47.237,
+      40.762,
+      53.296,
+      66.154,
+      54.063
+     ]
+    },
+    "-.": {
+     "mean": 52.124870951090465,
+     "sd": 17.0909057122068,
+     "values": [
+      58.967,
+      48.328,
+      20.156,
+      46.274,
+      65.609,
+      73.415
+     ]
+    }
+   },
+   "post": {
+    ".": {
+     "mean": 51.51622386759582,
+     "sd": 24.476090267118426,
+     "values": [
+      34.315,
+      6.794,
+      81.245,
+      58.814,
+      58.885,
+      69.044
+     ]
+    },
+    "-": {
+     "mean": 48.25179055361983,
+     "sd": 16.601601038068367,
+     "values": [
+      72.815,
+      46.89,
+      50.468,
+      31.577,
+      24.811,
+      62.95
+     ]
+    },
+    ".-": {
+     "mean": 46.39106658923732,
+     "sd": 21.075534028850345,
+     "values": [
+      21.961,
+      46.656,
+      65.738,
+      63.543,
+      14.499,
+      65.95
+     ]
+    },
+    "-.": {
+     "mean": 62.743579816750554,
+     "sd": 13.439050437167696,
+     "values": [
+      90.094,
+      49.233,
+      65.774,
+      54.864,
+      62.798,
+      53.7
+     ]
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20619,
+     "valence_during": -0.071
+    },
+    {
+     "epoch": 0,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17645,
+     "valence_during": 50.207
+    },
+    {
+     "epoch": 1,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20506,
+     "valence_during": 41.932
+    },
+    {
+     "epoch": 1,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17487,
+     "valence_during": 44.098
+    },
+    {
+     "epoch": 2,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21244,
+     "valence_during": 48.41
+    },
+    {
+     "epoch": 2,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17389,
+     "valence_during": 19.411
+    },
+    {
+     "epoch": 3,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20851,
+     "valence_during": 24.009
+    },
+    {
+     "epoch": 3,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17727,
+     "valence_during": 33.976
+    },
+    {
+     "epoch": 4,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20718,
+     "valence_during": 68.265
+    },
+    {
+     "epoch": 4,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17423,
+     "valence_during": 90.767
+    },
+    {
+     "epoch": 5,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21140,
+     "valence_during": 11.58
+    },
+    {
+     "epoch": 5,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17487,
+     "valence_during": 67.585
+    },
+    {
+     "epoch": 6,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 19362,
+     "valence_during": 55.27
+    },
+    {
+     "epoch": 6,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17203,
+     "valence_during": 49.557
+    },
+    {
+     "epoch": 7,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 11292,
+     "valence_during": 50.958
+    },
+    {
+     "epoch": 7,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17450,
+     "valence_during": 56.206
+    },
+    {
+     "epoch": 8,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 22392,
+     "valence_during": 28.626
+    },
+    {
+     "epoch": 8,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 16330,
+     "valence_during": 48.022
+    },
+    {
+     "epoch": 9,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21269,
+     "valence_during": 8.645
+    },
+    {
+     "epoch": 9,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17646,
+     "valence_during": 26.757
+    },
+    {
+     "epoch": 10,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 11812,
+     "valence_during": 72.267
+    },
+    {
+     "epoch": 10,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17749,
+     "valence_during": 34.103
+    },
+    {
+     "epoch": 11,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21537,
+     "valence_during": 69.556
+    },
+    {
+     "epoch": 11,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 18344,
+     "valence_during": 9.941
+    }
+   ],
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 41875,
+    "mean_gain": 0.5509,
+    "min_gain": 0.4759,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "separation_pre": -20.598,
+   "separation_post": 3.264,
+   "learned": true,
+   "generalization_post": {
+    ".-": 46.391,
+    "-.": 62.744
+   }
+  },
+  {
+   "seed": 202,
+   "pre": {
+    ".": {
+     "mean": 37.96820557491289,
+     "sd": 14.91283404273301,
+     "values": [
+      44.583,
+      15.2,
+      20.329,
+      52.842,
+      41.91,
+      52.945
+     ]
+    },
+    "-": {
+     "mean": 37.951267905536206,
+     "sd": 19.935006158808765,
+     "values": [
+      23.232,
+      30.121,
+      34.139,
+      69.744,
+      58.326,
+      12.144
+     ]
+    },
+    ".-": {
+     "mean": 40.86777326106595,
+     "sd": 21.81858096544812,
+     "values": [
+      7.883,
+      68.535,
+      56.458,
+      24.712,
+      28.293,
+      59.325
+     ]
+    },
+    "-.": {
+     "mean": 57.313846947993284,
+     "sd": 12.29611975744905,
+     "values": [
+      34.971,
+      51.887,
+      75.559,
+      63.313,
+      60.39,
+      57.762
+     ]
+    }
+   },
+   "post": {
+    ".": {
+     "mean": 44.54758275261324,
+     "sd": 20.44932876492804,
+     "values": [
+      68.603,
+      23.639,
+      65.799,
+      46.347,
+      12.805,
+      50.093
+     ]
+    },
+    "-": {
+     "mean": 42.46334204413473,
+     "sd": 26.40026410420711,
+     "values": [
+      12.95,
+      72.528,
+      31.09,
+      7.451,
+      66.209,
+      64.551
+     ]
+    },
+    ".-": {
+     "mean": 45.63693702413215,
+     "sd": 21.34561829987473,
+     "values": [
+      70.1,
+      76.931,
+      32.946,
+      46.441,
+      19.699,
+      27.705
+     ]
+    },
+    "-.": {
+     "mean": 48.837349980642664,
+     "sd": 6.8009435934024856,
+     "values": [
+      39.15,
+      58.123,
+      46.876,
+      56.937,
+      48.372,
+      43.566
+     ]
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20845,
+     "valence_during": 31.947
+    },
+    {
+     "epoch": 0,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17548,
+     "valence_during": 22.481
+    },
+    {
+     "epoch": 1,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21058,
+     "valence_during": 52.706
+    },
+    {
+     "epoch": 1,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17364,
+     "valence_during": 24.514
+    },
+    {
+     "epoch": 2,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21158,
+     "valence_during": 19.61
+    },
+    {
+     "epoch": 2,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 16722,
+     "valence_during": 37.809
+    },
+    {
+     "epoch": 3,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 19362,
+     "valence_during": 15.832
+    },
+    {
+     "epoch": 3,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17888,
+     "valence_during": 46.937
+    },
+    {
+     "epoch": 4,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20419,
+     "valence_during": 29.851
+    },
+    {
+     "epoch": 4,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 9443,
+     "valence_during": 58.108
+    },
+    {
+     "epoch": 5,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20683,
+     "valence_during": 51.677
+    },
+    {
+     "epoch": 5,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17654,
+     "valence_during": 72.557
+    },
+    {
+     "epoch": 6,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20666,
+     "valence_during": 51.617
+    },
+    {
+     "epoch": 6,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 16330,
+     "valence_during": 19.617
+    },
+    {
+     "epoch": 7,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 19880,
+     "valence_during": 21.684
+    },
+    {
+     "epoch": 7,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 18786,
+     "valence_during": 45.006
+    },
+    {
+     "epoch": 8,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20806,
+     "valence_during": 55.695
+    },
+    {
+     "epoch": 8,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 16330,
+     "valence_during": 70.478
+    },
+    {
+     "epoch": 9,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20996,
+     "valence_during": 17.699
+    },
+    {
+     "epoch": 9,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17859,
+     "valence_during": 70.634
+    },
+    {
+     "epoch": 10,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20712,
+     "valence_during": 52.009
+    },
+    {
+     "epoch": 10,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17200,
+     "valence_during": 42.102
+    },
+    {
+     "epoch": 11,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21048,
+     "valence_during": 21.679
+    },
+    {
+     "epoch": 11,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17533,
+     "valence_during": 36.182
+    }
+   ],
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 41520,
+    "mean_gain": 0.5481,
+    "min_gain": 0.4759,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "separation_pre": 0.017,
+   "separation_post": 2.084,
+   "learned": true,
+   "generalization_post": {
+    ".-": 45.637,
+    "-.": 48.837
+   }
+  },
+  {
+   "seed": 303,
+   "pre": {
+    ".": {
+     "mean": 22.938443670150992,
+     "sd": 11.288442779248756,
+     "values": [
+      37.015,
+      11.476,
+      18.129,
+      32.905,
+      7.17,
+      30.934
+     ]
+    },
+    "-": {
+     "mean": 42.16148857917151,
+     "sd": 18.69356655813678,
+     "values": [
+      38.342,
+      42.113,
+      63.052,
+      30.473,
+      12.155,
+      66.834
+     ]
+    },
+    ".-": {
+     "mean": 35.57999419279908,
+     "sd": 20.859848944778612,
+     "values": [
+      39.187,
+      37.139,
+      27.323,
+      56.206,
+      -4.397,
+      58.021
+     ]
+    },
+    "-.": {
+     "mean": 55.12445154213447,
+     "sd": 14.115454239057721,
+     "values": [
+      51.278,
+      28.586,
+      51.425,
+      63.586,
+      73.541,
+      62.331
+     ]
+    }
+   },
+   "post": {
+    ".": {
+     "mean": 35.626270325203244,
+     "sd": 24.90953856040919,
+     "values": [
+      38.877,
+      13.181,
+      54.731,
+      -7.415,
+      51.677,
+      62.707
+     ]
+    },
+    "-": {
+     "mean": 41.323678861788615,
+     "sd": 17.35029403208713,
+     "values": [
+      64.006,
+      60.21,
+      49.27,
+      20.253,
+      23.686,
+      30.517
+     ]
+    },
+    ".-": {
+     "mean": 55.616450509743196,
+     "sd": 12.121895083304484,
+     "values": [
+      61.948,
+      56.693,
+      78.121,
+      50.169,
+      44.957,
+      41.809
+     ]
+    },
+    "-.": {
+     "mean": 42.29981287908117,
+     "sd": 5.7649896144101955,
+     "values": [
+      32.995,
+      47.796,
+      40.009,
+      47.101,
+      48.12,
+      37.778
+     ]
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20851,
+     "valence_during": 44.349
+    },
+    {
+     "epoch": 0,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17463,
+     "valence_during": 54.533
+    },
+    {
+     "epoch": 1,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20712,
+     "valence_during": 62.707
+    },
+    {
+     "epoch": 1,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 18238,
+     "valence_during": 18.191
+    },
+    {
+     "epoch": 2,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 11812,
+     "valence_during": 59.174
+    },
+    {
+     "epoch": 2,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17171,
+     "valence_during": 55.056
+    },
+    {
+     "epoch": 3,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20712,
+     "valence_during": 59.07
+    },
+    {
+     "epoch": 3,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17744,
+     "valence_during": 86.074
+    },
+    {
+     "epoch": 4,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20855,
+     "valence_during": 22.648
+    },
+    {
+     "epoch": 4,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17888,
+     "valence_during": 28.68
+    },
+    {
+     "epoch": 5,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 11841,
+     "valence_during": 52.107
+    },
+    {
+     "epoch": 5,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17289,
+     "valence_during": 35.932
+    },
+    {
+     "epoch": 6,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21224,
+     "valence_during": 9.653
+    },
+    {
+     "epoch": 6,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17487,
+     "valence_during": 48.2
+    },
+    {
+     "epoch": 7,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20506,
+     "valence_during": 39.22
+    },
+    {
+     "epoch": 7,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 18238,
+     "valence_during": 72.34
+    },
+    {
+     "epoch": 8,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 21537,
+     "valence_during": 37.342
+    },
+    {
+     "epoch": 8,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 16330,
+     "valence_during": 67.668
+    },
+    {
+     "epoch": 9,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20388,
+     "valence_during": 9.849
+    },
+    {
+     "epoch": 9,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17753,
+     "valence_during": 41.703
+    },
+    {
+     "epoch": 10,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20712,
+     "valence_during": 29.241
+    },
+    {
+     "epoch": 10,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 17567,
+     "valence_during": 50.468
+    },
+    {
+     "epoch": 11,
+     "sound": ".",
+     "dopamine": 1,
+     "synapses_hit": 20771,
+     "valence_during": 49.249
+    },
+    {
+     "epoch": 11,
+     "sound": "-",
+     "dopamine": -1,
+     "synapses_hit": 18786,
+     "valence_during": 2.809
+    }
+   ],
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 41868,
+    "mean_gain": 0.5499,
+    "min_gain": 0.4759,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "separation_pre": -19.223,
+   "separation_post": -5.697,
+   "learned": false,
+   "generalization_post": {
+    ".-": 55.616,
+    "-.": 42.3
+   }
+  }
+ ]
+}

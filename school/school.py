@@ -97,7 +97,7 @@ if BRAIN == "axon":
     from flysim_axon import FlyBrainAxon as FlyBrain   # noqa: F811
     GRAPH = Path(r"C:/Users/lilli/Fly-Lab/versions/fly-v1-axon/graph_axon.npz")
 else:
-    GRAPH = RUNTIME / "build" / "graph.npz"
+    GRAPH = Path(os.environ["SCHOOL_GRAPH"]) if os.environ.get("SCHOOL_GRAPH") else RUNTIME / "build" / "graph.npz"   # fly-v2: SCHOOL_GRAPH
 
 
 def now():
@@ -232,10 +232,20 @@ class School:
             src = HERE / f"mb_{INHERIT}.npz"
             if src.exists():
                 shutil.copy(src, STORE); self.inherited = INHERIT
-        self.mb = MushroomBody(self.fb, calibration=C.CHOSEN, sides=RUNTIME / "build" / "mb_sides.json",
+        # CHOSEN per pupil (Jaron 9/17: a gentler rule is a NEW pupil beside the control, never a tweak to a running one)
+        LR = float(os.environ.get("SCHOOL_LR", 0.06)); FLOOR = float(os.environ.get("SCHOOL_FLOOR", 0.25))
+        self.mb = MushroomBody(self.fb, lr=LR, floor=FLOOR, calibration=C.CHOSEN, sides=RUNTIME / "build" / "mb_sides.json",
                                store=STORE, clock=time.time)          # wall clock: forgetting is real
+        self.rule = {"lr": LR, "floor": FLOOR, "punish_on_miss": os.environ.get("SCHOOL_PUNISH", "always")}
         self.jo = self.fb.where(type_re=r"^JO-A")
-        self.dn = self.fb.where(type_re=r"^DNa01$")
+        # readout (2026-09-17 00:20: the DN scan showed DNa01 cannot say a dash; SCHOOL_READOUT = type regex or body:<ids>)
+        spec = os.environ.get("SCHOOL_READOUT", "")
+        if spec.startswith("body:"):
+            want = np.array([int(x) for x in spec[5:].split(",")], dtype=np.int64)
+            self.dn = np.flatnonzero(np.isin(self.fb.bodies.astype(np.int64), want))
+        else:
+            self.dn = self.fb.where(type_re=spec or r"^DNa01$")
+        self.readout = spec or "DNa01"
         gains = C.gains_for(self.fb, C.CHOSEN)
         self.gain_per_neuron = (np.ones(self.fb.n, dtype=np.float32) if gains is None
                                 else gains[self.fb.type_code].astype(np.float32))
@@ -255,6 +265,7 @@ class School:
                 pass
         self.card = json.load(open(CARD, encoding="utf-8")) if CARD.exists() else {"fly": FLY, "version": VERSION, "exams": []}
         self.started = time.time()
+        self.last_answer = {}
         if self.inherited:
             self.state["inherited_from"] = self.inherited
             self.state["born"] = now().isoformat()
@@ -357,7 +368,7 @@ class School:
                  "hungry_h": round((time.time() - datetime.fromisoformat(self.state["fed_at"]).timestamp()) / 3600, 2) if self.state.get("fed_at") else None,
                  "lifeline_at": self.state.get("lifeline_at"), "school_day": self.state.get("school_day"),
                  "year": self.state.get("year", 1), "year_started": self.state.get("year_started"),
-                 "inherited_from": self.state.get("inherited_from"), "capacity": int(os.environ.get("SCHOOL_CAPACITY", 3))}
+                 "inherited_from": self.state.get("inherited_from"), "rule": self.rule, "readout": self.readout, "capacity": int(os.environ.get("SCHOOL_CAPACITY", 3))}
         self.state["last_alive"] = at
         fired = [self.atlas[int(n)] for n in r["fired"] if int(n) in self.atlas]
         if len(fired) > 3000:
@@ -423,7 +434,14 @@ class School:
                 r = self.trial(symbol, seed_for(lesson, "teach", symbol, epoch))
                 self.mb.forget_trace(); self.mb.observe(r["kc"])
                 valence = +1 if r["correct"] else -1
-                hit = int(self.mb.dopamine(valence, 1.0))
+                mode = self.rule["punish_on_miss"]
+                if mode == "never" and not r["correct"]:
+                    valence = 0
+                elif mode == "change":            # prediction-error flavour: dopamine only when the answer changed
+                    prev = self.last_answer.get(symbol)
+                    valence = 0 if prev == r["correct"] else valence
+                self.last_answer[symbol] = r["correct"]
+                hit = int(self.mb.dopamine(valence, 1.0)) if valence else 0
                 self.mb.apply(); self.mb.save()
                 ok += r["correct"]
                 self.publish("teach", lesson, epoch, r, dopamine=valence, hit=hit)
