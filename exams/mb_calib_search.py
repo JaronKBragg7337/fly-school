@@ -21,6 +21,8 @@ import calibration as C
 ap = argparse.ArgumentParser(); ap.add_argument("--worker", type=int, default=0); ap.add_argument("--of", type=int, default=1)
 ap.add_argument("--per-round", type=int, default=48); ap.add_argument("--round", type=int, default=0); ap.add_argument("--stage2", action="store_true")
 ap.add_argument("--epochs", type=int, default=12); ap.add_argument("--lr", type=float, default=0.06); ap.add_argument("--only", type=str, default="")
+ap.add_argument("--around", type=str, default="")        # json of params; round-1 local search: each param x exp(N(0, 0.35)), thresh +- 1.5 mV
+ap.add_argument("--s2seeds", type=int, default=1); ap.add_argument("--s2reps", type=int, default=4); ap.add_argument("--topk", type=int, default=6)
 args = ap.parse_args()
 OUT = LAB / "results" / "mb_calib"; OUT.mkdir(parents=True, exist_ok=True)
 GRAPH = Path(r"C:/Users/lilli/Fly-Lab/versions/fly-v3/graph_v3_s0.35.npz")
@@ -40,6 +42,11 @@ cells = {g: fb.where(type_re=rf"^{g}$") for g in PANEL}
 def candidate(i):
     rng = np.random.default_rng(1000 * args.round + i)
     c = {}
+    if args.around:
+        base = json.loads(args.around)
+        for k in SPACE:
+            c[k] = float(np.clip(base[k] + rng.normal(0, 1.5), *SPACE[k])) if k == "kc_thresh_shift_mv" else float(np.clip(base[k] * np.exp(rng.normal(0, 0.35)), *SPACE[k]))
+        return c
     for k, (lo, hi) in SPACE.items():
         c[k] = float(lo + (hi - lo) * rng.random()) if k == "kc_thresh_shift_mv" else float(np.exp(np.log(lo) + (np.log(hi) - np.log(lo)) * rng.random()))
     return c
@@ -92,20 +99,27 @@ def stage1(c):
 
 
 def stage2(c, A="ORN_DA2", Ctrl="ORN_VM5d"):
-    """learned, odour-specific MBON drop: 12 pairings A+reward; PAM-side MBON output on A vs control before/after."""
-    gpn, thresh = make(c)
-    mb = MushroomBody(fb, lr=args.lr, calibration=C.CHOSEN, sides=RUNTIME / "build" / "mb_sides.json", store=OUT / f"s2_{args.worker}.npz", clock=lambda: 0.0)
-    pam = np.asarray(mb.reward_side)
-    def out_rate(g, seed):
-        r = trial(gpn, thresh, cells[g], seed, mb); return r["per"][pam].sum() / max(1, len(pam)) / ((PRE_MS + PULSE_MS + TAIL_MS) / 1000.0), r
-    preA = [out_rate(A, 200 + k)[0] for k in range(4)]; preC = [out_rate(Ctrl, 300 + k)[0] for k in range(4)]
-    for e in range(args.epochs):
-        _, r = out_rate(A, 400 + e); mb.forget_trace(); mb.observe(kc[r["kc"]]); mb.dopamine(+1, 1.0); mb.apply()
-    postA = [out_rate(A, 500 + k)[0] for k in range(4)]; postC = [out_rate(Ctrl, 600 + k)[0] for k in range(4)]
-    (OUT / f"s2_{args.worker}.npz").unlink(missing_ok=True)
-    dA = 1 - np.mean(postA) / max(1e-6, np.mean(preA)); dC = 1 - np.mean(postC) / max(1e-6, np.mean(preC))
-    return {"pam_A_pre": round(float(np.mean(preA)), 2), "pam_A_post": round(float(np.mean(postA)), 2), "pam_C_pre": round(float(np.mean(preC)), 2), "pam_C_post": round(float(np.mean(postC)), 2),
-            "drop_A": round(float(dA), 3), "drop_C": round(float(dC), 3), "stage2_pass": bool(dA >= 0.30 and dC <= 0.10), "depressed": mb.stats()["depressed"]}
+    """learned, odour-specific MBON drop over S2SEEDS fresh flies: A+reward EPOCHS times; PAM-side MBON output on A vs control,
+    S2REPS cold reps before/after. Reports per-seed drops, block z (mean shift / (sd_pre/sqrt(reps))) and the pass rule:
+    mean drop_A >= 0.30, mean drop_C <= 0.10, and zA_block < -2 in a majority of seeds."""
+    gpn, thresh = make(c); per_seed = []
+    for sd in range(args.s2seeds):
+        mb = MushroomBody(fb, lr=args.lr, calibration=C.CHOSEN, sides=RUNTIME / "build" / "mb_sides.json", store=OUT / f"s2_{args.worker}.npz", clock=lambda: 0.0)
+        pam = np.asarray(mb.reward_side); base = 10000 * sd
+        def out_rate(g, seed):
+            r = trial(gpn, thresh, cells[g], seed, mb); return r["per"][pam].sum() / max(1, len(pam)) / ((PRE_MS + PULSE_MS + TAIL_MS) / 1000.0), r
+        preA = [out_rate(A, base + 200 + k)[0] for k in range(args.s2reps)]; preC = [out_rate(Ctrl, base + 300 + k)[0] for k in range(args.s2reps)]
+        for e in range(args.epochs):
+            _, r = out_rate(A, base + 400 + e); mb.forget_trace(); mb.observe(kc[r["kc"]]); mb.dopamine(+1, 1.0); mb.apply()
+        postA = [out_rate(A, base + 500 + k)[0] for k in range(args.s2reps)]; postC = [out_rate(Ctrl, base + 600 + k)[0] for k in range(args.s2reps)]
+        (OUT / f"s2_{args.worker}.npz").unlink(missing_ok=True)
+        dA = 1 - np.mean(postA) / max(1e-6, np.mean(preA)); dC = 1 - np.mean(postC) / max(1e-6, np.mean(preC))
+        zA = (np.mean(postA) - np.mean(preA)) / max(1e-6, np.std(preA) / np.sqrt(len(preA))); zC = (np.mean(postC) - np.mean(preC)) / max(1e-6, np.std(preC) / np.sqrt(len(preC)))
+        per_seed.append({"seed": sd, "pam_A": [round(float(np.mean(preA)), 2), round(float(np.mean(postA)), 2)], "pam_C": [round(float(np.mean(preC)), 2), round(float(np.mean(postC)), 2)],
+                         "drop_A": round(float(dA), 3), "drop_C": round(float(dC), 3), "zA": round(float(zA), 2), "zC": round(float(zC), 2), "depressed": mb.stats()["depressed"]})
+    mA = float(np.mean([x["drop_A"] for x in per_seed])); mC = float(np.mean([x["drop_C"] for x in per_seed])); nz = sum(x["zA"] < -2 for x in per_seed)
+    return {"seeds": per_seed, "drop_A": round(mA, 3), "drop_C": round(mC, 3), "zA_lt_-2_seeds": nz, "of": args.s2seeds,
+            "stage2_pass": bool(mA >= 0.30 and mC <= 0.10 and nz > args.s2seeds / 2), "score2": round(max(0, 0.30 - mA) + max(0, mC - 0.10) + (args.s2seeds - nz) * 0.05, 4)}
 
 
 t0 = time.perf_counter()
@@ -121,7 +135,7 @@ else:
     else:
         rows = [r for r in rows if "stage2" not in r]
     rows.sort(key=lambda r: r["stage1"]["score"])
-    for r in rows[args.worker::args.of][:6]:
+    for r in rows[args.worker::args.of][:args.topk]:
         m2 = stage2(r["params"]); key = "stage2" if (args.epochs == 12 and args.lr == 0.06) else f"stage2_e{args.epochs}_lr{args.lr}"; r[key] = m2
         json.dump(r, open(OUT / f"r{r['round']}_c{r['cand']:03d}.json", "w"), indent=1)
         print(f"stage2 r{r['round']} c{r['cand']:03d} score {r['stage1']['score']} -> {json.dumps(m2)}  {time.perf_counter()-t0:.0f}s", flush=True)

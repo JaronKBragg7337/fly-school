@@ -1,0 +1,20 @@
+{
+ "round": 1,
+ "cand": 47,
+ "params": {
+  "pn": 1.1625231261233977,
+  "apl": 6.6367581742684285,
+  "kc": 2.4603421692502243,
+  "kc_thresh_shift_mv": 1.1807880901119083,
+  "mbon": 1.0615519756811256
+ },
+ "stage1": {
+  "reliability": 0.381,
+  "median_overlap": 0.371,
+  "kc_frac": 0.0508,
+  "brain_hz": 4.48,
+  "score": 1.762,
+  "stage1_pass": false
+ },
+ "t": 193
+}

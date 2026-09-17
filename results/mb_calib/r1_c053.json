@@ -1,0 +1,78 @@
+{
+ "round": 1,
+ "cand": 53,
+ "params": {
+  "pn": 1.3985910636692755,
+  "apl": 8.0,
+  "kc": 1.3957651103127513,
+  "kc_thresh_shift_mv": 2.0489709799258224,
+  "mbon": 0.6352397977927433
+ },
+ "stage1": {
+  "reliability": 0.573,
+  "median_overlap": 0.042,
+  "kc_frac": 0.0619,
+  "brain_hz": 5.25,
+  "score": 0.081,
+  "stage1_pass": false
+ },
+ "t": 243,
+ "stage2_e12_lr0.2": {
+  "seeds": [
+   {
+    "seed": 0,
+    "pam_A": [
+     5.53,
+     6.65
+    ],
+    "pam_C": [
+     16.43,
+     17.48
+    ],
+    "drop_A": -0.202,
+    "drop_C": -0.064,
+    "zA": 1.84,
+    "zC": 2.04,
+    "depressed": 3352
+   },
+   {
+    "seed": 1,
+    "pam_A": [
+     6.33,
+     6.64
+    ],
+    "pam_C": [
+     16.66,
+     17.27
+    ],
+    "drop_A": -0.048,
+    "drop_C": -0.037,
+    "zA": 0.53,
+    "zC": 0.91,
+    "depressed": 3441
+   },
+   {
+    "seed": 2,
+    "pam_A": [
+     6.19,
+     6.31
+    ],
+    "pam_C": [
+     17.57,
+     17.29
+    ],
+    "drop_A": -0.02,
+    "drop_C": 0.016,
+    "zA": 0.18,
+    "zC": -0.4,
+    "depressed": 3276
+   }
+  ],
+  "drop_A": -0.09,
+  "drop_C": -0.028,
+  "zA_lt_-2_seeds": 0,
+  "of": 3,
+  "stage2_pass": false,
+  "score2": 0.54
+ }
+}
