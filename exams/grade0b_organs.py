@@ -26,6 +26,8 @@ import calibration as C
 
 GRAPH = Path(os.environ.get("G0_GRAPH", str(RUNTIME / "build" / "graph.npz"))); TAG = os.environ.get("G0_TAG", "v1")
 REPS = int(os.environ.get("G0_REPS", 3)); SEED = 73; PULSE_MS, PRE_MS, TAIL_MS = 300.0, 50.0, 50.0
+if os.environ.get("G0_V3"):
+    sys.path.insert(0, r"C:/Users/lilli/Fly-Lab/versions/fly-v3"); from flysim_v3 import FlyBrainV3 as FlyBrain   # noqa: F811
 fb = FlyBrain(GRAPH); p = fb.p
 ann = pd.read_feather(RUNTIME / "data" / "body-annotations.feather"); b2i = fb.body_to_i
 gains = C.gains_for(fb, C.CHOSEN); gpn = gains[fb.type_code].astype(np.float32)

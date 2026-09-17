@@ -24,7 +24,11 @@ ODOUR_HZ = float(os.environ.get("IDENT_HZ", 80.0)); PULSE_MS, PRE_MS, TAIL_MS = 
 TEACH_EPOCHS = int(os.environ.get("IDENT_EPOCHS", 12)); REPS = int(os.environ.get("IDENT_REPS", 6))
 SEEDS = tuple(int(s) for s in os.environ.get("IDENT_SEEDS", "73,7337,101,202,303").split(","))
 
+if os.environ.get("IDENT_V3"):
+    sys.path.insert(0, r"C:/Users/lilli/Fly-Lab/versions/fly-v3"); from flysim_v3 import FlyBrainV3 as FlyBrain   # noqa: F811
 fb = FlyBrain(GRAPH); p = fb.p
+B_HZ = float(os.environ.get("IDENT_B_HZ", 0)) or ODOUR_HZ      # row 17: equalise drive (set below by probe unless given)
+COMPARTMENT = os.environ.get("IDENT_READOUT", "compartment") == "compartment"   # row 17: read only MBONs downstream of the active KCs
 A = fb.where(type_re=rf"^{A_TYPE}$"); B = fb.where(type_re=rf"^{B_TYPE}$")
 gains = C.gains_for(fb, C.CHOSEN); gpn = gains[fb.type_code].astype(np.float32)
 STIM = {"A": A, "B": B, "AB": np.concatenate([A, B])}
@@ -38,12 +42,12 @@ def seed_for(base, phase, stim, rep):
 def trial(mb, stim, seed):
     cells = STIM[stim]
     steps = int(round((PRE_MS + PULSE_MS + TAIL_MS) / p.dt)); on0 = int(round(PRE_MS / p.dt)); on1 = on0 + int(round(PULSE_MS / p.dt))
-    rng = np.random.default_rng(seed); prob = min(1.0, ODOUR_HZ * p.dt / 1000.0)
+    rng = np.random.default_rng(seed); prob = min(1.0, (B_HZ if stim == "B" else ODOUR_HZ) * p.dt / 1000.0)
     v = np.full(fb.n, p.v_rest, dtype=np.float32); refr = np.zeros(fb.n, dtype=np.int32)
     indptr, indices, wdata = fb.indptr, fb.indices, fb.wdata
     kc_mask = np.zeros(fb.n, bool); kc_mask[mb.kc] = True
     app = np.zeros(fb.n, bool); app[mb.punish_side] = True; avd = np.zeros(fb.n, bool); avd[mb.reward_side] = True
-    kc_seen = np.zeros(fb.n, bool); n_app = n_avd = total = 0
+    kc_seen = np.zeros(fb.n, bool); n_app = n_avd = total = 0; per = np.zeros(fb.n, dtype=np.int32)
     for step in range(steps):
         v = p.v_rest + (v - p.v_rest) * fb.decay
         if on0 <= step < on1:
@@ -52,7 +56,7 @@ def trial(mb, stim, seed):
         v[refr > 0] = p.v_reset
         fired = np.flatnonzero((v >= p.v_thresh) & (refr <= 0))
         if len(fired):
-            total += len(fired); refr[fired] = fb.refr_steps; v[fired] = p.v_reset
+            total += len(fired); refr[fired] = fb.refr_steps; v[fired] = p.v_reset; per[fired] += 1
             kc_seen[fired[kc_mask[fired]]] = True; n_app += int(app[fired].sum()); n_avd += int(avd[fired].sum())
             starts = indptr[fired]; cnt = indptr[fired + 1] - starts; tot = int(cnt.sum())
             if tot:
@@ -60,6 +64,15 @@ def trial(mb, stim, seed):
                 v += np.bincount(indices[g], weights=wdata[g] * np.repeat(gpn[fired], cnt), minlength=fb.n).astype(np.float32)
         refr -= 1
     secs = steps * p.dt / 1000.0
+    if COMPARTMENT:
+        # row 17: only MBONs that receive KC->MBON synapses from the KCs active in THIS trial (mb.pre/mb.post = the synapse list)
+        active = kc_seen[mb.pre]
+        tgt = np.unique(mb.post[active]) if active.any() else np.array([], dtype=np.int64)
+        app_set = tgt[app[tgt]]; avd_set = tgt[avd[tgt]]
+        app_hz = per[app_set].sum() / max(1, len(app_set)) / secs; avd_hz = per[avd_set].sum() / max(1, len(avd_set)) / secs
+        return {"valence": app_hz - avd_hz, "kc": np.flatnonzero(kc_seen), "approach_hz": app_hz, "avoid_hz": avd_hz,
+                "n_app_mbons": int(len(app_set)), "n_avd_mbons": int(len(avd_set)),
+                "kc_n": int(kc_seen.sum()), "hz": total / secs / fb.n}
     return {"valence": n_app / max(1, app.sum()) / secs - n_avd / max(1, avd.sum()) / secs, "kc": np.flatnonzero(kc_seen),
             "approach_hz": n_app / max(1, app.sum()) / secs, "avoid_hz": n_avd / max(1, avd.sum()) / secs,
             "kc_n": int(kc_seen.sum()), "hz": total / secs / fb.n}
@@ -80,6 +93,16 @@ def jac(a, b): return len(a & b) / max(1, len(a | b))
 
 
 t0 = time.perf_counter(); seeds_out = []
+if not os.environ.get("IDENT_B_HZ"):
+    _mb = MushroomBody(fb, calibration=C.CHOSEN, sides=RUNTIME / "build" / "mb_sides.json", store=LAB / "identity_probe.npz", clock=lambda: 0.0)
+    ka = trial(_mb, "A", 11)["kc_n"]
+    for _ in range(4):
+        kb = trial(_mb, "B", 12)["kc_n"]
+        if kb == 0: B_HZ *= 1.5; continue
+        if abs(kb - ka) / max(1, ka) <= 0.2: break
+        B_HZ = float(np.clip(B_HZ * (ka / kb) ** 0.7, 5, 200))
+    print(f"drive equalised: A {A_TYPE} @{ODOUR_HZ} Hz -> {ka} KCs; B {B_TYPE} @{B_HZ:.1f} Hz -> {kb} KCs", flush=True)
+    (LAB / "identity_probe.npz").unlink(missing_ok=True)
 for seed in SEEDS:
     store = LAB / f"identity_seed_{seed}.npz"; store.unlink(missing_ok=True)
     mb = MushroomBody(fb, calibration=C.CHOSEN, sides=RUNTIME / "build" / "mb_sides.json", store=store, clock=lambda: 0.0)
@@ -109,7 +132,7 @@ for seed in SEEDS:
 
 n = sum(s["learned"] for s in seeds_out)
 out = {"experiment": "identity lesson: odour A rewarded, odour B punished; cold valence; mixture generalization",
-       "chosen": {"graph": str(GRAPH), "A": A_TYPE, "B": B_TYPE, "odour_hz": ODOUR_HZ, "pulse_ms": PULSE_MS, "teach_epochs": TEACH_EPOCHS, "reps": REPS, "seeds": SEEDS,
+       "chosen": {"graph": str(GRAPH), "A": A_TYPE, "B": B_TYPE, "odour_hz": ODOUR_HZ, "b_hz": B_HZ, "readout": "compartment" if COMPARTMENT else "population", "pulse_ms": PULSE_MS, "teach_epochs": TEACH_EPOCHS, "reps": REPS, "seeds": SEEDS,
                   "pass_line": "sep_post > sep_pre and sep_post > 0 in a majority of seeds; J(AB) well below J(AA)"},
        "measured": {"seeds_learned": n, "of": len(SEEDS), "pass": bool(n > len(SEEDS) / 2),
                     "mean_sep_pre": round(float(np.mean([s["separation_pre"] for s in seeds_out])), 3),
