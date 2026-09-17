@@ -1,0 +1,173 @@
+{
+ "chosen": {
+  "graph": "C:\\Users\\lilli\\AI-Shared\\projects\\fly-brain\\runtime\\build\\graph.npz",
+  "pulse_ms": 300.0,
+  "reps": 3,
+  "seed": 73,
+  "pass_rule": "any named readout >= max(1 Hz, 2x baseline) and brain < 10 Hz/cell"
+ },
+ "measured": [
+  {
+   "organ": "mouth/hands: tarsal taste -> proboscis",
+   "drive_cells": 50,
+   "drive_hz": 60,
+   "reads": {
+    "MN9": {
+     "hz": 116.25,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "MN1": {
+     "hz": 161.46,
+     "baseline_hz": 0.0,
+     "cells": 4
+    }
+   },
+   "brain_hz_per_cell": 27.6,
+   "kc_frac_active": 0.51,
+   "responded": {
+    "MN9": true,
+    "MN1": true
+   },
+   "verdict": "IGNITES"
+  },
+  {
+   "organ": "feet (hind): T3 bristles -> MDN backing",
+   "drive_cells": 1062,
+   "drive_hz": 20,
+   "reads": {
+    "MDN": {
+     "hz": 8.12,
+     "baseline_hz": 0.0,
+     "cells": 4
+    },
+    "DNa01": {
+     "hz": 43.33,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 29.69,
+   "kc_frac_active": 0.677,
+   "responded": {
+    "MDN": true,
+    "DNa01": true
+   },
+   "verdict": "IGNITES"
+  },
+  {
+   "organ": "feet (front): T1 bristles -> grooming DNs",
+   "drive_cells": 596,
+   "drive_hz": 20,
+   "reads": {
+    "DNg07": {
+     "hz": 138.07,
+     "baseline_hz": 0.0,
+     "cells": 16
+    },
+    "DNg08": {
+     "hz": 37.83,
+     "baseline_hz": 0.0,
+     "cells": 23
+    }
+   },
+   "brain_hz_per_cell": 31.82,
+   "kc_frac_active": 0.714,
+   "responded": {
+    "DNg07": true,
+    "DNg08": true
+   },
+   "verdict": "IGNITES"
+  },
+  {
+   "organ": "eyes: loom (LPLC2+LC4) -> giant fibre / takeoff",
+   "drive_cells": 311,
+   "drive_hz": 60,
+   "reads": {
+    "DNp01": {
+     "hz": 114.58,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp02+04": {
+     "hz": 242.29,
+     "baseline_hz": 0.0,
+     "cells": 4
+    }
+   },
+   "brain_hz_per_cell": 27.81,
+   "kc_frac_active": 0.499,
+   "responded": {
+    "DNp01": true,
+    "DNp02+04": true
+   },
+   "verdict": "IGNITES"
+  },
+  {
+   "organ": "ears (wind): JO-C/E -> MDN",
+   "drive_cells": 335,
+   "drive_hz": 60,
+   "reads": {
+    "MDN": {
+     "hz": 3.75,
+     "baseline_hz": 0.0,
+     "cells": 4
+    }
+   },
+   "brain_hz_per_cell": 30.11,
+   "kc_frac_active": 0.562,
+   "responded": {
+    "MDN": true
+   },
+   "verdict": "IGNITES"
+  },
+  {
+   "organ": "ears (song): JO-A -> courtship pIP10/DNp13",
+   "drive_cells": 50,
+   "drive_hz": 120,
+   "reads": {
+    "pIP10": {
+     "hz": 16.67,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp13": {
+     "hz": 6.67,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 29.69,
+   "kc_frac_active": 0.833,
+   "responded": {
+    "pIP10": true,
+    "DNp13": true
+   },
+   "verdict": "IGNITES"
+  },
+  {
+   "organ": "nose: ORN_DL3 -> KC sparse + steering",
+   "drive_cells": 103,
+   "drive_hz": 40,
+   "reads": {
+    "KC": {
+     "hz": 3.99,
+     "baseline_hz": 0.0,
+     "cells": 4064
+    },
+    "DNa02": {
+     "hz": 173.75,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 28.32,
+   "kc_frac_active": 0.19,
+   "responded": {
+    "KC": true,
+    "DNa02": true
+   },
+   "verdict": "IGNITES"
+  }
+ ]
+}

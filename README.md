@@ -164,3 +164,12 @@ real-fly walks, tripod, 10 Hz — commanded by our brain's own DN rates (`BODY_M
 silent, the fly steps intermittently at the walking threshold; a 120 Hz tone makes MDN fire and it backs up and turns
 (`results/body_loop_v2_gait_s0.json`, `_s120.json`). Mineplix also reports 7.4% active Kenyon cells in their fitted regime;
 our 0.35× gives 7.3%. Their raw-muscle mode "cannot stand"; ours stands on v2 (2 s, on a ball — small, checkable).
+
+## 10. Grade 0 — does each organ do its job? (2026-09-17 02:45)
+
+Before any lesson: sense in, the literature's named output read, no learning (`exams/grade0_organs.py`). Pass = output
+≥ max(1 Hz, 2× baseline) and brain < 10 Hz/cell. **fly-v1: 7 of 7 organs ignite the whole brain. fly-v2: 7 of 7 pass** —
+taste → proboscis MN9 (20 Hz); loom → giant fibre (253 Hz); wind → MDN (11.5 Hz); song → pIP10/DNp13; odour → 6.3% Kenyon
+cells + steering DNa02; hind-leg touch → DNa01/MDN; front-leg touch → grooming DNs (weak, 1–2 Hz). `results/grade0_v1.json`,
+`grade0_v2.json`. Identity lesson on v2 (`exams/identity_lesson.py`): two odours are distinct (KC overlap 0.10–0.21) but
+the population valence readout did not learn a preference in 12 pairings (0/5 seeds) — next: compartment-specific readout.

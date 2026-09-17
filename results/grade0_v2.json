@@ -1,0 +1,173 @@
+{
+ "chosen": {
+  "graph": "C:\\Users\\lilli\\Fly-Lab\\versions\\fly-v2\\graph_v2.npz",
+  "pulse_ms": 300.0,
+  "reps": 3,
+  "seed": 73,
+  "pass_rule": "any named readout >= max(1 Hz, 2x baseline) and brain < 10 Hz/cell"
+ },
+ "measured": [
+  {
+   "organ": "mouth/hands: tarsal taste -> proboscis",
+   "drive_cells": 50,
+   "drive_hz": 60,
+   "reads": {
+    "MN9": {
+     "hz": 20.0,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "MN1": {
+     "hz": 11.46,
+     "baseline_hz": 0.0,
+     "cells": 4
+    }
+   },
+   "brain_hz_per_cell": 2.88,
+   "kc_frac_active": 0.17,
+   "responded": {
+    "MN9": true,
+    "MN1": true
+   },
+   "verdict": "PASS"
+  },
+  {
+   "organ": "feet (hind): T3 bristles -> MDN backing",
+   "drive_cells": 1062,
+   "drive_hz": 20,
+   "reads": {
+    "MDN": {
+     "hz": 0.83,
+     "baseline_hz": 0.0,
+     "cells": 4
+    },
+    "DNa01": {
+     "hz": 8.75,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 3.11,
+   "kc_frac_active": 0.138,
+   "responded": {
+    "MDN": false,
+    "DNa01": true
+   },
+   "verdict": "PASS"
+  },
+  {
+   "organ": "feet (front): T1 bristles -> grooming DNs",
+   "drive_cells": 596,
+   "drive_hz": 20,
+   "reads": {
+    "DNg07": {
+     "hz": 1.61,
+     "baseline_hz": 0.0,
+     "cells": 16
+    },
+    "DNg08": {
+     "hz": 0.98,
+     "baseline_hz": 0.0,
+     "cells": 23
+    }
+   },
+   "brain_hz_per_cell": 2.15,
+   "kc_frac_active": 0.14,
+   "responded": {
+    "DNg07": true,
+    "DNg08": false
+   },
+   "verdict": "PASS"
+  },
+  {
+   "organ": "eyes: loom (LPLC2+LC4) -> giant fibre / takeoff",
+   "drive_cells": 311,
+   "drive_hz": 60,
+   "reads": {
+    "DNp01": {
+     "hz": 252.92,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp02+04": {
+     "hz": 250.21,
+     "baseline_hz": 0.0,
+     "cells": 4
+    }
+   },
+   "brain_hz_per_cell": 3.97,
+   "kc_frac_active": 0.157,
+   "responded": {
+    "DNp01": true,
+    "DNp02+04": true
+   },
+   "verdict": "PASS"
+  },
+  {
+   "organ": "ears (wind): JO-C/E -> MDN",
+   "drive_cells": 335,
+   "drive_hz": 60,
+   "reads": {
+    "MDN": {
+     "hz": 11.46,
+     "baseline_hz": 0.0,
+     "cells": 4
+    }
+   },
+   "brain_hz_per_cell": 4.84,
+   "kc_frac_active": 0.154,
+   "responded": {
+    "MDN": true
+   },
+   "verdict": "PASS"
+  },
+  {
+   "organ": "ears (song): JO-A -> courtship pIP10/DNp13",
+   "drive_cells": 50,
+   "drive_hz": 120,
+   "reads": {
+    "pIP10": {
+     "hz": 20.83,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp13": {
+     "hz": 11.25,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 3.2,
+   "kc_frac_active": 0.139,
+   "responded": {
+    "pIP10": true,
+    "DNp13": true
+   },
+   "verdict": "PASS"
+  },
+  {
+   "organ": "nose: ORN_DL3 -> KC sparse + steering",
+   "drive_cells": 103,
+   "drive_hz": 40,
+   "reads": {
+    "KC": {
+     "hz": 1.36,
+     "baseline_hz": 0.0,
+     "cells": 4064
+    },
+    "DNa02": {
+     "hz": 39.17,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 3.39,
+   "kc_frac_active": 0.063,
+   "responded": {
+    "KC": true,
+    "DNa02": true
+   },
+   "verdict": "PASS"
+  }
+ ]
+}

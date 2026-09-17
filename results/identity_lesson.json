@@ -1,0 +1,1517 @@
+{
+ "experiment": "identity lesson: odour A rewarded, odour B punished; cold valence; mixture generalization",
+ "chosen": {
+  "graph": "C:\\Users\\lilli\\Fly-Lab\\versions\\fly-v2\\graph_v2.npz",
+  "A": "ORN_DL3",
+  "B": "ORN_DM1",
+  "odour_hz": 40.0,
+  "pulse_ms": 300.0,
+  "teach_epochs": 12,
+  "reps": 6,
+  "seeds": [
+   73,
+   7337,
+   101,
+   202,
+   303
+  ],
+  "pass_line": "sep_post > sep_pre and sep_post > 0 in a majority of seeds; J(AB) well below J(AA)"
+ },
+ "measured": {
+  "seeds_learned": 0,
+  "of": 5,
+  "pass": false,
+  "mean_sep_pre": -3.245,
+  "mean_sep_post": -3.29,
+  "mean_jaccard_AB": 0.148,
+  "mean_jaccard_AA": 0.393,
+  "elapsed_s": 579.5
+ },
+ "seeds": [
+  {
+   "seed": 73,
+   "identity": {
+    "jaccard_AA": 0.475,
+    "jaccard_BB": 0.314,
+    "jaccard_AB": 0.166,
+    "kc_active_A": 256,
+    "kc_active_B": 71,
+    "kc_total": 4064
+   },
+   "pre": {
+    "A": {
+     "mean": 5.92818428184282,
+     "sd": 2.629691753266556,
+     "values": [
+      6.698,
+      5.172,
+      4.201,
+      2.063,
+      6.869,
+      10.567
+     ],
+     "kc_n": 256,
+     "hz": 4.18,
+     "approach_hz": 16.2,
+     "avoid_hz": 10.28
+    },
+    "B": {
+     "mean": 7.769147631952511,
+     "sd": 3.7486730171972233,
+     "values": [
+      3.19,
+      3.574,
+      7.886,
+      9.065,
+      14.362,
+      8.538
+     ],
+     "kc_n": 71,
+     "hz": 9.85,
+     "approach_hz": 24.29,
+     "avoid_hz": 16.52
+    },
+    "AB": {
+     "mean": 7.279165053555299,
+     "sd": 3.903758967654918,
+     "values": [
+      10.188,
+      6.969,
+      9.433,
+      5.274,
+      11.841,
+      -0.029
+     ],
+     "kc_n": 76,
+     "hz": 10.39,
+     "approach_hz": 25.17,
+     "avoid_hz": 17.89
+    }
+   },
+   "post": {
+    "A": {
+     "mean": 5.784819008904376,
+     "sd": 4.332111404990653,
+     "values": [
+      -0.751,
+      7.15,
+      11.114,
+      3.397,
+      2.935,
+      10.864
+     ],
+     "kc_n": 274,
+     "hz": 3.69,
+     "approach_hz": 14.56,
+     "avoid_hz": 8.77
+    },
+    "B": {
+     "mean": 8.864450251645374,
+     "sd": 2.9678982038824513,
+     "values": [
+      10.495,
+      10.64,
+      6.706,
+      6.095,
+      5.529,
+      13.721
+     ],
+     "kc_n": 110,
+     "hz": 9.97,
+     "approach_hz": 24.29,
+     "avoid_hz": 15.42
+    },
+    "AB": {
+     "mean": 11.014727706800882,
+     "sd": 3.4295833421993653,
+     "values": [
+      13.709,
+      15.851,
+      6.95,
+      12.886,
+      10.028,
+      6.664
+     ],
+     "kc_n": 169,
+     "hz": 10.11,
+     "approach_hz": 27.79,
+     "avoid_hz": 16.78
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1158,
+     "valence_during": 1.512
+    },
+    {
+     "epoch": 0,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 13.225
+    },
+    {
+     "epoch": 1,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1313,
+     "valence_during": 0.09
+    },
+    {
+     "epoch": 1,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 204,
+     "valence_during": 16.53
+    },
+    {
+     "epoch": 2,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1590,
+     "valence_during": -0.201
+    },
+    {
+     "epoch": 2,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 159,
+     "valence_during": -5.53
+    },
+    {
+     "epoch": 3,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1559,
+     "valence_during": 6.63
+    },
+    {
+     "epoch": 3,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 10.829
+    },
+    {
+     "epoch": 4,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2064,
+     "valence_during": 8.523
+    },
+    {
+     "epoch": 4,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 3.729
+    },
+    {
+     "epoch": 5,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1171,
+     "valence_during": 4.255
+    },
+    {
+     "epoch": 5,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 77,
+     "valence_during": 0.577
+    },
+    {
+     "epoch": 6,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 592,
+     "valence_during": 10.422
+    },
+    {
+     "epoch": 6,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 204,
+     "valence_during": 3.545
+    },
+    {
+     "epoch": 7,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1084,
+     "valence_during": 1.024
+    },
+    {
+     "epoch": 7,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 592,
+     "valence_during": 5.355
+    },
+    {
+     "epoch": 8,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1564,
+     "valence_during": 7.363
+    },
+    {
+     "epoch": 8,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 52,
+     "valence_during": -0.621
+    },
+    {
+     "epoch": 9,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1641,
+     "valence_during": 0.805
+    },
+    {
+     "epoch": 9,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": -4.974
+    },
+    {
+     "epoch": 10,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1161,
+     "valence_during": 14.389
+    },
+    {
+     "epoch": 10,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 810,
+     "valence_during": 1.634
+    },
+    {
+     "epoch": 11,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2646,
+     "valence_during": 19.61
+    },
+    {
+     "epoch": 11,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 204,
+     "valence_during": 17.348
+    }
+   ],
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 4645,
+    "mean_gain": 0.9762,
+    "min_gain": 0.4759,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "separation_pre": -1.841,
+   "separation_post": -3.08,
+   "learned": false,
+   "mixture_post": 11.015
+  },
+  {
+   "seed": 7337,
+   "identity": {
+    "jaccard_AA": 0.521,
+    "jaccard_BB": 0.714,
+    "jaccard_AB": 0.103,
+    "kc_active_A": 269,
+    "kc_active_B": 38,
+    "kc_total": 4064
+   },
+   "pre": {
+    "A": {
+     "mean": 2.8251629242482896,
+     "sd": 2.3681131196049354,
+     "values": [
+      4.49,
+      4.78,
+      -0.642,
+      3.928,
+      -0.354,
+      4.75
+     ],
+     "kc_n": 269,
+     "hz": 3.12,
+     "approach_hz": 11.6,
+     "avoid_hz": 8.77
+    },
+    "B": {
+     "mean": 6.918029745773648,
+     "sd": 2.196632871492926,
+     "values": [
+      5.203,
+      8.782,
+      7.747,
+      7.26,
+      3.028,
+      9.488
+     ],
+     "kc_n": 38,
+     "hz": 10.1,
+     "approach_hz": 23.65,
+     "avoid_hz": 16.73
+    },
+    "AB": {
+     "mean": 8.47004452187379,
+     "sd": 5.528890241991226,
+     "values": [
+      5.098,
+      8.953,
+      12.655,
+      -0.23,
+      17.232,
+      7.113
+     ],
+     "kc_n": 59,
+     "hz": 9.97,
+     "approach_hz": 26.57,
+     "avoid_hz": 18.1
+    }
+   },
+   "post": {
+    "A": {
+     "mean": 5.566645696218866,
+     "sd": 4.412283905429228,
+     "values": [
+      0.906,
+      5.923,
+      8.998,
+      13.146,
+      3.489,
+      0.938
+     ],
+     "kc_n": 252,
+     "hz": 3.25,
+     "approach_hz": 13.55,
+     "avoid_hz": 7.98
+    },
+    "B": {
+     "mean": 10.88789682539683,
+     "sd": 5.4806874562944845,
+     "values": [
+      8.402,
+      4.749,
+      15.621,
+      11.473,
+      19.895,
+      5.188
+     ],
+     "kc_n": 58,
+     "hz": 10.14,
+     "approach_hz": 28.48,
+     "avoid_hz": 17.59
+    },
+    "AB": {
+     "mean": 10.819339592205447,
+     "sd": 2.795148319010146,
+     "values": [
+      11.202,
+      15.096,
+      11.633,
+      6.544,
+      12.316,
+      8.125
+     ],
+     "kc_n": 84,
+     "hz": 10.19,
+     "approach_hz": 28.51,
+     "avoid_hz": 17.69
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1557,
+     "valence_during": 0.275
+    },
+    {
+     "epoch": 0,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 8.967
+    },
+    {
+     "epoch": 1,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1787,
+     "valence_during": 20.747
+    },
+    {
+     "epoch": 1,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 204,
+     "valence_during": 7.263
+    },
+    {
+     "epoch": 2,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1300,
+     "valence_during": 4.537
+    },
+    {
+     "epoch": 2,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 88,
+     "valence_during": 7.184
+    },
+    {
+     "epoch": 3,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1317,
+     "valence_during": 6.119
+    },
+    {
+     "epoch": 3,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 810,
+     "valence_during": 4.3
+    },
+    {
+     "epoch": 4,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2690,
+     "valence_during": 21.818
+    },
+    {
+     "epoch": 4,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 134,
+     "valence_during": 13.613
+    },
+    {
+     "epoch": 5,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1160,
+     "valence_during": 1.58
+    },
+    {
+     "epoch": 5,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 85,
+     "valence_during": 6.533
+    },
+    {
+     "epoch": 6,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2333,
+     "valence_during": 4.182
+    },
+    {
+     "epoch": 6,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 16.237
+    },
+    {
+     "epoch": 7,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2939,
+     "valence_during": 20.059
+    },
+    {
+     "epoch": 7,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 1934,
+     "valence_during": 5.404
+    },
+    {
+     "epoch": 8,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1554,
+     "valence_during": 6.054
+    },
+    {
+     "epoch": 8,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 110,
+     "valence_during": 9.097
+    },
+    {
+     "epoch": 9,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1766,
+     "valence_during": 1.699
+    },
+    {
+     "epoch": 9,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 49,
+     "valence_during": 4.526
+    },
+    {
+     "epoch": 10,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1563,
+     "valence_during": -1.33
+    },
+    {
+     "epoch": 10,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 10.593
+    },
+    {
+     "epoch": 11,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1245,
+     "valence_during": 12.933
+    },
+    {
+     "epoch": 11,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 1934,
+     "valence_during": 2.372
+    }
+   ],
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 6576,
+    "mean_gain": 0.9682,
+    "min_gain": 0.4759,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "separation_pre": -4.093,
+   "separation_post": -5.321,
+   "learned": false,
+   "mixture_post": 10.819
+  },
+  {
+   "seed": 101,
+   "identity": {
+    "jaccard_AA": 0.45,
+    "jaccard_BB": 0.386,
+    "jaccard_AB": 0.205,
+    "kc_active_A": 249,
+    "kc_active_B": 101,
+    "kc_total": 4064
+   },
+   "pre": {
+    "A": {
+     "mean": 6.060056136275648,
+     "sd": 8.18042851633517,
+     "values": [
+      22.834,
+      1.066,
+      -0.774,
+      3.535,
+      0.423,
+      9.276
+     ],
+     "kc_n": 249,
+     "hz": 4.17,
+     "approach_hz": 15.2,
+     "avoid_hz": 9.14
+    },
+    "B": {
+     "mean": 11.847899728997291,
+     "sd": 5.748223213103541,
+     "values": [
+      24.477,
+      8.873,
+      11.151,
+      7.785,
+      10.082,
+      8.719
+     ],
+     "kc_n": 101,
+     "hz": 9.73,
+     "approach_hz": 28.36,
+     "avoid_hz": 16.51
+    },
+    "AB": {
+     "mean": 7.823590140663312,
+     "sd": 2.767532177050652,
+     "values": [
+      8.895,
+      9.664,
+      4.374,
+      6.533,
+      5.12,
+      12.356
+     ],
+     "kc_n": 36,
+     "hz": 9.98,
+     "approach_hz": 24.14,
+     "avoid_hz": 16.32
+    }
+   },
+   "post": {
+    "A": {
+     "mean": 4.252564847077042,
+     "sd": 4.857841885493628,
+     "values": [
+      5.104,
+      3.231,
+      14.341,
+      0.029,
+      2.815,
+      -0.006
+     ],
+     "kc_n": 238,
+     "hz": 4.24,
+     "approach_hz": 14.77,
+     "avoid_hz": 10.51
+    },
+    "B": {
+     "mean": 5.4785294876758295,
+     "sd": 3.825070074626687,
+     "values": [
+      9.0,
+      8.287,
+      7.439,
+      7.6,
+      -1.299,
+      1.844
+     ],
+     "kc_n": 22,
+     "hz": 10.05,
+     "approach_hz": 26.07,
+     "avoid_hz": 20.6
+    },
+    "AB": {
+     "mean": 8.556345980126467,
+     "sd": 7.082044733727091,
+     "values": [
+      -0.45,
+      9.611,
+      2.48,
+      22.03,
+      8.615,
+      9.052
+     ],
+     "kc_n": 114,
+     "hz": 9.81,
+     "approach_hz": 26.74,
+     "avoid_hz": 18.18
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1548,
+     "valence_during": 6.804
+    },
+    {
+     "epoch": 0,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 508,
+     "valence_during": 14.471
+    },
+    {
+     "epoch": 1,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1551,
+     "valence_during": 15.848
+    },
+    {
+     "epoch": 1,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 2.364
+    },
+    {
+     "epoch": 2,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 365,
+     "valence_during": 9.576
+    },
+    {
+     "epoch": 2,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 5.795
+    },
+    {
+     "epoch": 3,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1701,
+     "valence_during": 5.239
+    },
+    {
+     "epoch": 3,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 5.899
+    },
+    {
+     "epoch": 4,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1943,
+     "valence_during": 2.653
+    },
+    {
+     "epoch": 4,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": -1.063
+    },
+    {
+     "epoch": 5,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1567,
+     "valence_during": -2.393
+    },
+    {
+     "epoch": 5,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 9.123
+    },
+    {
+     "epoch": 6,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1557,
+     "valence_during": 2.755
+    },
+    {
+     "epoch": 6,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 11.871
+    },
+    {
+     "epoch": 7,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1978,
+     "valence_during": 1.593
+    },
+    {
+     "epoch": 7,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 508,
+     "valence_during": 1.1
+    },
+    {
+     "epoch": 8,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1648,
+     "valence_during": 3.563
+    },
+    {
+     "epoch": 8,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 259,
+     "valence_during": 7.789
+    },
+    {
+     "epoch": 9,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 3905,
+     "valence_during": 5.398
+    },
+    {
+     "epoch": 9,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 85,
+     "valence_during": 7.146
+    },
+    {
+     "epoch": 10,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2735,
+     "valence_during": 5.053
+    },
+    {
+     "epoch": 10,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 508,
+     "valence_during": 13.576
+    },
+    {
+     "epoch": 11,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1151,
+     "valence_during": 7.092
+    },
+    {
+     "epoch": 11,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 810,
+     "valence_during": -1.194
+    }
+   ],
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 5368,
+    "mean_gain": 0.9713,
+    "min_gain": 0.4759,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "separation_pre": -5.788,
+   "separation_post": -1.226,
+   "learned": false,
+   "mixture_post": 8.556
+  },
+  {
+   "seed": 202,
+   "identity": {
+    "jaccard_AA": 0.403,
+    "jaccard_BB": 0.719,
+    "jaccard_AB": 0.114,
+    "kc_active_A": 240,
+    "kc_active_B": 38,
+    "kc_total": 4064
+   },
+   "pre": {
+    "A": {
+     "mean": 4.117265130984642,
+     "sd": 2.1028161295940384,
+     "values": [
+      1.021,
+      3.326,
+      4.093,
+      8.068,
+      4.692,
+      3.504
+     ],
+     "kc_n": 240,
+     "hz": 3.36,
+     "approach_hz": 12.79,
+     "avoid_hz": 8.67
+    },
+    "B": {
+     "mean": 6.730908826945412,
+     "sd": 6.12900768181383,
+     "values": [
+      8.921,
+      3.098,
+      5.546,
+      13.319,
+      13.547,
+      -4.046
+     ],
+     "kc_n": 38,
+     "hz": 10.34,
+     "approach_hz": 24.38,
+     "avoid_hz": 17.65
+    },
+    "AB": {
+     "mean": 9.910956252419666,
+     "sd": 5.358339533361173,
+     "values": [
+      14.831,
+      10.103,
+      16.401,
+      1.709,
+      12.264,
+      4.157
+     ],
+     "kc_n": 70,
+     "hz": 9.88,
+     "approach_hz": 27.45,
+     "avoid_hz": 17.54
+    }
+   },
+   "post": {
+    "A": {
+     "mean": 6.306458897922313,
+     "sd": 4.793796551659829,
+     "values": [
+      14.16,
+      4.238,
+      -1.679,
+      5.287,
+      8.9,
+      6.934
+     ],
+     "kc_n": 249,
+     "hz": 3.84,
+     "approach_hz": 15.05,
+     "avoid_hz": 8.74
+    },
+    "B": {
+     "mean": 11.793255581365337,
+     "sd": 3.5562711253536365,
+     "values": [
+      14.17,
+      9.929,
+      10.128,
+      8.856,
+      8.991,
+      18.686
+     ],
+     "kc_n": 21,
+     "hz": 10.12,
+     "approach_hz": 26.31,
+     "avoid_hz": 14.52
+    },
+    "AB": {
+     "mean": 8.105884630274874,
+     "sd": 4.166642544867599,
+     "values": [
+      10.631,
+      1.718,
+      8.689,
+      3.548,
+      13.631,
+      10.418
+     ],
+     "kc_n": 67,
+     "hz": 9.81,
+     "approach_hz": 26.46,
+     "avoid_hz": 18.35
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2373,
+     "valence_during": 7.607
+    },
+    {
+     "epoch": 0,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 9.662
+    },
+    {
+     "epoch": 1,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1044,
+     "valence_during": 3.642
+    },
+    {
+     "epoch": 1,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 159,
+     "valence_during": 1.182
+    },
+    {
+     "epoch": 2,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1374,
+     "valence_during": -3.903
+    },
+    {
+     "epoch": 2,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 810,
+     "valence_during": 9.497
+    },
+    {
+     "epoch": 3,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1574,
+     "valence_during": 3.609
+    },
+    {
+     "epoch": 3,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 592,
+     "valence_during": 10.539
+    },
+    {
+     "epoch": 4,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1137,
+     "valence_during": -1.579
+    },
+    {
+     "epoch": 4,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 159,
+     "valence_during": 2.66
+    },
+    {
+     "epoch": 5,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1573,
+     "valence_during": -0.329
+    },
+    {
+     "epoch": 5,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 4.896
+    },
+    {
+     "epoch": 6,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1667,
+     "valence_during": -1.102
+    },
+    {
+     "epoch": 6,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 159,
+     "valence_during": 5.948
+    },
+    {
+     "epoch": 7,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1064,
+     "valence_during": 5.347
+    },
+    {
+     "epoch": 7,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 7.772
+    },
+    {
+     "epoch": 8,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1206,
+     "valence_during": 14.874
+    },
+    {
+     "epoch": 8,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 508,
+     "valence_during": 7.842
+    },
+    {
+     "epoch": 9,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1588,
+     "valence_during": 2.536
+    },
+    {
+     "epoch": 9,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 508,
+     "valence_during": 17.603
+    },
+    {
+     "epoch": 10,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 4838,
+     "valence_during": 6.977
+    },
+    {
+     "epoch": 10,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 195,
+     "valence_during": 13.036
+    },
+    {
+     "epoch": 11,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1140,
+     "valence_during": -1.728
+    },
+    {
+     "epoch": 11,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 1934,
+     "valence_during": 2.213
+    }
+   ],
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 7041,
+    "mean_gain": 0.9693,
+    "min_gain": 0.4759,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "separation_pre": -2.614,
+   "separation_post": -5.487,
+   "learned": false,
+   "mixture_post": 8.106
+  },
+  {
+   "seed": 303,
+   "identity": {
+    "jaccard_AA": 0.114,
+    "jaccard_BB": 0.071,
+    "jaccard_AB": 0.154,
+    "kc_active_A": 212,
+    "kc_active_B": 85,
+    "kc_total": 4064
+   },
+   "pre": {
+    "A": {
+     "mean": 3.4341124661246614,
+     "sd": 3.820258242563113,
+     "values": [
+      2.952,
+      11.36,
+      3.557,
+      2.57,
+      0.884,
+      -0.719
+     ],
+     "kc_n": 212,
+     "hz": 3.67,
+     "approach_hz": 12.56,
+     "avoid_hz": 9.12
+    },
+    "B": {
+     "mean": 5.322460962704866,
+     "sd": 2.8194629506380675,
+     "values": [
+      4.272,
+      9.847,
+      1.436,
+      2.757,
+      6.859,
+      6.764
+     ],
+     "kc_n": 85,
+     "hz": 9.95,
+     "approach_hz": 26.22,
+     "avoid_hz": 20.9
+    },
+    "AB": {
+     "mean": 9.194331526648602,
+     "sd": 4.478453839624602,
+     "values": [
+      6.777,
+      15.665,
+      10.924,
+      11.83,
+      1.293,
+      8.677
+     ],
+     "kc_n": 37,
+     "hz": 10.14,
+     "approach_hz": 25.12,
+     "avoid_hz": 15.92
+    }
+   },
+   "post": {
+    "A": {
+     "mean": 3.3123225577493876,
+     "sd": 3.27591304752917,
+     "values": [
+      -0.099,
+      4.259,
+      0.909,
+      3.688,
+      1.326,
+      9.792
+     ],
+     "kc_n": 201,
+     "hz": 3.12,
+     "approach_hz": 11.07,
+     "avoid_hz": 7.76
+    },
+    "B": {
+     "mean": 4.647575493612077,
+     "sd": 6.4932694773676225,
+     "values": [
+      8.552,
+      7.47,
+      4.988,
+      5.026,
+      -9.12,
+      10.97
+     ],
+     "kc_n": 75,
+     "hz": 10.07,
+     "approach_hz": 21.83,
+     "avoid_hz": 17.19
+    },
+    "AB": {
+     "mean": 8.971923796618919,
+     "sd": 7.586728375141756,
+     "values": [
+      1.552,
+      17.879,
+      -0.376,
+      12.949,
+      17.993,
+      3.835
+     ],
+     "kc_n": 104,
+     "hz": 9.78,
+     "approach_hz": 25.79,
+     "avoid_hz": 16.81
+    }
+   },
+   "teach": [
+    {
+     "epoch": 0,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2148,
+     "valence_during": 9.469
+    },
+    {
+     "epoch": 0,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 49,
+     "valence_during": 5.865
+    },
+    {
+     "epoch": 1,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1564,
+     "valence_during": 10.901
+    },
+    {
+     "epoch": 1,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 508,
+     "valence_during": 4.49
+    },
+    {
+     "epoch": 2,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1577,
+     "valence_during": 1.532
+    },
+    {
+     "epoch": 2,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 9.615
+    },
+    {
+     "epoch": 3,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2394,
+     "valence_during": 3.677
+    },
+    {
+     "epoch": 3,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 125,
+     "valence_during": 15.85
+    },
+    {
+     "epoch": 4,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1185,
+     "valence_during": 0.838
+    },
+    {
+     "epoch": 4,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 159,
+     "valence_during": 7.676
+    },
+    {
+     "epoch": 5,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1734,
+     "valence_during": 5.476
+    },
+    {
+     "epoch": 5,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 159,
+     "valence_during": 8.279
+    },
+    {
+     "epoch": 6,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 2316,
+     "valence_during": 13.099
+    },
+    {
+     "epoch": 6,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 848,
+     "valence_during": 14.887
+    },
+    {
+     "epoch": 7,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1549,
+     "valence_during": 2.879
+    },
+    {
+     "epoch": 7,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 159,
+     "valence_during": 5.055
+    },
+    {
+     "epoch": 8,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1473,
+     "valence_during": 7.92
+    },
+    {
+     "epoch": 8,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 278,
+     "valence_during": 4.34
+    },
+    {
+     "epoch": 9,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1591,
+     "valence_during": 8.613
+    },
+    {
+     "epoch": 9,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 204,
+     "valence_during": 16.134
+    },
+    {
+     "epoch": 10,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1744,
+     "valence_during": 13.916
+    },
+    {
+     "epoch": 10,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 1048,
+     "valence_during": 13.269
+    },
+    {
+     "epoch": 11,
+     "stim": "A",
+     "dopamine": 1,
+     "synapses_hit": 1164,
+     "valence_during": 3.545
+    },
+    {
+     "epoch": 11,
+     "stim": "B",
+     "dopamine": -1,
+     "synapses_hit": 85,
+     "valence_during": 8.439
+    }
+   ],
+   "mb": {
+    "synapses": 44042,
+    "reward_side": 24005,
+    "punish_side": 20037,
+    "depressed": 5439,
+    "mean_gain": 0.9721,
+    "min_gain": 0.4759,
+    "rewards": 12,
+    "punishments": 12,
+    "half_life_h": 6.0,
+    "calibration": "pn05_apl10_kc03"
+   },
+   "separation_pre": -1.888,
+   "separation_post": -1.335,
+   "learned": false,
+   "mixture_post": 8.972
+  }
+ ]
+}
