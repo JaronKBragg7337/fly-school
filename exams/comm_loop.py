@@ -25,6 +25,8 @@ PULSE_MS, PRE_MS, TAIL_MS = float(os.environ.get("COMM_PULSE_MS", 300.0)), 20.0,
 R_TYPES = ("MBON09",); P_TYPES = ("MBON25", "MBON25-like", "MBON34"); ANSWER = "MDN"
 
 fb = FlyBrain(GRAPH); p = fb.p
+W_ORIG = fb.wdata.copy()          # Grok review 2026-09-17 (theory A): restore the graph's weights before EVERY pupil; MushroomBody
+                                  # reads its base from fb.wdata, so a second pupil in one process inherited the first one's lesson
 THRESH = np.load(os.environ["COMM_THRESH"]).astype(np.float32) if os.environ.get("COMM_THRESH") else np.full(fb.n, p.v_thresh, dtype=np.float32)   # fly-v4 per-KC thresholds
 types = fb.types.astype(str)
 T = lambda *names: np.flatnonzero(np.isin(types, names))
@@ -88,7 +90,8 @@ def cold(mb, seed, phase, c_hz):
                        "AB": round(float(np.mean([j(a, b) for a in out["A"]["_kc"] for b in out["B"]["_kc"]])), 3),
                        "AC": round(float(np.mean([j(a, b) for a in out["A"]["_kc"] for b in out["C"]["_kc"]])), 3),
                        "BC": round(float(np.mean([j(a, b) for a in out["B"]["_kc"] for b in out["C"]["_kc"]])), 3)}
-    for s in ("A", "B", "C"): out[s].pop("_kc")
+    for s in ("A", "B", "C"):
+        out[s]["_kc_union"] = set().union(*out[s]["_kc"]); out[s].pop("_kc")
     return out
 
 
@@ -105,9 +108,23 @@ print(f"C rate equalised: A -> {ka} KCs; C @{c_hz:.1f} Hz -> {kc_} KCs", flush=T
 
 READ["PAM"] = np.asarray(_mb.reward_side); READ["PPL"] = np.asarray(_mb.punish_side)
 for seed in SEEDS:
+    fb.wdata[:] = W_ORIG
     store = LAB / f"comm_seed_{seed}.npz"; store.unlink(missing_ok=True)
     mb = MushroomBody(fb, lr=LR, calibration=C.CHOSEN, sides=RUNTIME / "build" / "mb_sides.json", store=store, clock=lambda: 0.0)
     pre = cold(mb, seed, "pre", c_hz)
+    if os.environ.get("COMM_TOPK"):      # test 8: answer channel = top-K PAM-side MBON TYPES by KC->MBON weight from A's PRE-trial KCs (wiring + pre only)
+        K = int(os.environ["COMM_TOPK"]); a_kc = np.array(sorted(pre["A"]["_kc_union"]), dtype=np.int64)
+        m = np.isin(mb.pre, a_kc) & np.isin(mb.post, READ["PAM"])
+        w_by_cell = np.bincount(mb.post[m], weights=np.abs(mb.base[m]), minlength=fb.n)
+        w_by_type = {}
+        for cell in READ["PAM"]: w_by_type[types[cell]] = w_by_type.get(types[cell], 0.0) + float(w_by_cell[cell])
+        top = sorted(w_by_type, key=lambda t_: -w_by_type[t_])[:K]
+        READ["PAMtop"] = np.flatnonzero(np.isin(types, top)); topinfo = {t_: round(w_by_type[t_], 1) for t_ in top}
+        # re-read the pre block on the chosen channel (same seeds -> identical trials, just the extra readout)
+        pre = cold(mb, seed, "pre", c_hz)
+        print(f"seed {seed}: answer channel = PAM types {topinfo} ({len(READ['PAMtop'])} cells)", flush=True)
+    else:
+        topinfo = None
     teach = []
     for epoch in range(TEACH_EPOCHS):
         for s, val in (("A", +1), ("B", -1)):
@@ -128,7 +145,8 @@ for seed in SEEDS:
                 zP, zL = (xP - muP) / sdP, (xL - muL) / sdL
                 replies.append("APPROACH" if (zP < -1 and zP <= zL) else ("AVOID" if zL < -1 else "NONE"))
             dec[s] = {"replies": replies, "approach_rate": round(sum(r == "APPROACH" for r in replies) / REPS, 3), "avoid_rate": round(sum(r == "AVOID" for r in replies) / REPS, 3),
-                      "pam_pre_post": [round(muP, 2), round(float(np.mean(post[s]["PAM"])), 2)], "ppl_pre_post": [round(muL, 2), round(float(np.mean(post[s]["PPL"])), 2)]}
+                      "pam_pre_post": [round(muP, 2), round(float(np.mean(post[s]["PAM"])), 2)], "ppl_pre_post": [round(muL, 2), round(float(np.mean(post[s]["PPL"])), 2)],
+                      "pamtop_pre_post": ([round(float(np.mean(pre[s]["PAMtop"])), 2), round(float(np.mean(post[s]["PAMtop"])), 2)] if "PAMtop" in pre[s] else None)}
         elif os.environ.get("COMM_DECODE") == "drop1sd":          # test 2: answer channel falls below its own pre baseline
             thr = mu - 1.0 * sd; replies = ["LEARNED" if x < thr else "NONE" for x in post[s]["MDN"]]
             dec[s] = {"threshold": round(thr, 3), "replies": replies, "avoid_rate": round(sum(r == "LEARNED" for r in replies) / REPS, 3)}
@@ -138,7 +156,9 @@ for seed in SEEDS:
     R_drop = float(np.mean(post["A"]["R"])) < float(np.mean(pre["A"]["R"]))
     L_drop = float(np.mean(post["A"]["MDN"])) < float(np.mean(pre["A"]["MDN"]))
     P_drop = float(np.mean(post["B"]["P"])) < float(np.mean(pre["B"]["P"]))
-    row = {"seed": seed, "pre": pre, "post": post, "teach": teach, "decode": dec, "R_A_pre_post": [round(float(np.mean(pre["A"]["R"])), 2), round(float(np.mean(post["A"]["R"])), 2)],
+    for d_ in (pre, post):
+        for s_ in ("A", "B", "C"): d_[s_].pop("_kc_union", None)
+    row = {"seed": seed, "pre": pre, "post": post, "teach": teach, "decode": dec, "answer_channel": topinfo, "R_A_pre_post": [round(float(np.mean(pre["A"]["R"])), 2), round(float(np.mean(post["A"]["R"])), 2)],
            "P_B_pre_post": [round(float(np.mean(pre["B"]["P"])), 2), round(float(np.mean(post["B"]["P"])), 2)], "R_drop": R_drop, "P_drop": P_drop, "L_drop": L_drop, "L_A_pre_post": [round(float(np.mean(pre["A"]["MDN"])), 2), round(float(np.mean(post["A"]["MDN"])), 2)],
            "MDN_mean": {s: [round(float(np.mean(pre[s]["MDN"])), 2), round(float(np.mean(post[s]["MDN"])), 2)] for s in ("A", "B", "C")}, "mb": mb.stats()}
     results.append(row)
@@ -159,7 +179,8 @@ if os.environ.get("COMM_DECODE") == "valence2" and os.environ.get("COMM_BLOCK"):
     for r in results:
         b = {}
         for s_ in ("A", "B", "C"):
-            P0, P1 = np.array(r["pre"][s_]["PAM"]), np.array(r["post"][s_]["PAM"]); L0, L1 = np.array(r["pre"][s_]["PPL"]), np.array(r["post"][s_]["PPL"])
+            key = "PAMtop" if "PAMtop" in r["pre"][s_] else "PAM"
+            P0, P1 = np.array(r["pre"][s_][key]), np.array(r["post"][s_][key]); L0, L1 = np.array(r["pre"][s_]["PPL"]), np.array(r["post"][s_]["PPL"])
             zP = (P1.mean() - P0.mean()) / max(1e-6, P0.std() / np.sqrt(len(P0))); zL = (L1.mean() - L0.mean()) / max(1e-6, L0.std() / np.sqrt(len(L0)))
             if os.environ.get("COMM_ONESIDED"):
                 b[s_] = {"zP": round(float(zP), 2), "zL": round(float(zL), 2), "reply": "APPROACH" if zP < -2 else "NONE"}

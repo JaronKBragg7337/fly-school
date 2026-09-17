@@ -1,0 +1,8 @@
+{
+ "pn": 1.2653676328049124,
+ "apl": 1.0,
+ "kc": 1.789810060699586,
+ "kc_thresh_shift_mv": 1.8016575199247349,
+ "mbon": 0.8561399722476636,
+ "note": "APL/DPM x6.016 applied on APL/DPM->KC edges inside graph_v6.npz; APL->MBON and other APL outputs at x1"
+}

@@ -118,3 +118,16 @@ rule predicts: reward depresses A's drive to PAM-side (avoid) MBONs and says not
   reply(X) = "APPROACH" if zP(X) < -2, else "NONE".
 PASS (fixed): (1) reply(A) == "APPROACH" in >= 6 of 8 seeds; (2) reply(C) == "NONE" in >= 7 of 8 seeds.
 Seeds: 4949,5050,5151,5252,5353,5454,5555,5656. B recorded. DNs recorded. Grade 0b on fly-v7 already passed (9/1/1).
+
+# TEST 8 — predeclared 2026-09-17 ~10:45 EDT, on fly-v10. Eighth predeclared test; tests 1-7 stand as FAILED.
+Changes since test 7, each measured before this declaration: (a) fly-v9: antennal-lobe lLN1/lLN2 local neurons made inhibitory
+(they were marked cholinergic by the transmitter table; one odour activated 154-164 PN types, now 23-35); (b) shared-weights bug
+fixed (Grok's review): weights restored before every pupil; (c) fly-v10 = v9 + calibration r2_c025 (stage 2 on 3 flies: paired-odour
+drop 0.44, control 0.08). Symbols, training, pupil as test 7: A = ORN_DA2 @40 Hz reward; B = ORN_DL3 @40 Hz punish (recorded);
+C = ORN_VM5d equalised, never paired. 12 pairings, lr 0.2. Cold: 24 reps per odour pre and post, 300 ms pulses.
+Answer channel (Grok's review, item C): the top-5 PAM-side MBON TYPES ranked by KC->MBON synaptic weight received from A's
+PRE-trial Kenyon cells (wiring + pre trials only; chosen before any post trial). The whole-PAM mean is also reported.
+Decode (one-sided, block, as test 7): zP = (mean top5_post - mean top5_pre) / (sd top5_pre / sqrt(24)); reply = "APPROACH" if zP < -2 else "NONE".
+PASS (fixed): (1) reply(A) == "APPROACH" in >= 6 of 8 seeds; (2) reply(C) == "NONE" in >= 7 of 8 seeds.
+Seeds: 5757,5858,5959,6060,6161,6262,6363,6464 (one process per seed). Grade 0b on fly-v10 with calib.json runs alongside.
+After a pass: freeze raw outputs + manifest; clean re-run of this exact test with new seeds 6565-7272 from a fresh process; both must pass.

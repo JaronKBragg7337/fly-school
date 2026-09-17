@@ -214,3 +214,13 @@ KC→MBON edges ×24 (`versions/fly-v7`). Grade 0b on v7: 9 pass / 1 fail / 1 no
 24 pairings, 24 reps, 8 fresh seeds): the rewarded odour's avoid-side MBON output fell in 7/8 flies (z −2.9 to −6.4) — but the
 control odour fell 3–10% too, so the predeclared specificity criterion failed; the punished odour did not move. Seven predeclared
 tests, none redefined. Open question: why the control inherits part of the lesson. `results/comm_loop_test{5,6,7}_s*.json`.
+
+## 15. Antennal lobe corrected (fly-v9), fly-v10, test 8 (2026-09-17 10:25)
+
+The lLN1/lLN2 antennal-lobe local neurons are marked cholinergic by the transmitter table; in the fly they are GABAergic lateral
+inhibition. With that sign fixed (`versions/fly-v9`), one odour activates 23–35 PN types instead of 154–164. A shared-weights bug
+(pupils in one process inheriting each other's memory — found in Grok's review) is fixed too. Calibration round 2 on v9 then
+gave a 32–50% learned drop in every fly (`versions/fly-v10`). Grade 0b on v10: core reflexes hold. Test 8 (8 fresh seeds, the
+wiring-chosen top-5 reward-side compartments): the rewarded odour's output fell 40% in 8/8 flies (z −13 to −22) — but the
+never-paired control fell 15% and the punished odour 30%, so the predeclared specificity criterion failed. Eight predeclared
+tests, none redefined. The remaining leak is Kenyon-cell reliability (0.29–0.47 in these flies). `results/comm_loop_test8_s*.json`.

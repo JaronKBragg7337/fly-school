@@ -35,6 +35,7 @@ fb = FlyBrainV3(GRAPH); p = fb.p
 types = fb.types.astype(str)
 is_pn = np.array([("PN" in x and not x.startswith("MBON")) for x in types]); is_apl = types == "APL"; is_kc = np.array([x.startswith("KC") for x in types]); is_mbon = np.array([x.startswith("MBON") for x in types])
 base_gpn = C.gains_for(fb, C.CHOSEN)[fb.type_code].astype(np.float32)
+W_ORIG = fb.wdata.copy()          # restore before every stage-2 fly (shared-weights bug found by Grok's review, 2026-09-17)
 kc = np.flatnonzero(is_kc)
 cells = {g: fb.where(type_re=rf"^{g}$") for g in PANEL}
 
@@ -86,15 +87,18 @@ def jac(a, b): return float((a & b).sum() / max(1, (a | b).sum()))
 
 def stage1(c):
     gpn, thresh = make(c); sets = {}; hz = []
+    NREP = int(os.environ.get("S1_REPS", 2))
     for g in PANEL:
-        r0 = trial(gpn, thresh, cells[g], 11); r1 = trial(gpn, thresh, cells[g], 12); sets[g] = (r0["kc"], r1["kc"]); hz += [r0["hz"], r1["hz"]]
-    rel = float(np.mean([jac(a, b) for a, b in sets.values()]))
+        rs = [trial(gpn, thresh, cells[g], 11 + k) for k in range(NREP)]; sets[g] = tuple(r["kc"] for r in rs); hz += [r["hz"] for r in rs]
+    rel = float(np.mean([jac(ss[0], ss[k]) for ss in sets.values() for k in range(1, len(ss))]))
     pairs = [jac(sets[a][0], sets[b][0]) for i, a in enumerate(PANEL) for b in PANEL[i + 1:]]
+    TEST_PAIRS = (("ORN_DA2", "ORN_DL3"), ("ORN_DA2", "ORN_VM5d"))
+    test_ovl = float(max(jac(sets[a][0], sets[b][0]) for a, b in TEST_PAIRS if a in sets and b in sets))
     frac = float(np.mean([s[0].mean() for s in sets.values()]))
-    m = {"reliability": round(rel, 3), "median_overlap": round(float(np.median(pairs)), 3), "kc_frac": round(frac, 4), "brain_hz": round(float(np.mean(hz)), 2)}
-    ok = m["median_overlap"] <= 0.15 and m["reliability"] >= 0.6 and 0.03 <= m["kc_frac"] <= 0.10 and m["brain_hz"] < 8
+    m = {"reliability": round(rel, 3), "median_overlap": round(float(np.median(pairs)), 3), "test_pair_overlap_max": round(test_ovl, 3), "kc_frac": round(frac, 4), "brain_hz": round(float(np.mean(hz)), 2)}
+    ok = m["median_overlap"] <= 0.15 and test_ovl <= 0.15 and m["reliability"] >= 0.6 and 0.03 <= m["kc_frac"] <= 0.10 and m["brain_hz"] < 8
     # score: distance to targets (lower is better)
-    m["score"] = round(max(0, m["median_overlap"] - 0.15) * 5 + max(0, 0.6 - m["reliability"]) * 3 + (0 if 0.03 <= frac <= 0.10 else abs(frac - 0.065) * 20) + max(0, m["brain_hz"] - 8) * 0.2, 4)
+    m["score"] = round(max(0, test_ovl - 0.15) * 5 + max(0, m["median_overlap"] - 0.15) * 5 + max(0, 0.6 - m["reliability"]) * 3 + (0 if 0.03 <= frac <= 0.10 else abs(frac - 0.065) * 20) + max(0, m["brain_hz"] - 8) * 0.2, 4)
     m["stage1_pass"] = bool(ok); return m
 
 
@@ -104,6 +108,7 @@ def stage2(c, A="ORN_DA2", Ctrl="ORN_VM5d"):
     mean drop_A >= 0.30, mean drop_C <= 0.10, and zA_block < -2 in a majority of seeds."""
     gpn, thresh = make(c); per_seed = []
     for sd in range(args.s2seeds):
+        fb.wdata[:] = W_ORIG
         mb = MushroomBody(fb, lr=args.lr, calibration=C.CHOSEN, sides=RUNTIME / "build" / "mb_sides.json", store=OUT / f"s2_{args.worker}.npz", clock=lambda: 0.0)
         pam = np.asarray(mb.reward_side); base = 10000 * sd
         def out_rate(g, seed):
