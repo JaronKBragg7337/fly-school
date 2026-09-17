@@ -29,6 +29,10 @@ PROP_HZ_PER_RAD_S = float(os.environ.get("BODY_PROP_GAIN", 5.0))  # CHOSEN: prop
 MOTOR_GAIN = float(os.environ.get("BODY_MOTOR_GAIN", 0.05))    # CHOSEN: actuation per motor-neuron spike in the 2 ms window
 MOTOR_DECAY = float(os.environ.get("BODY_MOTOR_DECAY", 0.8))   # CHOSEN: activation memory per control step (muscle is slow)
 SEED = int(os.environ.get("BODY_SEED", 1))
+MODE = os.environ.get("BODY_MODE", "connectome")          # 'connectome' = every leg muscle from its motor neurons (raw wiring);
+                                                          # 'descending' = DN rates command a declared gait (ported from Mineplix, MIT)
+SOUND_HZ = float(os.environ.get("BODY_SOUND_HZ", 0))      # optional: tone on the 50 JO-A ear cells for the whole run
+SOUND_FROM_S = float(os.environ.get("BODY_SOUND_FROM_S", 0.5))
 
 # muscle -> (actuator stem, sign). Anatomy: Tr = trochanter (coxa-trochanter joint; flybody's 'femur' hinge), Fe = femur
 # reductor (rotates femur; 'femur_twist'), Ti = tibia, Ta = tarsus, ltm = long tendon (claw/tarsus grip), sternal
@@ -52,6 +56,10 @@ def main():
     fb = FlyBrain(Path(os.environ["BODY_GRAPH"]) if os.environ.get("BODY_GRAPH") else RUNTIME / "build" / "graph.npz")
     ann = pd.read_feather(RUNTIME / "data" / "body-annotations.feather")
     b2i = fb.body_to_i
+    soma_side = np.array([""] * fb.n, dtype=object)
+    for bid, sd in zip(ann["bodyId"].astype(int), ann["somaSide"].astype(str)):
+        if bid in b2i and sd in ("L", "R"): soma_side[b2i[bid]] = sd
+    jo = fb.where(type_re=r"^JO-A")
     env = walk_on_ball(); ts = env.reset()
     m = env.physics.model
     act_names = [m.actuator(i).name.replace("walker/", "") for i in range(m.nu)]
@@ -96,6 +104,11 @@ def main():
     print(f"motor neurons mapped {len(mn_idx)} (unmapped by type: {unmapped}); leg sensory touch "
           f"{ {k: len(v) for k, v in touch_cells.items()} } prop { {k: len(v) for k, v in prop_cells.items()} }", flush=True)
 
+    gait = None
+    if MODE == "descending":
+        sys.path.insert(0, str(HERE)); from gait import Gait
+        gait = Gait(fb, side=soma_side)
+        print(f"gait: forward DNs {len(gait.fwd)}, backward {len(gait.back)}, turnL {len(gait.turnL)}, turnR {len(gait.turnR)}", flush=True)
     # ---- brain state
     p = fb.p; gains = C.gains_for(fb, C.CHOSEN); gpn = gains[fb.type_code].astype(np.float32)
     rng = np.random.default_rng(SEED)
@@ -119,9 +132,12 @@ def main():
                 dof = [m.jnt_dofadr[j] for j in js]
                 speed = float(np.mean(np.abs(qvel[dof])))
                 drive_rate[prop_cells[leg]] = min(200.0, PROP_HZ_PER_RAD_S * speed)
+        if SOUND_HZ > 0 and k * ctrl_dt >= SOUND_FROM_S:
+            drive_rate[jo] = SOUND_HZ
         prob = np.clip(drive_rate * p.dt / 1000.0, 0, 1); drive_idx = np.flatnonzero(prob > 0); drive_p = prob[drive_idx]
         # brain steps
         mn_count = np.zeros(m.nu, dtype=np.float32)
+        win_count = np.zeros(fb.n, dtype=np.float32) if gait is not None else None
         for _ in range(steps_per_ctrl):
             v = p.v_rest + (v - p.v_rest) * fb.decay
             if len(drive_idx):
@@ -132,6 +148,7 @@ def main():
             if len(fired):
                 total_spikes += len(fired)
                 refr[fired] = fb.refr_steps; v[fired] = p.v_reset
+                if win_count is not None: win_count[fired] += 1
                 f_mn = np.isin(mn_idx, fired)
                 if f_mn.any():
                     np.add.at(mn_count, mn_act[f_mn], mn_sign[f_mn]); mn_spikes_total += int(f_mn.sum())
@@ -142,19 +159,25 @@ def main():
                     v += np.bincount(indices[g], weights=wdata[g] * np.repeat(gpn[fired], cnt), minlength=fb.n).astype(np.float32)
             refr -= 1
         # brain -> body
-        activation = np.clip(activation * MOTOR_DECAY + MOTOR_GAIN * mn_count, -1.0, 1.0)
+        if gait is not None:
+            gait.read_brain(win_count, ctrl_dt * 1000.0)
+            activation[:] = 0.0; cmd = gait.controls(ctrl_dt * 1000.0, act_index, activation)
+        else:
+            activation = np.clip(activation * MOTOR_DECAY + MOTOR_GAIN * mn_count, -1.0, 1.0); cmd = None
         ts = env.step(activation)
         if k % 25 == 0:
             xpos = env.physics.named.data.xpos
             trace.append({"t": round(k * ctrl_dt, 3), "touch": [int(x > 0) for x in np.asarray(ts.observation["walker/touch"]).ravel()],
                           "ball_qvel": [round(float(x), 3) for x in np.asarray(ts.observation.get("walker/ball_qvel", [])).ravel()[:3]],
                           "act_abs_mean": round(float(np.abs(activation).mean()), 4), "mn_spikes_window": int(np.abs(mn_count).sum()),
+                          "cmd": {k_: round(float(v_), 3) for k_, v_ in cmd.items()} if cmd else None,
                           "brain_hz_per_cell": round(total_spikes / max(1e-9, (k + 1) * ctrl_dt) / fb.n, 2)})
         if ts.last():
             ts = env.reset()
     secs = n_ctrl * ctrl_dt
     out = {"chosen": {"seconds": SECONDS, "touch_hz": TOUCH_HZ, "prop_gain": PROP_HZ_PER_RAD_S, "motor_gain": MOTOR_GAIN,
-                      "motor_decay": MOTOR_DECAY, "muscle_map": MUSCLE_MAP, "seed": SEED, "env": "flybody walk_on_ball", "graph": os.environ.get("BODY_GRAPH", "runtime/build/graph.npz")},
+                      "motor_decay": MOTOR_DECAY, "muscle_map": MUSCLE_MAP, "seed": SEED, "env": "flybody walk_on_ball", "graph": os.environ.get("BODY_GRAPH", "runtime/build/graph.npz"), "mode": MODE, "sound_hz": SOUND_HZ,
+                      "gait": "Mineplix/fly-brain gait.json (MIT) via gait.py" if MODE == "descending" else None},
            "measured": {"motor_neurons_mapped": int(len(mn_idx)), "unmapped_by_type": unmapped,
                         "touch_cells": {k: int(len(v)) for k, v in touch_cells.items()}, "prop_cells": {k: int(len(v)) for k, v in prop_cells.items()},
                         "brain_spikes_per_sec_per_cell": round(total_spikes / secs / fb.n, 3), "motor_neuron_spikes": mn_spikes_total,

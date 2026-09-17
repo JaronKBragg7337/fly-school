@@ -154,3 +154,13 @@ Code in `school/`, `exams/`, `axon/`: MIT (Jaron Bragg, 2026). `runtime/`: MIT, 
    stands (4–6 Hz/cell, five or six legs down, ball still). (`results/body_loop_*.json`)
 
 Rebuild check for this section: `SWEEP=0.35 SWEEP_SEED=73 python exams/gain_sweep.py` → `hz_per_cell` ≈ 2.0, `kc_frac_active` ≈ 0.07.
+
+## 9. Walking — borrowed, declared (2026-09-17 02:10)
+
+No connectome-only model walks; every public embodied fly brain (FlyGM, Fly.exe, Mineplix/fly-brain, NeuroMechFly v2) puts a
+stepping generator between descending-neuron rates and the legs, and says so. We do the same: `body/gait.py` is a port of
+**Mineplix/fly-brain's** generator (lulzx, MIT) — `gait.mineplix.json`, two-harmonic joint curves fitted to 100 FlySuite
+real-fly walks, tripod, 10 Hz — commanded by our brain's own DN rates (`BODY_MODE=descending`). Measured on fly-v2:
+silent, the fly steps intermittently at the walking threshold; a 120 Hz tone makes MDN fire and it backs up and turns
+(`results/body_loop_v2_gait_s0.json`, `_s120.json`). Mineplix also reports 7.4% active Kenyon cells in their fitted regime;
+our 0.35× gives 7.3%. Their raw-muscle mode "cannot stand"; ours stands on v2 (2 s, on a ball — small, checkable).
