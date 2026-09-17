@@ -1,0 +1,5 @@
+GPU determinism diagnostic (13:40 EDT). Fly 23505, odour C, MUTE block (96 receiver flies, identical world input, identical rng seeds),
+the same block run 3x and then 4x with torch.use_deterministic_algorithms(True):
+  run0 vs run1: 1 (neuron,fly) entry differs, 1 spike;  run0 vs run2: identical;  deterministic mode: [1, 0, 0] entries differ.
+cuSPARSE SpMM summation order is not fixed at 96 columns; a borderline threshold crossing can flip by one spike. Not a leak:
+no sender, no world change, no rng change was involved. Per-trial readouts (vPN, lPN, brain_hz) were identical in every case.

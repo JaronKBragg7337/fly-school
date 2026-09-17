@@ -1,0 +1,379 @@
+{
+ "tag": "gate3c",
+ "protocol": "gate3_protocol.md",
+ "lr": 0.2,
+ "reps": 96,
+ "s1b_abs": true,
+ "seeds": [
+  23101,
+  23202,
+  23303,
+  23404,
+  23505,
+  23606,
+  23707,
+  23808
+ ],
+ "counts": {
+  "S1a": 8,
+  "S1b": 8,
+  "W1": 8,
+  "R1a": 8,
+  "R1b": 8,
+  "R2": 8,
+  "R3": 7,
+  "R4": 8,
+  "G_no_ignition": 8
+ },
+ "criteria": {
+  "S1_mdnA_drop_ge_7of8_and_A_gt_C_ge_7of8": true,
+  "W1_cVA_up_ge_7of8": true,
+  "R1_vPN_up_ge_7of8_and_z_ge_2_in_6of8": true,
+  "R2_C_within_15pct_ge_6of8": true,
+  "R3_mute_identical_all": false,
+  "R4_no_leak_all": true,
+  "G_no_ignition_all": true
+ },
+ "verdict": "FAIL",
+ "replies": [
+  "SENDER-CAME-CLOSER",
+  "SENDER-CAME-CLOSER",
+  "SENDER-CAME-CLOSER",
+  "SENDER-CAME-CLOSER",
+  "SENDER-CAME-CLOSER",
+  "SENDER-CAME-CLOSER",
+  "SENDER-CAME-CLOSER",
+  "SENDER-CAME-CLOSER"
+ ],
+ "rows": [
+  {
+   "seed": 23101,
+   "mdn_A": [
+    49.83,
+    34.54
+   ],
+   "mdn_C": [
+    2.26,
+    1.69
+   ],
+   "rel_mdn_A": 0.307,
+   "rel_mdn_C": 0.256,
+   "pam5_A": [
+    52.29,
+    28.27
+   ],
+   "cVA_at_R_A": [
+    0.2867,
+    0.3826
+   ],
+   "vPN_A": [
+    98.64,
+    125.665
+   ],
+   "vPN_A_z": 5.879,
+   "vPN_C": [
+    171.195,
+    171.904
+   ],
+   "rel_vPN_C": 0.004,
+   "reply": "SENDER-CAME-CLOSER",
+   "S1a": true,
+   "S1b": true,
+   "W1": true,
+   "R1a": true,
+   "R1b": true,
+   "R2": true,
+   "R3": true,
+   "R4": true,
+   "G_no_ignition": true
+  },
+  {
+   "seed": 23202,
+   "mdn_A": [
+    46.99,
+    32.18
+   ],
+   "mdn_C": [
+    1.7,
+    1.47
+   ],
+   "rel_mdn_A": 0.315,
+   "rel_mdn_C": 0.136,
+   "pam5_A": [
+    51.67,
+    27.74
+   ],
+   "cVA_at_R_A": [
+    0.305,
+    0.407
+   ],
+   "vPN_A": [
+    105.353,
+    129.21
+   ],
+   "vPN_A_z": 4.801,
+   "vPN_C": [
+    172.02,
+    172.671
+   ],
+   "rel_vPN_C": 0.004,
+   "reply": "SENDER-CAME-CLOSER",
+   "S1a": true,
+   "S1b": true,
+   "W1": true,
+   "R1a": true,
+   "R1b": true,
+   "R2": true,
+   "R3": true,
+   "R4": true,
+   "G_no_ignition": true
+  },
+  {
+   "seed": 23303,
+   "mdn_A": [
+    46.69,
+    31.88
+   ],
+   "mdn_C": [
+    1.09,
+    0.64
+   ],
+   "rel_mdn_A": 0.317,
+   "rel_mdn_C": 0.411,
+   "pam5_A": [
+    51.46,
+    27.34
+   ],
+   "cVA_at_R_A": [
+    0.3047,
+    0.3974
+   ],
+   "vPN_A": [
+    106.019,
+    127.893
+   ],
+   "vPN_A_z": 5.517,
+   "vPN_C": [
+    173.278,
+    173.626
+   ],
+   "rel_vPN_C": 0.002,
+   "reply": "SENDER-CAME-CLOSER",
+   "S1a": true,
+   "S1b": true,
+   "W1": true,
+   "R1a": true,
+   "R1b": true,
+   "R2": true,
+   "R3": true,
+   "R4": true,
+   "G_no_ignition": true
+  },
+  {
+   "seed": 23404,
+   "mdn_A": [
+    45.23,
+    33.2
+   ],
+   "mdn_C": [
+    1.82,
+    1.66
+   ],
+   "rel_mdn_A": 0.266,
+   "rel_mdn_C": 0.084,
+   "pam5_A": [
+    52.2,
+    27.47
+   ],
+   "cVA_at_R_A": [
+    0.3187,
+    0.3957
+   ],
+   "vPN_A": [
+    109.447,
+    129.702
+   ],
+   "vPN_A_z": 4.297,
+   "vPN_C": [
+    173.119,
+    172.801
+   ],
+   "rel_vPN_C": -0.002,
+   "reply": "SENDER-CAME-CLOSER",
+   "S1a": true,
+   "S1b": true,
+   "W1": true,
+   "R1a": true,
+   "R1b": true,
+   "R2": true,
+   "R3": true,
+   "R4": true,
+   "G_no_ignition": true
+  },
+  {
+   "seed": 23505,
+   "mdn_A": [
+    47.79,
+    32.75
+   ],
+   "mdn_C": [
+    2.16,
+    2.37
+   ],
+   "rel_mdn_A": 0.315,
+   "rel_mdn_C": -0.097,
+   "pam5_A": [
+    50.92,
+    27.52
+   ],
+   "cVA_at_R_A": [
+    0.2969,
+    0.3993
+   ],
+   "vPN_A": [
+    101.562,
+    128.154
+   ],
+   "vPN_A_z": 6.21,
+   "vPN_C": [
+    171.73,
+    171.788
+   ],
+   "rel_vPN_C": 0.0,
+   "reply": "SENDER-CAME-CLOSER",
+   "S1a": true,
+   "S1b": true,
+   "W1": true,
+   "R1a": true,
+   "R1b": true,
+   "R2": true,
+   "R3": false,
+   "R4": true,
+   "G_no_ignition": true
+  },
+  {
+   "seed": 23606,
+   "mdn_A": [
+    46.33,
+    30.16
+   ],
+   "mdn_C": [
+    1.3,
+    1.34
+   ],
+   "rel_mdn_A": 0.349,
+   "rel_mdn_C": -0.028,
+   "pam5_A": [
+    51.99,
+    27.39
+   ],
+   "cVA_at_R_A": [
+    0.304,
+    0.4182
+   ],
+   "vPN_A": [
+    109.91,
+    132.393
+   ],
+   "vPN_A_z": 4.599,
+   "vPN_C": [
+    173.365,
+    172.859
+   ],
+   "rel_vPN_C": -0.003,
+   "reply": "SENDER-CAME-CLOSER",
+   "S1a": true,
+   "S1b": true,
+   "W1": true,
+   "R1a": true,
+   "R1b": true,
+   "R2": true,
+   "R3": true,
+   "R4": true,
+   "G_no_ignition": true
+  },
+  {
+   "seed": 23707,
+   "mdn_A": [
+    45.59,
+    31.8
+   ],
+   "mdn_C": [
+    1.25,
+    0.99
+   ],
+   "rel_mdn_A": 0.303,
+   "rel_mdn_C": 0.208,
+   "pam5_A": [
+    51.15,
+    27.45
+   ],
+   "cVA_at_R_A": [
+    0.309,
+    0.4053
+   ],
+   "vPN_A": [
+    107.48,
+    129.659
+   ],
+   "vPN_A_z": 4.874,
+   "vPN_C": [
+    172.627,
+    173.134
+   ],
+   "rel_vPN_C": 0.003,
+   "reply": "SENDER-CAME-CLOSER",
+   "S1a": true,
+   "S1b": true,
+   "W1": true,
+   "R1a": true,
+   "R1b": true,
+   "R2": true,
+   "R3": true,
+   "R4": true,
+   "G_no_ignition": true
+  },
+  {
+   "seed": 23808,
+   "mdn_A": [
+    49.7,
+    36.57
+   ],
+   "mdn_C": [
+    2.23,
+    2.19
+   ],
+   "rel_mdn_A": 0.264,
+   "rel_mdn_C": 0.016,
+   "pam5_A": [
+    51.23,
+    27.77
+   ],
+   "cVA_at_R_A": [
+    0.2849,
+    0.3647
+   ],
+   "vPN_A": [
+    100.116,
+    121.832
+   ],
+   "vPN_A_z": 4.551,
+   "vPN_C": [
+    171.021,
+    171.774
+   ],
+   "rel_vPN_C": 0.004,
+   "reply": "SENDER-CAME-CLOSER",
+   "S1a": true,
+   "S1b": true,
+   "W1": true,
+   "R1a": true,
+   "R1b": true,
+   "R2": true,
+   "R3": true,
+   "R4": true,
+   "G_no_ignition": true
+  }
+ ],
+ "wall_s": 1945
+}

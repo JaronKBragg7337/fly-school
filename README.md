@@ -271,3 +271,28 @@ not fitted. It is a wire test. Gates 2–4 (cVA / CO2 on the receiver; state-gat
 Credits for this stretch: Grok chat (the four-gate design, the mute/scramble controls, the song channel, the shared-weights bug);
 ChatGPT chat (the A-only calibration mismatch, the one-trial equaliser, the block statistic, the literature answer key); Claude
 Code (the runs, the kernel, the writing); Jaron (the rule that nothing is cancelled out — the chemistry lead is logged, not dropped).
+
+## 19. Gate 3 — the sender's learned state reaches a receiver through a world; passed and reproduced (2026-09-17 12:40–15:30)
+
+Grok chat's Gate 3: train the sender only, and the receiver — which never smells the taught odour — must track the sender's state
+through a physical channel, with a mute lesion as the control. The pilot showed the mushroom-body lesson does not reach the song
+circuit consistently, so song was dropped as the channel (`world/gate3_pilot.py`). The lesson does reach MDN, the backward-walking
+neurons (test 10). A male carries cVA on his cuticle; a nearby male is smelled through Or67d → DA1. So the world (`world/gate3_world.py`,
+declared 1-D physics) turns the sender's MDN rate into how far it backs away from the odour source, and into the cVA concentration
+at the receiver, which drives the receiver's 204 ORN_DA1 neurons. Sender (`world/gate3_sender.py`) and receiver
+(`world/gate3_receiver.py`) are separate processes; the world file is the only bridge; the receiver's ORN_DA2/VM5d spike counts are
+checked to be zero every trial.
+
+Six declarations, all in `world/gate3_protocol.md` with their results: 3 failed (a learning-rate transcription error; an under-powered
+z line and a ratio-of-small-numbers control line; then twice the "mute bit-identical" line, because the GPU sparse matmul flips one
+borderline spike about once per 800 trials and the network cascades from it — `results/gate3/gate3c/determinism.txt`). Every
+scientific line passed 8/8 in 3c, 3d, 3e and 3f. **Gate 3e passed every line 8/8; Gate 3f, the reproduction on fresh seeds, passed
+every line 8/8.** Across 3e+3f: sender MDN down 17–33% for the rewarded odour in 16/16, control odour within 1 Hz; cVA at the
+receiver up in 16/16; the receiver's DA1 projection neurons up ~20% (≈105 → ≈126 Hz), paired z 2.9–6.0, in 16/16; control odour
+flat (|change| ≤ 0.6%); mute clean; no ignition. Decoded reply at the receiver: "SENDER-CAME-CLOSER" 16/16. Grade 0b after: every
+verdict and read identical to before.
+
+What it is not: the sender does not decide to signal — it backs away less and the pheromone it already carries does the rest; the
+walking is a declared kinematic rule, not the MuJoCo body; the receiver's readout is a projection-neuron rate, not a behaviour;
+Gate 4 (two senders, one receiver; persistence across a school day) is not started. `results/gate3/*/gate3_summary.json`,
+`results/grade0b_v10calib_post_gate3.json`, hashes in `versions/comm-loop-1/MANIFEST.md`.

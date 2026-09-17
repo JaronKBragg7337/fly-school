@@ -69,15 +69,15 @@ class GPUBrain:
         B = len(seeds); dev = self.dev
         steps = int(round((pre_ms + pulse_ms + tail_ms) / self.dt)); on0 = int(round(pre_ms / self.dt)); on1 = on0 + int(round(pulse_ms / self.dt))
         # Poisson hits drawn on the CPU in the CPU kernel's order: one rng per fly, one random(len(cells)) per step.
-        hits = []
-        for cells, hz in stims:
-            prob = min(1.0, hz * self.dt / 1000.0)
-            m = np.zeros((on1 - on0, len(cells), B), dtype=bool)
-            for b, seed in enumerate(seeds):
-                rng = np.random.default_rng(int(seed))
-                for k in range(on1 - on0):
-                    m[k, :, b] = rng.random(len(cells)) < prob
-            hits.append((torch.as_tensor(np.asarray(cells), dtype=torch.int64, device=dev), torch.as_tensor(m, device=dev)))
+        # one rng per fly; per step the stims draw in order (stim 0, stim 1, ...) exactly as the CPU kernel does
+        masks = [np.zeros((on1 - on0, len(cells), B), dtype=bool) for cells, _ in stims]
+        probs = [min(1.0, hz * self.dt / 1000.0) for _, hz in stims]
+        for b, seed in enumerate(seeds):
+            rng = np.random.default_rng(int(seed))
+            for k in range(on1 - on0):
+                for i, (cells, _) in enumerate(stims):
+                    masks[i][k, :, b] = rng.random(len(cells)) < probs[i]
+        hits = [(torch.as_tensor(np.asarray(cells), dtype=torch.int64, device=dev), torch.as_tensor(m, device=dev)) for (cells, _), m in zip(stims, masks)]
         v = torch.full((self.n, B), self.v_rest, dtype=torch.float32, device=dev)
         refr = torch.zeros((self.n, B), dtype=torch.int32, device=dev)
         counts = torch.zeros((self.n, B), dtype=torch.int32, device=dev)
