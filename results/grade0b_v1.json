@@ -1,0 +1,349 @@
+{
+ "chosen": {
+  "graph": "C:\\Users\\lilli\\AI-Shared\\projects\\fly-brain\\runtime\\build\\graph.npz",
+  "pulse_ms": 300.0,
+  "reps": 3,
+  "seed": 73,
+  "answer_key": "ChatGPT chat literature table 2026-09-17 (inbox brief); Shiu 2024 numbers as soft targets"
+ },
+ "measured": [
+  {
+   "id": 1,
+   "organ": "sugar LB3b+LB3c -> MN9",
+   "drive_cells": [
+    34
+   ],
+   "drive_hz": [
+    100
+   ],
+   "reads": {
+    "MN9": {
+     "hz": 85.83,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "MN6": {
+     "hz": 2.92,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "MN8": {
+     "hz": 248.75,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 27.55,
+   "kc_frac_active": 0.825,
+   "note": "",
+   "verdict": "IGNITES"
+  },
+  {
+   "id": 2,
+   "organ": "water LB3a -> MN9",
+   "drive_cells": [
+    17
+   ],
+   "drive_hz": [
+    100
+   ],
+   "reads": {
+    "MN9": {
+     "hz": 44.17,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 30.62,
+   "kc_frac_active": 0.769,
+   "note": "",
+   "verdict": "IGNITES"
+  },
+  {
+   "id": 3,
+   "organ": "bitter LB1a-e + sugar -> MN9 lower than sugar",
+   "drive_cells": [
+    34,
+    57
+   ],
+   "drive_hz": [
+    100,
+    100
+   ],
+   "reads": {
+    "MN9": {
+     "hz": 39.17,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 30.88,
+   "kc_frac_active": 0.703,
+   "note": "MN9 39.17 vs sugar-alone 85.83",
+   "verdict": "IGNITES"
+  },
+  {
+   "id": 4,
+   "organ": "loom LPLC2 alone -> GF/takeoff DNs",
+   "drive_cells": [
+    185
+   ],
+   "drive_hz": [
+    60
+   ],
+   "reads": {
+    "DNp01": {
+     "hz": 100.42,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp02": {
+     "hz": 92.5,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp04": {
+     "hz": 20.42,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp06": {
+     "hz": 132.5,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 28.69,
+   "kc_frac_active": 0.568,
+   "note": "",
+   "verdict": "IGNITES"
+  },
+  {
+   "id": 4.1,
+   "organ": "loom LC4 alone -> GF/takeoff DNs",
+   "drive_cells": [
+    126
+   ],
+   "drive_hz": [
+    60
+   ],
+   "reads": {
+    "DNp01": {
+     "hz": 15.83,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp02": {
+     "hz": 117.08,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp04": {
+     "hz": 42.08,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp06": {
+     "hz": 55.83,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 29.49,
+   "kc_frac_active": 0.591,
+   "note": "",
+   "verdict": "IGNITES"
+  },
+  {
+   "id": 4.2,
+   "organ": "loom LPLC2+LC4 -> GF/takeoff DNs",
+   "drive_cells": [
+    311
+   ],
+   "drive_hz": [
+    60
+   ],
+   "reads": {
+    "DNp01": {
+     "hz": 123.75,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp02": {
+     "hz": 229.17,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp04": {
+     "hz": 213.33,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "DNp06": {
+     "hz": 189.17,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 33.42,
+   "kc_frac_active": 0.443,
+   "note": "",
+   "verdict": "IGNITES"
+  },
+  {
+   "id": 5,
+   "organ": "sound JO-A -> giant fibre DNp01",
+   "drive_cells": [
+    50
+   ],
+   "drive_hz": [
+    120
+   ],
+   "reads": {
+    "DNp01": {
+     "hz": 0.0,
+     "baseline_hz": 0.0,
+     "cells": 2
+    }
+   },
+   "brain_hz_per_cell": 27.91,
+   "kc_frac_active": 0.847,
+   "note": "",
+   "verdict": "IGNITES"
+  },
+  {
+   "id": 6,
+   "organ": "song JO-B -> AMMC second-order (weak: aPN1 not typed)",
+   "drive_cells": [
+    89
+   ],
+   "drive_hz": [
+    120
+   ],
+   "reads": {
+    "AMMC": {
+     "hz": 80.86,
+     "baseline_hz": 0.0,
+     "cells": 208
+    }
+   },
+   "brain_hz_per_cell": 28.57,
+   "kc_frac_active": 0.677,
+   "note": "",
+   "verdict": "IGNITES"
+  },
+  {
+   "id": 7,
+   "organ": "odour ORN_DM1 -> DM1_lPN, KC 5-10%",
+   "drive_cells": [
+    74
+   ],
+   "drive_hz": [
+    40
+   ],
+   "reads": {
+    "DM1_lPN": {
+     "hz": 348.75,
+     "baseline_hz": 0.0,
+     "cells": 2
+    },
+    "KC": {
+     "hz": 7.35,
+     "baseline_hz": 0.0,
+     "cells": 4064
+    }
+   },
+   "brain_hz_per_cell": 29.44,
+   "kc_frac_active": 0.376,
+   "note": "KC active 37.6% (target 3-15%)",
+   "verdict": "IGNITES"
+  },
+  {
+   "id": 8,
+   "organ": "steer: left ORNs -> DNa02 L > R",
+   "drive_cells": [
+    0
+   ],
+   "drive_hz": [
+    40
+   ],
+   "reads": {
+    "DNa02_L": {
+     "hz": 0.0,
+     "baseline_hz": 0.0,
+     "cells": 1
+    },
+    "DNa02_R": {
+     "hz": 0.0,
+     "baseline_hz": 0.0,
+     "cells": 1
+    }
+   },
+   "brain_hz_per_cell": 0.0,
+   "kc_frac_active": 0.0,
+   "note": "DNa02_L 0.0 vs DNa02_R 0.0",
+   "verdict": "NOT TESTABLE"
+  },
+  {
+   "id": 9,
+   "organ": "antennal deflection JO-C/E/F -> MDN (informational)",
+   "drive_cells": [
+    413
+   ],
+   "drive_hz": [
+    60
+   ],
+   "reads": {
+    "MDN": {
+     "hz": 107.08,
+     "baseline_hz": 0.0,
+     "cells": 4
+    }
+   },
+   "brain_hz_per_cell": 30.83,
+   "kc_frac_active": 0.47,
+   "note": "",
+   "verdict": "IGNITES"
+  },
+  {
+   "id": 10,
+   "organ": "antennal JO-C/E/F -> grooming DNs (weak: aBN/aDN not typed)",
+   "drive_cells": [
+    413
+   ],
+   "drive_hz": [
+    60
+   ],
+   "reads": {
+    "DNg11": {
+     "hz": 215.0,
+     "baseline_hz": 0.0,
+     "cells": 6
+    },
+    "DNg07": {
+     "hz": 87.6,
+     "baseline_hz": 0.0,
+     "cells": 16
+    },
+    "DNg08": {
+     "hz": 35.07,
+     "baseline_hz": 0.0,
+     "cells": 23
+    }
+   },
+   "brain_hz_per_cell": 31.62,
+   "kc_frac_active": 0.384,
+   "note": "",
+   "verdict": "IGNITES"
+  }
+ ],
+ "not_testable_in_this_release": [
+  "aBN1/2",
+  "aDN1/2",
+  "aPN1/AMMC-B1",
+  "vPN1",
+  "pC1",
+  "TLA",
+  "APN2/3"
+ ]
+}

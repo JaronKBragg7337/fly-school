@@ -157,12 +157,12 @@ Rebuild check for this section: `SWEEP=0.35 SWEEP_SEED=73 python exams/gain_swee
 
 ## 9. Walking — borrowed, declared (2026-09-17 02:10)
 
-No connectome-only model walks; every public embodied fly brain (FlyGM, Fly.exe, Mineplix/fly-brain, NeuroMechFly v2) puts a
+No connectome-only model walks; every public embodied fly brain (FlyGM, Fly.exe, lulzx/fly-brain, NeuroMechFly v2) puts a
 stepping generator between descending-neuron rates and the legs, and says so. We do the same: `body/gait.py` is a port of
-**Mineplix/fly-brain's** generator (lulzx, MIT) — `gait.mineplix.json`, two-harmonic joint curves fitted to 100 FlySuite
+**lulzx/fly-brain's** generator (lulzx, MIT) — `gait.mineplix.json`, two-harmonic joint curves fitted to 100 FlySuite
 real-fly walks, tripod, 10 Hz — commanded by our brain's own DN rates (`BODY_MODE=descending`). Measured on fly-v2:
 silent, the fly steps intermittently at the walking threshold; a 120 Hz tone makes MDN fire and it backs up and turns
-(`results/body_loop_v2_gait_s0.json`, `_s120.json`). Mineplix also reports 7.4% active Kenyon cells in their fitted regime;
+(`results/body_loop_v2_gait_s0.json`, `_s120.json`). lulzx also reports 7.4% active Kenyon cells in their fitted regime;
 our 0.35× gives 7.3%. Their raw-muscle mode "cannot stand"; ours stands on v2 (2 s, on a ball — small, checkable).
 
 ## 10. Grade 0 — does each organ do its job? (2026-09-17 02:45)
@@ -173,3 +173,13 @@ taste → proboscis MN9 (20 Hz); loom → giant fibre (253 Hz); wind → MDN (11
 cells + steering DNa02; hind-leg touch → DNa01/MDN; front-leg touch → grooming DNs (weak, 1–2 Hz). `results/grade0_v1.json`,
 `grade0_v2.json`. Identity lesson on v2 (`exams/identity_lesson.py`): two odours are distinct (KC overlap 0.10–0.21) but
 the population valence readout did not learn a preference in 12 pairings (0/5 seeds) — next: compartment-specific readout.
+
+## 11. Grade 0b — the organ check on the corrected answer key (2026-09-17 03:00)
+
+A literature answer key (assembled with ChatGPT; Shiu 2024, Ache 2019, Zhou 2015, Turner 2008, the 2026 MaleCNS gustatory
+typing) removed three unsupported rows from section 10 and named the right cells. `exams/grade0b_organs.py`, fly-v2:
+sweet LB3b+LB3c → MN9 (6.7 Hz) PASS · **bitter + sweet → MN9 1.7 Hz, the veto sign Shiu reports** PASS · water LB3a → MN9 0
+FAIL · loom: LPLC2 → GF/DNp04/DNp06, LC4 → DNp02/DNp04 — the feature specificity the key predicts — PASS · JO-A → GF 0 FAIL ·
+JO-B → AMMC PASS (weak key) · DM1 odour → DM1 PN 297 Hz but Kenyon cells 2.8% (target 5–10%) FAIL · antennal → grooming DNs
+PASS (weak key). **v2: 7 pass / 3 fail / 1 not testable. v1: 0 pass, 11 ignite.** Neighbour numbers (lulzx/fly-brain, nine
+fitted globals, conductance synapses): sugar → MN9 59 Hz, KC 7.4%. That recipe is the fly-v3 candidate. `results/grade0b_*.json`.

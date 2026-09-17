@@ -1,4 +1,4 @@
-"""Stepping pattern generator - PORTED from Mineplix/fly-brain (lulzx, MIT), src/sim/motor.js + public/body/gait.json.
+"""Stepping pattern generator - PORTED from lulzx/fly-brain (MIT; github.com/lulzx/fly-brain is a mirror), src/sim/motor.js + public/body/gait.json.
 Two-harmonic joint curves fitted to 100 FlySuite real-fly walking trajectories (tripod, 10 Hz, duty 0.68), refined for
 stability on flybody. The brain's descending neurons command it (forward drive, steering); the generator moves the legs.
 This is BORROWED walking, declared as such - no connectome-only model walks (their docs, ours). Claude Code, 2026-09-17.
