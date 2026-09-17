@@ -1,0 +1,30 @@
+{
+ "round": 0,
+ "cand": 95,
+ "params": {
+  "pn": 1.0437049954240596,
+  "apl": 6.290740568077971,
+  "kc": 0.5049888647624144,
+  "kc_thresh_shift_mv": 3.0453316373621417,
+  "mbon": 1.043000285430246
+ },
+ "stage1": {
+  "reliability": 0.532,
+  "median_overlap": 0.216,
+  "kc_frac": 0.0097,
+  "brain_hz": 4.23,
+  "score": 1.6408,
+  "stage1_pass": false
+ },
+ "t": 569,
+ "stage2": {
+  "pam_A_pre": 4.15,
+  "pam_A_post": 5.49,
+  "pam_C_pre": 18.0,
+  "pam_C_post": 15.77,
+  "drop_A": -0.322,
+  "drop_C": 0.124,
+  "stage2_pass": false,
+  "depressed": 1694
+ }
+}

@@ -53,3 +53,21 @@ PASS (all four, fixed): (1) pooled LEARNED rate on A >= 0.50; (2) pooled rate on
 (3) seeds with A rate > C rate: >= 6 of 8; (4) mean L(A) post < pre in >= 6 of 8 seeds. Seeds: 909,1010,1111,1212,1313,1414,1515,1616.
 This test reads the mushroom body's own output, not a motor neuron: if it passes, items 1-4 of the goal are met and item 5
 is met only as far as "endogenous output pathway"; the motor reply remains NOT shown. Stated before running.
+
+# TEST 3 — predeclared 2026-09-17 04:50 EDT, on fly-v5 (after tests 1 and 2 FAILED on v3)
+Fly: fly-v5 = fly-v3 graph + calib.json (PN x1.27, APL x6.02, KC x1.79, KC threshold +1.8 mV, MBON x0.86), refractory 3.8 ms.
+Chosen by mb_calib_search.py stage 1 (odour panel, seeds 11/12) and stage 2 (seeds 200-600) — none of the test seeds.
+Pupil under test: lr 0.2 (declared variant; stage 2 chose it). Control pupil lr 0.06 run on the same seeds, reported.
+Symbols: A = ORN_DA2 @40 Hz (REWARD +1); B = ORN_DL3 @40 Hz (PUNISH -1); C = ORN_VM5d @40 Hz (NEVER paired, control).
+Training: 12 x (A+reward, B+punishment). Cold: 6 reps each of A, B, C, pre and post; dopamine off.
+Learning site: KC->MBON. Answer channels (endogenous mushroom-body OUTPUT pathway):
+  PAM(X) = mean Hz over all PAM-side (avoid-promoting) MBONs on odour X; PPL(X) = mean Hz over all PPL1-side (approach) MBONs.
+Predictions from the rule: reward on A depresses A's drive to PAM MBONs -> PAM(A) falls; punishment on B -> PPL(B) falls.
+Decoded reply per cold post trial of X (against X's own pre baseline, 6 trials):
+  zP = (PAM(X) - mean PAM_pre(X)) / sd PAM_pre(X);  zL = (PPL(X) - mean PPL_pre(X)) / sd PPL_pre(X)
+  reply = "APPROACH" if zP < -1 and zP <= zL; "AVOID" if zL < -1 and zL < zP; else "NONE". Chance per class ~16%.
+PASS (all, fixed): (1) pooled APPROACH rate on A >= 0.50; (2) pooled AVOID rate on B >= 0.50;
+(3) pooled (APPROACH+AVOID) rate on C <= 0.25; (4) seeds with A's APPROACH rate > C's: >= 6/8 AND B's AVOID rate > C's: >= 6/8.
+Also recorded (not criteria): DNa13, DNa03, MDN, DNa02 — the motor pathway; if they move with the answer, item 5 is fully met,
+otherwise item 5 is met only as "endogenous output pathway". Seeds: 1717,1818,1919,2020,2121,2222,2323,2424.
+After a pass: Grade 0b on fly-v5; freeze; re-run this exact test from a clean process; both must pass.

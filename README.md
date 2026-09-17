@@ -184,7 +184,7 @@ JO-B → AMMC PASS (weak key) · DM1 odour → DM1 PN 297 Hz but Kenyon cells 2.
 PASS (weak key). **v2: 7 pass / 3 fail / 1 not testable. v1: 0 pass, 11 ignite.** Neighbour numbers (lulzx/fly-brain, nine
 fitted globals, conductance synapses): sugar → MN9 59 Hz, KC 7.4%. That recipe is the fly-v3 candidate. `results/grade0b_*.json`.
 
-## 12. The communication loop — attempted, predeclared, NOT established (2026-09-17 03:15–05:05)
+## 12. The communication loop — attempted, predeclared, NOT established (2026-09-17 03:15–03:59)
 
 `exams/comm_protocol.md` holds two predeclared tests; `exams/comm_loop.py` runs them; every pilot and test JSON is in
 `results/`. Test 1 (answer = MDN, 8 fresh seeds) failed all criteria. Test 2 (answer = MBON21+26, 8 fresh seeds) failed all
@@ -194,3 +194,12 @@ any answer channel selecting reproducibly by symbol after learning. Root cause, 
 0.4–0.7 of its cells across most odour pairs (`results/glom_scan_v3.json`), and a per-KC homeostasis attempt (`versions/fly-v4`)
 decorrelates it only by making it unreliable. The next step is a mushroom-body calibration search with the objective written
 in the project ledger. Nothing was redefined after a result.
+
+## 13. Calibration search → fly-v5 → test 3 (2026-09-17 04:05–04:30). Failed. Where the loop stands.
+
+`exams/mb_calib_search.py` (96 random candidates; `results/mb_calib/`) found one calibration meeting the predeclared
+mushroom-body targets — reliability 0.69, overlap 0.06, 4.6% Kenyon cells — by raising APL inhibition ×6 (`versions/fly-v5`).
+On it, a rewarded odour's avoid-side MBON output fell 21–31% while a control odour's did not (stage 2, one seed). The
+predeclared test 3 on 8 fresh seeds: the drop is 5–20% and per-trial replies are at chance — failed. Three predeclared
+tests (24 seeds) failed tonight; none was redefined. The gap is quantitative: the learned change is about a fifth of the
+trial-to-trial variability at the readout. Next: a calibration whose objective includes the learned readout, many seeds.
