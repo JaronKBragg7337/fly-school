@@ -22,10 +22,10 @@ ap = argparse.ArgumentParser(); ap.add_argument("--worker", type=int, default=0)
 ap.add_argument("--per-round", type=int, default=48); ap.add_argument("--round", type=int, default=0); ap.add_argument("--stage2", action="store_true")
 ap.add_argument("--epochs", type=int, default=12); ap.add_argument("--lr", type=float, default=0.06); ap.add_argument("--only", type=str, default="")
 ap.add_argument("--around", type=str, default="")        # json of params; round-1 local search: each param x exp(N(0, 0.35)), thresh +- 1.5 mV
-ap.add_argument("--s2seeds", type=int, default=1); ap.add_argument("--s2reps", type=int, default=4); ap.add_argument("--topk", type=int, default=6)
+ap.add_argument("--params", type=str, default=""); ap.add_argument("--s2seeds", type=int, default=1); ap.add_argument("--s2reps", type=int, default=4); ap.add_argument("--topk", type=int, default=6)
 args = ap.parse_args()
 OUT = LAB / "results" / "mb_calib"; OUT.mkdir(parents=True, exist_ok=True)
-GRAPH = Path(r"C:/Users/lilli/Fly-Lab/versions/fly-v3/graph_v3_s0.35.npz")
+GRAPH = Path(os.environ.get("CALIB_GRAPH", r"C:/Users/lilli/Fly-Lab/versions/fly-v3/graph_v3_s0.35.npz"))
 PANEL = ["ORN_DA2", "ORN_DL3", "ORN_DL4", "ORN_DM6", "ORN_VA1d", "ORN_VL2a", "ORN_VM4", "ORN_VM5d"]
 HZ, PULSE_MS, PRE_MS, TAIL_MS = 40.0, 300.0, 20.0, 40.0
 # search space (log-uniform), CHOSEN: gains multiply the CHOSEN calibration pn05_apl10_kc03
@@ -123,6 +123,13 @@ def stage2(c, A="ORN_DA2", Ctrl="ORN_VM5d"):
 
 
 t0 = time.perf_counter()
+if args.params:
+    c = json.loads(open(args.params).read()) if os.path.exists(args.params) else json.loads(args.params)
+    c = {k: c[k] for k in SPACE}
+    m1 = stage1(c); print("stage1", json.dumps(m1), flush=True)
+    m2 = stage2(c); print("stage2", json.dumps(m2), flush=True)
+    json.dump({"params": c, "graph": str(GRAPH), "stage1": m1, "stage2": m2, "epochs": args.epochs, "lr": args.lr}, open(OUT / f"named_{os.path.basename(args.params).replace('.json','')}_{GRAPH.stem}.json", "w"), indent=1)
+    sys.exit(0)
 if not args.stage2:
     for i in range(args.worker, args.per_round, args.of):
         c = candidate(i); m = stage1(c)

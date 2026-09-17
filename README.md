@@ -205,3 +205,12 @@ tests (24 seeds) failed tonight; none was redefined. The gap is quantitative: th
 trial-to-trial variability at the readout. Next: a calibration whose objective includes the learned readout, many seeds.
 
 Test 4 (block-level reply, 8 fresh seeds): failed — 0/8. Four predeclared tests, 32 seeds, none redefined. Communication not established; see `exams/comm_protocol.md` for every predeclaration and the ledger for the next step.
+
+## 14. The readout was pinned (2026-09-17 morning): fly-v6, fly-v7, tests 5–7
+
+Instrumenting a trained fly showed the lesson landing (KC→MBON synapses at gain 0.26; KC drive −60%) while the MBONs did not
+move: APL inhibition and weak KC→MBON synapses pinned the readout. fly-v6 puts the APL gain on APL→KC edges only; fly-v7 sets
+KC→MBON edges ×24 (`versions/fly-v7`). Grade 0b on v7: 9 pass / 1 fail / 1 not testable — core reflexes intact. Test 7 (one-sided,
+24 pairings, 24 reps, 8 fresh seeds): the rewarded odour's avoid-side MBON output fell in 7/8 flies (z −2.9 to −6.4) — but the
+control odour fell 3–10% too, so the predeclared specificity criterion failed; the punished odour did not move. Seven predeclared
+tests, none redefined. Open question: why the control inherits part of the lesson. `results/comm_loop_test{5,6,7}_s*.json`.

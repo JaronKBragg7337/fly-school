@@ -32,6 +32,12 @@ fb = FlyBrain(GRAPH); p = fb.p
 ann = pd.read_feather(RUNTIME / "data" / "body-annotations.feather"); b2i = fb.body_to_i
 gains = C.gains_for(fb, C.CHOSEN); gpn = gains[fb.type_code].astype(np.float32)
 types = fb.types.astype(str)
+THRESH = np.full(fb.n, p.v_thresh, dtype=np.float32)
+if os.environ.get("G0_CALIB"):                      # the same per-type calibration the school/comm loop applies (fly-v5..v7)
+    _c = json.load(open(os.environ["G0_CALIB"]))
+    gpn[np.array([("PN" in x and not x.startswith("MBON")) for x in types])] *= np.float32(_c["pn"]); gpn[types == "APL"] *= np.float32(_c["apl"])
+    gpn[np.array([x.startswith("KC") for x in types])] *= np.float32(_c["kc"]); gpn[np.array([x.startswith("MBON") for x in types])] *= np.float32(_c["mbon"])
+    THRESH[np.array([x.startswith("KC") for x in types])] += np.float32(_c["kc_thresh_shift_mv"])
 side = np.array([""] * fb.n, dtype=object)
 for bid, sd in zip(ann["bodyId"].astype(int), ann["somaSide"].astype(str)):
     if bid in b2i and sd in ("L", "R"): side[b2i[bid]] = sd
@@ -68,9 +74,9 @@ def run(drives, seed, reads):
         if on0 <= step < on1:
             for cells, prob in dl:
                 hit = cells[rng.random(len(cells)) < prob]
-                if len(hit): v[hit] = p.v_thresh + 1.0
+                if len(hit): v[hit] = THRESH[hit] + 1.0
         v[refr > 0] = p.v_reset
-        fired = np.flatnonzero((v >= p.v_thresh) & (refr <= 0))
+        fired = np.flatnonzero((v >= THRESH) & (refr <= 0))
         if len(fired):
             total += len(fired); per[fired] += 1; ever[fired] = True; refr[fired] = fb.refr_steps; v[fired] = p.v_reset
             starts = indptr[fired]; cnt = indptr[fired + 1] - starts; tot = int(cnt.sum())
@@ -114,6 +120,6 @@ for r in ROWS:
     rows.append(row); by_id[r["id"]] = row
     print(f"[{TAG}] {r['id']:>4} {r['organ']:58s} drive {row['drive_cells']}@{row['drive_hz']}  brain {brain:5.2f}  KC {kcf*100:4.1f}%  "
           + "  ".join(f"{n} {v['hz']}" for n, v in reads.items()) + f"  {note}  -> {verdict}  {time.perf_counter()-t0:.0f}s", flush=True)
-out = {"chosen": {"graph": str(GRAPH), "pulse_ms": PULSE_MS, "reps": REPS, "seed": SEED, "answer_key": "ChatGPT chat literature table 2026-09-17 (inbox brief); Shiu 2024 numbers as soft targets"},
+out = {"chosen": {"graph": str(GRAPH), "calib": os.environ.get("G0_CALIB"), "pulse_ms": PULSE_MS, "reps": REPS, "seed": SEED, "answer_key": "ChatGPT chat literature table 2026-09-17 (inbox brief); Shiu 2024 numbers as soft targets"},
        "measured": rows, "not_testable_in_this_release": ["aBN1/2", "aDN1/2", "aPN1/AMMC-B1", "vPN1", "pC1", "TLA", "APN2/3"]}
 (LAB / "results" / f"grade0b_{TAG}.json").write_text(json.dumps(out, indent=1), encoding="utf-8")

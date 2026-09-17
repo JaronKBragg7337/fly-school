@@ -21,7 +21,7 @@ A_HZ, B_HZ = float(os.environ.get("COMM_A_HZ", 40.0)), float(os.environ.get("COM
 TEACH_EPOCHS, REPS = int(os.environ.get("COMM_EPOCHS", 12)), int(os.environ.get("COMM_REPS", 6))
 LR = float(os.environ.get("COMM_LR", 0.06))               # variant pupil: learning rate (CHOSEN, declared); 0.06 = control
 ANS_TYPES = tuple(os.environ.get("COMM_ANSWER", "MDN").split(","))
-PULSE_MS, PRE_MS, TAIL_MS = 300.0, 20.0, 40.0
+PULSE_MS, PRE_MS, TAIL_MS = float(os.environ.get("COMM_PULSE_MS", 300.0)), 20.0, 40.0
 R_TYPES = ("MBON09",); P_TYPES = ("MBON25", "MBON25-like", "MBON34"); ANSWER = "MDN"
 
 fb = FlyBrain(GRAPH); p = fb.p
@@ -161,7 +161,10 @@ if os.environ.get("COMM_DECODE") == "valence2" and os.environ.get("COMM_BLOCK"):
         for s_ in ("A", "B", "C"):
             P0, P1 = np.array(r["pre"][s_]["PAM"]), np.array(r["post"][s_]["PAM"]); L0, L1 = np.array(r["pre"][s_]["PPL"]), np.array(r["post"][s_]["PPL"])
             zP = (P1.mean() - P0.mean()) / max(1e-6, P0.std() / np.sqrt(len(P0))); zL = (L1.mean() - L0.mean()) / max(1e-6, L0.std() / np.sqrt(len(L0)))
-            b[s_] = {"zP": round(float(zP), 2), "zL": round(float(zL), 2), "reply": "APPROACH" if (zP < -2 and zP <= zL) else ("AVOID" if zL < -2 else "NONE")}
+            if os.environ.get("COMM_ONESIDED"):
+                b[s_] = {"zP": round(float(zP), 2), "zL": round(float(zL), 2), "reply": "APPROACH" if zP < -2 else "NONE"}
+            else:
+                b[s_] = {"zP": round(float(zP), 2), "zL": round(float(zL), 2), "reply": "APPROACH" if (zP < -2 and zP <= zL) else ("AVOID" if zL < -2 else "NONE")}
         r["block"] = b; blk[r["seed"]] = b
     nA = sum(b["A"]["reply"] == "APPROACH" for b in blk.values()); nC = sum(b["C"]["reply"] == "NONE" for b in blk.values()); nB = sum(b["B"]["reply"] == "AVOID" for b in blk.values())
     crit = {"1_A_APPROACH_ge_6of8": nA >= 6, "2_C_NONE_ge_7of8": nC >= 7, "3_B_AVOID_recorded_not_required": True}
@@ -182,7 +185,7 @@ else:
     crit = {"1_B_avoid_ge_0.60": pool["B"] >= 0.60, "2_A_and_C_avoid_le_0.30": pool["A"] <= 0.30 and pool["C"] <= 0.30,
             "3_seeds_B_gt_A_ge_6of8": seeds_B_gt_A >= 6, "4_R_drop_ge5_and_P_drop_ge5": nR >= 5 and nP >= 5}
 out = {"protocol": "comm_protocol.md (predeclared 2026-09-17 03:20 EDT)", "graph": str(GRAPH), "seeds": SEEDS, "c_hz": c_hz,
-       "mbon_gain": MBON_GAIN, "calib": CALIB, "thresh": os.environ.get("COMM_THRESH", "scalar -45"), "lr": LR, "epochs": TEACH_EPOCHS, "reps": REPS, "A": A_TYPE, "B": B_TYPE, "C": C_TYPE, "a_hz": A_HZ, "b_hz": B_HZ, "answer": ANS_TYPES, "pooled_avoid_rate": pool, "seeds_B_gt_A": seeds_B_gt_A, "R_drop_seeds": nR, "P_drop_seeds": nP, "L_drop_seeds": nL, "decode": os.environ.get("COMM_DECODE", "avoid2sd"), "criteria": crit, "PASS": all(crit.values()),
+       "mbon_gain": MBON_GAIN, "calib": CALIB, "thresh": os.environ.get("COMM_THRESH", "scalar -45"), "lr": LR, "epochs": TEACH_EPOCHS, "reps": REPS, "A": A_TYPE, "B": B_TYPE, "C": C_TYPE, "a_hz": A_HZ, "b_hz": B_HZ, "answer": ANS_TYPES, "pulse_ms": PULSE_MS, "pooled_avoid_rate": pool, "seeds_B_gt_A": seeds_B_gt_A, "R_drop_seeds": nR, "P_drop_seeds": nP, "L_drop_seeds": nL, "decode": os.environ.get("COMM_DECODE", "avoid2sd"), "criteria": crit, "PASS": all(crit.values()),
        "elapsed_s": round(time.perf_counter() - t0, 1), "seeds_detail": results}
 (LAB / "results" / f"comm_loop_{TAG}.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
 print(json.dumps({k: v for k, v in out.items() if k != "seeds_detail"}, indent=1))

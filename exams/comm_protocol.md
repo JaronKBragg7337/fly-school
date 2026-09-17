@@ -83,3 +83,38 @@ PASS (all, fixed): (1) reply(A) == "APPROACH" in >= 6 of 8 seeds; (2) reply(C) =
 (3) reply(B) recorded; "AVOID" on B is reported but NOT required (the PPL1-side output is ~5 Hz and did not move in test 3).
 Seeds: 2525,2626,2727,2828,2929,3030,3131,3232. A pass establishes items 1-4 and item 5 as "endogenous MB output pathway"
 (not motor) — stated now. Then Grade 0b on fly-v5 and a clean re-run of this exact test.
+
+# TEST 5 — predeclared 2026-09-17 08:55 EDT, on fly-v5 (after tests 3 and 4 FAILED; diagnosis 08:50: KC share of MBON input is
+# 82-92% in v1 and v3, so the learning site controls the readout; the failures are statistical — 2-3 MBON spikes per 360 ms trial,
+# 6 reps, reliability 0.69 — not structural)
+Same fly-v5 (calib.json), same symbols A = ORN_DA2 @40 Hz (REWARD), C = ORN_VM5d @ rate equalised (NEVER paired, control),
+B = ORN_DL3 @40 Hz (PUNISH, recorded, not required). Pupil lr 0.2. Changes, all sizes, stated before running:
+  odour pulse 1000 ms (was 300); 24 pairings (was 12); 12 cold reps per odour, pre and post (was 6).
+Answer channel and decode unchanged from test 4: PAM(X) = mean Hz over PAM-side MBONs; block z on the 12-rep means;
+reply(X) = "APPROACH" if zP_block < -2 and zP_block <= zL_block; "AVOID" if zL_block < -2; else "NONE".
+PASS (fixed): (1) reply(A) == "APPROACH" in >= 6 of 8 seeds; (2) reply(C) == "NONE" in >= 7 of 8 seeds.
+Seeds: 3333,3434,3535,3636,3737,3838,3939,4040 (one process per seed; pooled afterwards without change).
+Then Grade 0b on fly-v5; freeze; clean re-run of this exact test.
+
+# TEST 6 — predeclared 2026-09-17 09:58 EDT, on fly-v7 (tests 1-5 FAILED; diagnosis 09:20-09:50: the readout was pinned —
+# APL crushed the MBONs (v5), then KC->MBON synapses were too weak to drive them (v6); fly-v7 = v6 with KC->MBON edges x24)
+Fly: fly-v7 (graph_v7_km24_am1.0.npz + versions/fly-v7/calib.json), refractory 3.8 ms. Pupil lr 0.2.
+Symbols: A = ORN_DA2 @40 Hz (REWARD +1); B = ORN_DL3 @40 Hz (PUNISH -1, recorded, not required); C = ORN_VM5d @ rate equalised
+to A's KC count (NEVER paired, control). Training 12 x (A+reward, B+punishment). Pulse 300 ms (as in the stage-2 evidence).
+Cold: 12 reps per odour pre and post, dopamine off.
+Answer channel: PAM(X) = mean Hz over PAM-side MBONs; PPL(X) likewise. Block decode as tests 4/5:
+  zP = (mean PAM_post - mean PAM_pre) / (sd PAM_pre / sqrt(12)); zL likewise; reply = "APPROACH" if zP < -2 and zP <= zL;
+  "AVOID" if zL < -2; else "NONE".
+PASS (fixed): (1) reply(A) == "APPROACH" in >= 6 of 8 seeds; (2) reply(C) == "NONE" in >= 7 of 8 seeds.
+Seeds: 4141,4242,4343,4444,4545,4646,4747,4848 (one process per seed; pooled without change). DNa13/DNa03/MDN recorded.
+Grade 0b runs on fly-v7 in parallel; core properties must hold (no ignition, sugar->MN9, bitter veto, loom specificity, JO-A->GF).
+After a pass: freeze test 6's raw outputs with the manifest; clean re-run of this exact test (new process, stores deleted).
+
+# TEST 7 — predeclared 2026-09-17 ~09:20 EDT, on fly-v7. Seventh predeclared test; tests 1-6 stand as FAILED.
+Same fly-v7, symbols, and answer channel as test 6. Changes, stated before running: 24 pairings (all eligible synapses reach
+the floor), 24 cold reps per odour pre and post (z on the block mean uses sd/sqrt(24)), and the decode is ONE-SIDED, as the
+rule predicts: reward depresses A's drive to PAM-side (avoid) MBONs and says nothing about the PPL side.
+  zP(X) = (mean PAM_post(X) - mean PAM_pre(X)) / (sd PAM_pre(X) / sqrt(24))
+  reply(X) = "APPROACH" if zP(X) < -2, else "NONE".
+PASS (fixed): (1) reply(A) == "APPROACH" in >= 6 of 8 seeds; (2) reply(C) == "NONE" in >= 7 of 8 seeds.
+Seeds: 4949,5050,5151,5252,5353,5454,5555,5656. B recorded. DNs recorded. Grade 0b on fly-v7 already passed (9/1/1).
