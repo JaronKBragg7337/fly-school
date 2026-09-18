@@ -219,3 +219,11 @@ torch 2.6.0+cu124, RTX 4060 Laptop GPU. SHA-256 (first 16):
 - results/gate3/gate3f/26808_world.json  080d56476cc0b203
 - results/gate3/gate3f/gate3_summary.json  bc1f0d91704422e2
 - results/gate3/grade0b_v10calib_post_gate3.json  216b8318117c08ab
+
+## Added 2026-09-18 01:00 EDT — Gate 4 (round trip) FAIL on L3; L1/L2/L4/L5 pass. SHA-256 (first 16):
+- code/world/gate4.py  b74944ffb200c20f
+- code/world/gate4_pilot.py  1e45dd66b3286310
+- code/world/gate4_protocol.md  ecab6063bbaa908d
+- results/gate4/gate4_pilot.json  89187318dfb26a2b
+- results/gate4/gate4_pilot3.log  403802f6bf77a647
+- results/gate4/gate4_summary.json  211291ffc6cc7ecc

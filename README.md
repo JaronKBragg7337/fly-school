@@ -246,6 +246,11 @@ reply GO-TOWARD in 16/16. Grade 0b after: every verdict and read identical. Cave
 (1–5 Hz vs A's 90–111 Hz), so single-fly rel_Y(C) is noisy; the A effect is not. `results/comm_loop_test10*_s*.json`,
 `results/comm_loop_test10_pooled.json`, `results/grade0b_v10calib_post10.json`.
 
+One fact that is easy to miss in the sections above: the learning rule has had an aversive side from the start — PPL1-dopamine
+depression of the punishment-side KC→MBON synapses (side table verified against Aso 2014), and tests 1–8 trained odour B + punishment
+beside odour A + reward. B's aversive lesson leaked into the network used to judge A, and dropping it is part of why test 9 passed.
+So aversive learning exists and was measured; it has not yet been run as the *primary* symbol on the frozen stack.
+
 With that, the nine-item goal predeclared on 2026-09-17 is met on every item, on its own bars, and reproduced from clean
 processes. In Grok chat's words it is **Goal A: a decoded endogenous reply from one fly on a frozen test.** It is not two flies
 talking through a world (Goal B). Section 18 starts that.
@@ -296,3 +301,28 @@ What it is not: the sender does not decide to signal — it backs away less and 
 walking is a declared kinematic rule, not the MuJoCo body; the receiver's readout is a projection-neuron rate, not a behaviour;
 Gate 4 (two senders, one receiver; persistence across a school day) is not started. `results/gate3/*/gate3_summary.json`,
 `results/grade0b_v10calib_post_gate3.json`, hashes in `versions/comm-loop-1/MANIFEST.md`.
+
+## 20. Gate 4 — the round trip; the reply arrives, but does not yet carry the lesson (2026-09-17 19:35 → 2026-09-18 00:57)
+
+Jaron's bar, stated plainly on the evening of the 17th: something learned goes out, something comes back, and the next move depends on
+what came back. Gate 3 is half of that. Gate 4 (`world/gate4_protocol.md`, predeclared before the run) asks for the other half:
+fly A learns odour A; its backing-away changes what B smells; B's wings (cVA → wing motor neurons, graded, 32 cells) push air at A's
+antenna; A's antennal mechanosensors reach A's walking neurons even while A is smelling the odour (the cVA channel cannot — the
+restored lateral inhibition silences a faint odour behind a strong one, as in the real fly). Two separate brain objects, A trained,
+B frozen and leak-checked; a 1-D world of distance, pheromone and air; three one-second bouts; 8 pairs × 96 paired realisations;
+LIVE vs YOKED (B's wing output replayed from the untrained pairing) vs MUTE; the never-paired odour as the control loop.
+
+Result: learning enters the world 8/8 (the pair ends 11–14 mm closer); **A hears B's reply 8/8** (A's walking neurons 13–16 Hz with
+the air arriving, 31–38 Hz with it cut, z −9 to −12); control flat; no leak; B's weights untouched. But the line that mattered —
+does B's reply depend on what A learned — failed: pooled Δ −0.65 Hz, z −1.34 against a bar of −3, sign right in 6/8. The reply is
+loud and it is the same reply whether or not A learned. Verdict FAIL as declared; no reproduction; nothing re-declared.
+`results/gate4/gate4_summary.json`.
+
+That is the measured gap, at a named link, and it is the most useful line in this file for anyone who wants to take the work
+further: the native wiring carries a lesson one way strongly and hears a reply strongly, but nothing in the fly persists between
+bouts except its position, so the reply cannot mean anything to it. What the model lacks is not another channel; it is state —
+something to need, something to lose, something to expect (decisions/OPEN-QUESTIONS Q-019, Q-020). That is where this repo hands off.
+
+Credits for the two-fly stretch: Grok chat (the four gates, mute/scramble, "the fail is the finding"); ChatGPT chat (the return-path
+tightening — no scripted rule, LIVE/YOKED/MUTE — and the "something to lose, need, expect" framing); DeepSeek (stakes and contrast);
+Claude Code (kernel, world, runs, writing); Jaron (the bar, the three things, and the rule that nothing is cancelled out).

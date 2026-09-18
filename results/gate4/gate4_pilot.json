@@ -1,0 +1,82 @@
+[
+ {
+  "seed": 60505,
+  "bout1_A_mdn_pre_post": [
+   54.63,
+   34.3
+  ],
+  "d_after_bout1_pre_post": [
+   65.4,
+   56.6
+  ],
+  "B_cVA_orn_hz_bout2_pre_post": [
+   2.33,
+   2.69
+  ],
+  "B_mdn_bout2_pre_post": [
+   18.25,
+   22.93
+  ],
+  "B_mdn_bout2_z_post_vs_pre": 1.63,
+  "A_vpn_bout2_live": 61.09,
+  "A_mdn_bout2_LIVE_YOKED_MUTE": [
+   10.63,
+   14.11,
+   34.13
+  ],
+  "A_mdn_bout2_z_live_vs_yoked": -2.44,
+  "A_mdn_bout2_z_live_vs_mute": -8.03,
+  "A_mdn_bout3_LIVE_YOKED_MUTE": [
+   17.43,
+   20.74,
+   32.32
+  ],
+  "A_mdn_bout3_z_live_vs_yoked": -1.24,
+  "A_mdn_bout3_z_live_vs_mute": -5.94,
+  "d_final_pre_post_LIVE": [
+   115.7,
+   91.7
+  ],
+  "d_bout2_LIVE_vs_YOKED_mm": -1.74
+ },
+ {
+  "seed": 60606,
+  "bout1_A_mdn_pre_post": [
+   59.29,
+   35.5
+  ],
+  "d_after_bout1_pre_post": [
+   68.4,
+   58.3
+  ],
+  "B_cVA_orn_hz_bout2_pre_post": [
+   2.23,
+   2.63
+  ],
+  "B_mdn_bout2_pre_post": [
+   20.84,
+   18.65
+  ],
+  "B_mdn_bout2_z_post_vs_pre": -0.8,
+  "A_vpn_bout2_live": 59.15,
+  "A_mdn_bout2_LIVE_YOKED_MUTE": [
+   14.46,
+   16.06,
+   34.9
+  ],
+  "A_mdn_bout2_z_live_vs_yoked": -0.76,
+  "A_mdn_bout2_z_live_vs_mute": -6.73,
+  "A_mdn_bout3_LIVE_YOKED_MUTE": [
+   18.22,
+   17.9,
+   34.12
+  ],
+  "A_mdn_bout3_z_live_vs_yoked": 0.14,
+  "A_mdn_bout3_z_live_vs_mute": -5.18,
+  "d_final_pre_post_LIVE": [
+   121.3,
+   94.6
+  ],
+  "d_bout2_LIVE_vs_YOKED_mm": -0.8
+ }
+]
